@@ -86,3 +86,50 @@ Known direct competitors include MES Innovation Sdn Bhd and Bizit Systems. The c
 ## 7. UPDATE RULE
 
 This prompt should evolve as `company_profile.md`, `positioning.md`, competitor files, and performance data mature. Update it when strategy, audience understanding, or channel priorities materially change — do not let it drift out of sync with the business profile.
+
+---
+
+## 8. DRAFT CONTENT — LINKEDIN POST: MES IMPLEMENTATION ROI
+
+Platform: LinkedIn
+Audience: GM / Managing Director / Plant Manager (budget owner + operational leadership)
+Objective: Consideration → Enquiry
+Funnel Stage: Consideration
+Hook Type: Question / Problem
+Status: DRAFT — pending human review before publishing (per brain_rules.md Section 30, Human Approval)
+
+Note on evidence: `company_profile.md` marks revenue/ROI proof as not yet available (no case study or ROAS/ROI data on file — see `mes-power-bi-dashboard` notes). This draft therefore frames ROI as a decision framework and cost-of-inaction question rather than citing specific percentages, payback periods, or case results we cannot currently substantiate. Once real customer ROI data exists, this post should be revised to include actual proof.
+
+---
+
+**Draft Post:**
+
+Most factories don't lose money in one big moment.
+
+They lose it in a hundred small ones — a job nobody could locate for an hour, a quantity typed in wrong, a report that said one thing while the shop floor was doing another.
+
+None of that shows up as a single line item. It just shows up as margin that quietly disappears.
+
+That's the real ROI question with an MES — it's rarely "how much revenue will this generate." It's:
+
+→ How much are we already losing to production information we can't fully trust?
+→ How many hours does your team spend chasing "what's actually happening" instead of acting on it?
+→ When a number is wrong, how long does it take you to find out — and how much has already been decided based on it?
+
+An MES doesn't create value by adding another dashboard. It creates value by closing the gap between what was reported and what actually happened on the shop floor — so decisions get made on production reality, not paperwork.
+
+If you're a Plant Manager, Ops Director, or MD sizing up an MES investment, the sharper question isn't "what does it cost to implement."
+
+It's: **what is it currently costing you not to know?**
+
+Curious how manufacturers in Penang and Northern Malaysia are thinking about this — what's the biggest source of "invisible loss" on your floor right now?
+
+#ManufacturingExecutionSystem #MES #Manufacturing #ProductionVisibility #Malaysia #Industry40
+
+---
+
+**Suggested CTA (comment version):** "Curious how manufacturers in Penang and Northern Malaysia are thinking about this — what's the biggest source of 'invisible loss' on your floor right now?"
+
+**Alternative CTA (link version, if driving traffic):** "See how Mysoft MES gives you a verified view of what's actually happening on your shop floor → [link]"
+
+NEXT ACTION: Human review required before publishing. If approved, log as a content asset per brain_rules.md Section 14 (Creative DNA) once posted, and track engagement + any resulting enquiries against Section 17 (Performance ≠ Views) metrics.
