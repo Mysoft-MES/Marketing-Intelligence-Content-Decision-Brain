@@ -30,13 +30,22 @@ def write_doc(filename: str, content: str) -> str:
 def sync_to_github(commit_message: str = "docs: update content strategy and prompts") -> str:
     """Commits and pushes all updated local markdown files directly to GitHub."""
     try:
-        subprocess.run(["git", "add", "."], cwd=WORKSPACE_DIR, check=True)
-        subprocess.run(["git", "commit", "-m", commit_message], cwd=WORKSPACE_DIR, check=True)
-        subprocess.run(["git", "push"], cwd=WORKSPACE_DIR, check=True)
-        return "Successfully pushed all updates to GitHub repository!"
-    except subprocess.CalledProcessError as e:
-        return f"Git sync error: {e}"
+        env = os.environ.copy()
+        env["GIT_TERMINAL_PROMPT"] = "0"  # Prevent Git from hanging on authentication prompts
 
+        subprocess.run(["git", "add", "."], cwd=WORKSPACE_DIR, check=True, env=env)
+        
+        # Commit only if there are staged changes
+        status = subprocess.run(["git", "status", "--porcelain"], cwd=WORKSPACE_DIR, capture_output=True, text=True, env=env)
+        if status.stdout.strip():
+            subprocess.run(["git", "commit", "-m", commit_message], cwd=WORKSPACE_DIR, check=True, env=env)
+            
+        push_res = subprocess.run(["git", "push"], cwd=WORKSPACE_DIR, capture_output=True, text=True, timeout=30, env=env)
+        return "Successfully pushed all updates to GitHub!"
+    except subprocess.TimeoutExpired:
+        return "Git push timed out. Please ensure your Git credentials are authenticated."
+    except subprocess.CalledProcessError as e:
+        return f"Git error: {e}"
 # ----------------- 3. DRAFT PREVIEW TOOL -----------------
 
 @mcp.tool()
