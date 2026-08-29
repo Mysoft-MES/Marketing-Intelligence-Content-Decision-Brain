@@ -30,22 +30,26 @@ def write_doc(filename: str, content: str) -> str:
 def sync_to_github(commit_message: str = "docs: update content strategy and prompts") -> str:
     """Commits and pushes all updated local markdown files directly to GitHub."""
     try:
-        env = os.environ.copy()
-        env["GIT_TERMINAL_PROMPT"] = "0"  # Prevent Git from hanging on authentication prompts
+        # 1. Add all modified files
+        add_res = subprocess.run(["git", "add", "."], cwd=WORKSPACE_DIR, capture_output=True, text=True)
+        if add_res.returncode != 0:
+            return f"Git add error: {add_res.stderr}"
 
-        subprocess.run(["git", "add", "."], cwd=WORKSPACE_DIR, check=True, env=env)
-        
-        # Commit only if there are staged changes
-        status = subprocess.run(["git", "status", "--porcelain"], cwd=WORKSPACE_DIR, capture_output=True, text=True, env=env)
+        # 2. Check if there are changes to commit
+        status = subprocess.run(["git", "status", "--porcelain"], cwd=WORKSPACE_DIR, capture_output=True, text=True)
         if status.stdout.strip():
-            subprocess.run(["git", "commit", "-m", commit_message], cwd=WORKSPACE_DIR, check=True, env=env)
-            
-        push_res = subprocess.run(["git", "push"], cwd=WORKSPACE_DIR, capture_output=True, text=True, timeout=30, env=env)
-        return "Successfully pushed all updates to GitHub!"
-    except subprocess.TimeoutExpired:
-        return "Git push timed out. Please ensure your Git credentials are authenticated."
-    except subprocess.CalledProcessError as e:
-        return f"Git error: {e}"
+            commit_res = subprocess.run(["git", "commit", "-m", commit_message], cwd=WORKSPACE_DIR, capture_output=True, text=True)
+            if commit_res.returncode != 0:
+                return f"Git commit error: {commit_res.stderr}"
+
+        # 3. Push to remote
+        push_res = subprocess.run(["git", "push", "origin", "main"], cwd=WORKSPACE_DIR, capture_output=True, text=True)
+        if push_res.returncode != 0:
+            return f"Git push error: {push_res.stderr}"
+
+        return "Successfully pushed all updates to GitHub repository!"
+    except Exception as e:
+        return f"Unexpected error during sync: {str(e)}"
 # ----------------- 3. DRAFT PREVIEW TOOL -----------------
 
 @mcp.tool()
