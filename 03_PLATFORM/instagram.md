@@ -1,3 +1,6 @@
 # Instagram
 
 _(placeholder)_
+
+## 2026-08-31
+Instagram in Malaysia functions as an extension of the Meta/Reels ecosystem rather than a distinct strategy — the same vertical video asset used on Facebook Reels is typically reused natively on Instagram Reels rather than rebuilt, with only captions/hashtags tweaked. Instagram Reels ad inventory is currently under-priced relative to demand: CPC runs about 26% lower than Facebook Feed (~RM1.28 vs Facebook's RM1.00–1.70), making it a cost-efficient supplementary buy rather than a primary channel. Instagram skews toward a younger, more English/BM-fluent, visually-driven audience than Facebook — useful for reaching junior engineers, plant digitalization champions, or younger second-generation SME owners who influence (but don't always sign off on) MES purchases, rather than the older decision-makers Facebook reaches. There is very little organic MES/industrial-software-specific content on Instagram in Malaysia today — most local MES/automation vendors (e.g. Regaltech) treat Instagram as a secondary contact-info channel rather than a content platform, which is a content gap: short visual 'day in the life of a digitized factory' or dashboard-UI aesthetic posts could stand out with little competition.
