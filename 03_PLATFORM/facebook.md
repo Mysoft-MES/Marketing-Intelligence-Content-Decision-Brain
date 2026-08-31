@@ -1,3 +1,6 @@
 # Facebook
 
 _(placeholder)_
+
+## 2026-08-31
+Facebook remains the single highest-reach platform in Malaysia (30M+ users) and is still rated the top-converting channel for B2B/industrial lead gen among Malaysian SMEs in 2026, especially for buyers 35+ (58% of the MY user base) — a good match for factory owner/GM demographics who make MES purchase decisions. The format has shifted hard to video: Reels now drive most organic reach, and video ads consistently outperform static images/boosted posts. Typical Malaysian SME ad budgets start at RM1,500–3,000/month to test creative, scaling to RM6,000–10,000+ once a working video format is found; average CPC is RM1.00–1.70. Click-to-WhatsApp ad objectives (driving prospects straight into a WhatsApp chat rather than a landing page) are the current gold standard for lead gen, paired with Meta's Advantage+ automated targeting. Mandarin-language creative builds strong trust with Chinese-Malaysian SME owners, a large share of manufacturing operators. Practical implication for MES content: short (30–60s) factory-floor video content (before/after shop floor, dashboard walkthroughs, testimonials) posted as Reels, with a Click-to-WhatsApp CTA, will outperform static infographic posts or long-form text.
