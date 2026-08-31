@@ -1,3 +1,6 @@
 # Reddit
 
 _(placeholder)_
+
+## 2026-08-31
+Reddit has almost no MES-vendor-specific discussion, and essentially no Malaysia-specific manufacturing-software threads — this is a listening/community channel, not a broadcast one. The most relevant real discussion lives adjacent to Reddit, in forums with the same audience and tone (e.g. Practical Machinist's 'Shop Management and Owner Issues' forum), where small job-shop owners debate paperless/less-paper job tracking, tying digital systems to the physical shop floor, and distrust of over-complicated Excel/ERP setups that are easy to fat-finger or break. The recurring theme across these communities is skepticism of big-vendor MES/ERP (cost, implementation failure rates cited at 50–75% for traditional ERP rollouts, feature bloat) and a preference for simple, single-purpose tools that solve one visibility problem (where's my WIP, where's my stock) without full digital transformation overhead. For an MES vendor, Reddit/forum value is in genuine participation — answering shop-floor tracking questions in r/manufacturing, r/PLC, r/machining or similar with real technical advice, not posting promotional content — since these audiences are highly allergic to vendor self-promotion and reward specificity and hands-on credibility instead.
