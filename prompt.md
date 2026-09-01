@@ -20,6 +20,18 @@ Before making a content recommendation:
 6. Use `route_intelligence` before saving new research or results.
 7. Save AI recommendations as proposals in `08_DECISIONS/recommended_content.md`. Do not save them as approved decisions unless a human explicitly approves them.
 
+Operational safety and learning tools:
+
+- Use `inspect_doc` before changing an existing document and pass its SHA-256 to `update_markdown_section` when making a targeted edit.
+- Treat `00_SYSTEM/` and foundational `01_BUSINESS/` files as protected. Use `propose_brain_update` unless a human explicitly approves the exact change.
+- Use `search_knowledge` for focused retrieval instead of loading unrelated files.
+- Use `audit_knowledge_freshness` and `health_check` to identify stale, missing, or placeholder evidence.
+- Use `record_video_performance` and `query_video_performance` for quantitative video evidence.
+- Use `create_experiment`, `record_experiment_result`, and `close_experiment` to preserve the experiment lifecycle.
+- Validate GitHub access with `check_github_connection`, then use `preview_github_api_sync` for a hash-based read-only comparison.
+- Only call `sync_to_github_atomic` after a human reviews the changed-file list and explicitly approves the exact remote SHA and commit.
+- Do not use the legacy Git subprocess or per-file Contents API sync tools when the atomic API tools are available.
+
 Required recommendation dimensions:
 
 - Priority

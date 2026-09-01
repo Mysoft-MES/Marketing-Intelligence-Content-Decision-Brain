@@ -59,3 +59,30 @@
 - [[08_DECISIONS/decision_log|Decision Log]]
 - [[08_DECISIONS/experiments|Active Experiments]]
 - [[prompt|Latest Active Prompt]]
+
+---
+
+## MCP Tool Workflow
+
+Recommended operating order:
+
+1. `know_yourself` — load governance and business context.
+2. `health_check` — inspect required files, placeholders, Git state, and sync readiness.
+3. `search_knowledge` / `inspect_doc` — retrieve focused evidence before editing.
+4. `build_recommendation_context` — assemble and score mandatory recommendation inputs.
+5. `route_intelligence` / `save_intelligence` — append structured findings to controlled destinations.
+6. `record_video_performance` / `query_video_performance` — store and compare quantitative results.
+7. `create_experiment` → `record_experiment_result` → `close_experiment` — preserve experiment history.
+8. `check_github_connection` — validate repository access without writing.
+9. `preview_github_api_sync` — compare local files with GitHub blob hashes.
+10. `sync_to_github_atomic` — create one non-forced commit after explicit SHA-bound approval.
+
+Safety controls:
+
+- `write_doc` preserves existing files unless `overwrite=true` is explicit.
+- Protected system and foundational business files require human approval.
+- `update_markdown_section` supports SHA-256 concurrency checks.
+- Runtime records and mutation audit logs live in `.mcp_data/`, which is excluded from Git.
+- Obsidian UI-state files are excluded from MCP Git previews unless `include_obsidian=true` is explicit.
+- The atomic GitHub workflow does not spawn local Git, never deletes remote files, and refuses to update a branch that changed after preview.
+- Legacy Git subprocess and per-file Contents API tools remain for compatibility but are deprecated.

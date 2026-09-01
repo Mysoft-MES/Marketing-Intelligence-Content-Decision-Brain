@@ -1,0 +1,6 @@
+.env
+.mcp_data/
+__pycache__/
+*.pyc
+.uv-cache/
+.uv-python/
