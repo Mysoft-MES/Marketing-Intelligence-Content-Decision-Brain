@@ -1,10 +1,14 @@
 # PRODUCTS
 
 Business: Mysoft MES
+
 Company: My Software Solutions
+
 Document Type: Product Knowledge
-Version: 1.2
-Last Updated: 2026-09-01
+
+Version: 1.0
+
+Last Updated: 2026-08-29
 
 ---
 
@@ -82,7 +86,27 @@ Help manufacturers create more structured, visible and traceable production info
 
 Core concept:
 
-SEE → TRACK → TRACE → VERIFY → MANAGE → IMPROVE.
+SEE
+
+↓
+
+TRACK
+
+↓
+
+TRACE
+
+↓
+
+VERIFY
+
+↓
+
+MANAGE
+
+↓
+
+IMPROVE.
 
 ---
 
@@ -106,11 +130,7 @@ SYSTEM INTEGRATION
 
 +
 
-IMPLEMENTATION KNOWLEDGE
-
-+
-
-CUSTOMER-SPECIFIC CONFIGURATION / CUSTOMISATION.
+IMPLEMENTATION KNOWLEDGE.
 
 The Brain must NOT define:
 
@@ -119,26 +139,6 @@ MYSOFT MES = DIGIWIN.
 The Brain must also NOT define My Software Solutions as simply a reseller of Digiwin.
 
 My Software Solutions already develops technology that forms part of the current solution.
-
-Mysoft MES can also be customised according to the customer's industry and manufacturing requirements.
-
-Therefore:
-
-MYSOFT MES IS NOT A RIGID ONE-SIZE-FITS-ALL MES PACKAGE.
-
-The exact implementation may depend on:
-
-- customer industry
-- manufacturing environment
-- production process
-- production workflow
-- Job Order workflow
-- operational requirements
-- traceability requirements
-- reporting requirements
-- integration requirements
-- user requirements
-- approved customisation
 
 ---
 
@@ -169,30 +169,6 @@ Additional architecture:
 TO VERIFY.
 
 The Brain should treat this as the current high-level understanding, not a complete technical architecture.
-
-Customer implementations may differ according to:
-
-CUSTOMER INDUSTRY
-
-+
-
-MANUFACTURING WORKFLOW
-
-+
-
-CUSTOMER REQUIREMENTS
-
-+
-
-CONFIGURATION
-
-+
-
-CUSTOMISATION
-
-+
-
-INTEGRATION.
 
 ---
 
@@ -321,31 +297,28 @@ Supplier:
 
 Digiwin
 
-Official Digiwin information and supplied Digiwin product documentation should be treated as:
+Official Supplier Reference:
 
-PRIMARY SUPPLIER SOURCES
+https://digiwin.com.my/digiwin-aiot-cloud/
+
+Official Digiwin information should be treated as a:
+
+PRIMARY SUPPLIER SOURCE
 
 for understanding Digiwin technology.
 
-Current supplier documentation verifies selected Digiwin capabilities involving:
+Digiwin supplier information may be used to research areas such as:
 
-- Digiwin Cloud
-- Digiwin AIoT Cloud Web
-- Digiwin AIoT Apps
-- organizations
-- roles
-- users
-- applications / modules
-- production basic data
-- equipment
-- product routings
-- Manufacturing Order management
-- work-order issue
-- work-order dispatch
-- standard production reports
-- operational activities
-- Kanban / Dashboard examples
-- Equipment Data Control examples
+- AIoT
+- machine data
+- IT / OT integration
+- equipment monitoring
+- production progress monitoring
+- production visualisation
+- manufacturing information
+- production process information
+- smart manufacturing
+- equipment connectivity
 
 However:
 
@@ -355,16 +328,7 @@ does not automatically equal:
 
 MYSOFT MES CAPABILITY.
 
-The Brain must verify which Digiwin technologies are actually:
-
-- included
-- sold
-- implemented
-- configured
-- customised
-- supported
-
-within the Mysoft MES solution.
+The Brain must verify which Digiwin technologies are actually included, sold, implemented or supported within the Mysoft MES solution.
 
 ---
 
@@ -418,23 +382,7 @@ MYSOFT-OWNED TECHNOLOGY
 
 +
 
-DIGIWIN TECHNOLOGY
-
-+
-
-CONFIGURATION
-
-+
-
-CUSTOMISATION
-
-+
-
-INTEGRATION
-
-+
-
-IMPLEMENTATION KNOWLEDGE.
+DIGIWIN TECHNOLOGY.
 
 The Brain must therefore understand:
 
@@ -448,14 +396,6 @@ WHAT DOES THE CUSTOMER ACTUALLY RECEIVE?
 
 WHAT IS INCLUDED IN THE IMPLEMENTATION?
 
-WHAT IS STANDARD?
-
-WHAT IS CONFIGURED?
-
-WHAT IS CUSTOMISED?
-
-WHAT REQUIRES NEW DEVELOPMENT?
-
 ---
 
 # 10. PRODUCT KNOWLEDGE CLASSIFICATION
@@ -466,9 +406,13 @@ Every significant capability should eventually have a status.
 
 Capability confirmed as developed or currently provided by My Software Solutions.
 
+---
+
 ## DIGIWIN / SUPPLIER VERIFIED
 
-Capability confirmed through primary Digiwin information but not necessarily confirmed as part of the Mysoft MES customer offering.
+Capability confirmed through official Digiwin information but not yet confirmed as part of the Mysoft MES customer offering.
+
+---
 
 ## MYSOFT + SUPPLIER INTEGRATED
 
@@ -476,18 +420,21 @@ Capability or workflow delivered through a combination of Mysoft-owned and suppl
 
 Exact responsibilities should be documented.
 
+---
+
 ## CONDITIONALLY VERIFIED
 
 Capability exists but depends on:
 
 - module
 - configuration
-- customisation
 - integration
 - hardware
 - implementation
 - licensing
 - customer environment
+
+---
 
 ## MYSOFT FUTURE ROADMAP
 
@@ -497,15 +444,21 @@ ROADMAP DOES NOT MEAN AVAILABLE.
 
 Never market roadmap functionality as a current capability.
 
+---
+
 ## PRODUCT OPPORTUNITY
 
 Potential capability identified through research or customer learning.
 
 A Product Opportunity is NOT automatically an approved roadmap item.
 
+---
+
 ## TO VERIFY
 
 Information is currently insufficient.
+
+---
 
 ## NOT SUPPORTED
 
@@ -513,198 +466,7 @@ Confirmed as currently unavailable.
 
 ---
 
-# 11. DIGIWIN CLOUD / AIOT SYSTEM STRUCTURE
-
-The supplied Digiwin setup documentation confirms three relevant layers.
-
-## DIGIWIN CLOUD
-
-Main documented functions:
-
-- Organization
-- Roles
-- Users
-- Applications
-- user accessibility to AIoT Web and Apps
-
-Status:
-
-DIGIWIN / SUPPLIER VERIFIED.
-
----
-
-## DIGIWIN AIOT CLOUD — WEB
-
-Main documented functions:
-
-- production basic data
-- equipment
-- product routings
-- Manufacturing Order management
-- issue work orders
-- dispatch work orders
-- standard production reports
-
-Status:
-
-DIGIWIN / SUPPLIER VERIFIED.
-
----
-
-## DIGIWIN AIOT CLOUD — APPS
-
-Main documented purpose:
-
-Perform operating activities using Basic Data and Operational / Manufacturing Order information from AIoT Web.
-
-Status:
-
-DIGIWIN / SUPPLIER VERIFIED.
-
-Whether every capability above is currently included in the Mysoft customer offering:
-
-TO VERIFY.
-
----
-
-# 12. DIGIWIN ORGANIZATION, ROLES, USERS AND RIGHTS
-
-The supplied Digiwin documentation confirms a role-based user authorization structure.
-
-Documented relationship:
-
-ORGANIZATION
-
-↓
-
-ROLES & FUNCTIONS
-
-↓
-
-USERS / GROUPS
-
-↓
-
-AUTHORIZED APPLICATIONS / MODULES
-
-↓
-
-FUNCTION RIGHTS.
-
-Example roles shown include:
-
-- Operator
-- Supervisor
-- Planner
-- Production Clerk
-
-Example functions shown include:
-
-- Create MO
-- Check In / Out
-- Report Defective
-- Dashboard
-- Equipment Data Control
-
-Status:
-
-DIGIWIN / SUPPLIER VERIFIED.
-
-These are documented examples, not a complete list of all Digiwin capabilities or Mysoft customer functions.
-
-The document also shows a:
-
-COMPANY
-
-↓
-
-FACTORY
-
-organization structure.
-
-The document states that data is not interactive between factories and that both factories' data cannot be viewed together in one factory at the same time.
-
-Status:
-
-DIGIWIN / SUPPLIER VERIFIED FOR THE DOCUMENTED CONFIGURATION.
-
----
-
-# 13. DIGIWIN MODULES AND USER COUNTS
-
-Modules shown in the supplied Digiwin documentation include examples such as:
-
-- Operating Module
-- Equipment Module
-- Kanban Module
-- Equipment Settings Center / ESC
-
-The documentation shows:
-
-PURCHASE USER QTY
-
-and
-
-CURRENT USER QTY
-
-by module.
-
-Users assigned to authorized applications/modules are counted as module users in the documented setup.
-
-Status:
-
-DIGIWIN / SUPPLIER VERIFIED.
-
-Exact Mysoft:
-
-- purchased modules
-- customer modules
-- pricing
-- licensing
-- commercial structure
-
-remain:
-
-TO VERIFY.
-
----
-
-# 14. DIGIWIN USER MANAGEMENT
-
-The supplied Digiwin documentation confirms multiple methods for creating or inviting users:
-
-1. Add Enterprises
-2. Load Enterprises in Batch
-3. Invite Users
-
-Batch creation can use an Excel import template.
-
-Documented user information may include:
-
-- User ID
-- User Name
-- Password
-- Mobile country code
-- Phone number
-- Email address
-- Organization ID
-- Role ID
-- Product ID / Authorized Application
-
-Users may be assigned:
-
-- organizations
-- roles
-- modules
-- function rights
-
-Status:
-
-DIGIWIN / SUPPLIER VERIFIED.
-
----
-
-# 15. PRODUCT ROLE
+# 11. PRODUCT ROLE
 
 Mysoft MES operates around the connection between:
 
@@ -742,7 +504,7 @@ The Brain should understand this distinction without making unsupported technica
 
 ---
 
-# 16. CORE CUSTOMER PROBLEMS
+# 12. CORE CUSTOMER PROBLEMS
 
 Mysoft MES may address problems involving:
 
@@ -754,6 +516,8 @@ Mysoft MES may address problems involving:
 - management depends on manual updates
 - production problems become visible too late
 
+---
+
 ## MANUAL JOB ORDER RECORDING
 
 - paper Job Orders / Job Travellers
@@ -763,6 +527,8 @@ Mysoft MES may address problems involving:
 - delayed recording
 - incorrect entries
 - difficult information retrieval
+
+---
 
 ## REPORTING RELIABILITY
 
@@ -775,6 +541,8 @@ Mysoft MES may address problems involving:
 - difficulty verifying production claims
 - management depending on information that may not accurately represent shop-floor activity
 
+---
+
 ## TRACEABILITY
 
 - difficult to reconstruct production history
@@ -783,6 +551,8 @@ Mysoft MES may address problems involving:
 - difficult to identify where a problem occurred
 - difficult to investigate discrepancies
 
+---
+
 ## PLANNING VS EXECUTION
 
 - planned production may differ from actual production
@@ -790,12 +560,16 @@ Mysoft MES may address problems involving:
 - delays may not become visible quickly enough
 - planning decisions may rely on outdated information
 
+---
+
 ## DISCONNECTED INFORMATION
 
 - Job Order information may exist separately from other production information
 - information may require manual transfer
 - production data may exist across multiple systems
 - management may need to consolidate information manually
+
+---
 
 ## MANAGEMENT INFORMATION
 
@@ -810,7 +584,7 @@ The Brain must validate which problems create actual buying urgency.
 
 ---
 
-# 17. CORE SOLUTION AREAS
+# 13. CORE SOLUTION AREAS
 
 Current solution areas associated with Mysoft MES include:
 
@@ -825,13 +599,12 @@ Current solution areas associated with Mysoft MES include:
 9. IIoT
 10. ERP Integration
 11. Smart Manufacturing
-12. Industry-Specific MES Configuration / Customisation
 
-Exact Mysoft capabilities within each area must be verified.
+Exact capabilities within each area must be verified.
 
 ---
 
-# 18. DIGITAL JOB ORDER RECORDING
+# 14. DIGITAL JOB ORDER RECORDING
 
 Digital Job Order Recording is a:
 
@@ -853,7 +626,7 @@ The Brain should treat this as an important current Mysoft technology asset.
 
 ---
 
-# 19. DIGITAL JOB TRAVELLER
+# 15. DIGITAL JOB TRAVELLER
 
 Digital Job Traveller is a key Mysoft MES solution concept.
 
@@ -908,10 +681,6 @@ Exact current fields and capabilities:
 
 TO VERIFY.
 
-The exact relationship between Digital Job Traveller and the Mysoft Digital Job Order Recording System:
-
-TO VERIFY.
-
 The Brain should not position Digital Job Traveller merely as:
 
 "REPLACE PAPER WITH A SCREEN."
@@ -920,7 +689,7 @@ The deeper potential value is the production information created around the job.
 
 ---
 
-# 20. MANUFACTURING EXECUTION SYSTEM
+# 16. MANUFACTURING EXECUTION SYSTEM
 
 At a high level, MES relates production planning information to actual shop-floor execution.
 
@@ -952,24 +721,13 @@ TRACEABILITY
 
 MANAGEMENT INFORMATION.
 
-The Digiwin supplier document confirms at supplier level:
-
-- Manufacturing Order management
-- work-order issue
-- work-order dispatch
-- operational activities based on MO information
-
-Status:
-
-DIGIWIN / SUPPLIER VERIFIED.
-
-Exact current Mysoft / Digiwin responsibility within the complete architecture:
+Exact current Mysoft / Digiwin responsibility within this architecture:
 
 TO VERIFY.
 
 ---
 
-# 21. SHOP FLOOR TRACKING
+# 17. SHOP FLOOR TRACKING
 
 Shop Floor Tracking focuses on visibility into production execution.
 
@@ -983,6 +741,10 @@ Potential information may include:
 - production progress
 - production status
 - production time information
+
+Exact current capabilities:
+
+TO VERIFY.
 
 Potential questions include:
 
@@ -1002,18 +764,9 @@ Potential business value:
 - better traceability
 - more structured production records
 
-The Digiwin document gives supplier-side evidence of MO management and operating functions such as:
-
-- Check In / Out
-- Report Defective
-
-Exact current Mysoft Shop Floor Tracking capabilities:
-
-TO VERIFY.
-
 ---
 
-# 22. PRODUCTION VISIBILITY
+# 18. PRODUCTION VISIBILITY
 
 Production Visibility aims to help relevant users understand production conditions and progress.
 
@@ -1028,30 +781,15 @@ Potential questions include:
 - Which jobs are delayed?
 - What is happening in production?
 
-The supplied Digiwin documentation shows a:
+Exact dashboards:
 
-KANBAN MODULE
+TO VERIFY.
 
-with a:
+Exact reports:
 
-DASHBOARD
+TO VERIFY.
 
-example.
-
-Status:
-
-DIGIWIN / SUPPLIER VERIFIED.
-
-Exact:
-
-- dashboard screens
-- metrics
-- filters
-- update frequency
-- customization
-- Mysoft customer availability
-
-remain:
+Exact update frequency:
 
 TO VERIFY.
 
@@ -1067,7 +805,7 @@ Seeing a problem does not automatically mean the system resolves it.
 
 ---
 
-# 23. PRODUCTION TRACEABILITY
+# 19. PRODUCTION TRACEABILITY
 
 Production Traceability aims to create a clearer history of production activity.
 
@@ -1089,7 +827,7 @@ WHAT QUANTITY
 
 WHAT RESULT.
 
-Exact Mysoft capabilities:
+Exact capabilities:
 
 TO VERIFY.
 
@@ -1102,13 +840,11 @@ Potential uses include:
 - supporting quality investigation
 - supporting management review
 
-The Digiwin document confirms user roles and selected MO/operating functions, but it does not by itself prove every traceability dimension above.
-
 The Brain must not claim regulatory or compliance outcomes unless verified.
 
 ---
 
-# 24. PRODUCTION DATA RELIABILITY AND ACCOUNTABILITY
+# 20. PRODUCTION DATA RELIABILITY AND ACCOUNTABILITY
 
 A key customer problem is the reliability of manually recorded or reported production information.
 
@@ -1161,7 +897,7 @@ MES CAN HELP REDUCE CERTAIN MANUAL REPORTING RISKS AND MAKE PRODUCTION INFORMATI
 
 ---
 
-# 25. PAPERLESS PRODUCTION
+# 21. PAPERLESS PRODUCTION
 
 Paperless Production refers to reducing dependence on physical production records where appropriate.
 
@@ -1202,7 +938,7 @@ REDUCED MANUAL HANDLING.
 
 ---
 
-# 26. DIGIWIN AIOT INTEGRATION
+# 22. DIGIWIN AIOT INTEGRATION
 
 Current verified high-level capability:
 
@@ -1244,7 +980,7 @@ The Brain must not invent bidirectional integration unless verified.
 
 ---
 
-# 27. IIOT / EQUIPMENT INFORMATION
+# 23. IIOT
 
 IIoT may support connections between manufacturing equipment, production information and manufacturing systems.
 
@@ -1258,7 +994,7 @@ DATA COLLECTION
 
 ↓
 
-IIOT / AIOT
+IIOT
 
 ↓
 
@@ -1268,34 +1004,28 @@ PRODUCTION INFORMATION
 
 VISIBILITY / ANALYSIS.
 
-The supplied Digiwin documentation confirms:
+Exact current Mysoft MES IIoT capabilities:
 
-- production basic data can include equipment
-- an Equipment Module example
-- Equipment Data Control as an example function
-- Equipment Settings Center / ESC as a documented module/example
+TO VERIFY.
 
-Status:
+Potential Digiwin capabilities should first be classified:
 
 DIGIWIN / SUPPLIER VERIFIED.
 
-The document does NOT by itself verify:
+The Brain must not automatically claim:
 
 - machine control
 - automatic machine connectivity
 - specific PLC compatibility
 - specific sensor support
-- specific protocols
 - automatic downtime detection
 - predictive maintenance
 
-Exact current Mysoft MES IIoT capabilities:
-
-TO VERIFY.
+unless verified for the actual Mysoft MES offering.
 
 ---
 
-# 28. ERP INTEGRATION
+# 24. ERP INTEGRATION
 
 ERP Integration is part of the broader Mysoft MES solution direction.
 
@@ -1335,7 +1065,7 @@ The Brain must not claim compatibility with named ERP products unless verified.
 
 ---
 
-# 29. SMART MANUFACTURING
+# 25. SMART MANUFACTURING
 
 Smart Manufacturing is a broader transformation concept.
 
@@ -1348,7 +1078,6 @@ Mysoft MES may contribute through:
 - structured manufacturing data
 - shop-floor connectivity
 - reduced manual information handling
-- industry-specific configuration and customisation
 
 The Brain should not use:
 
@@ -1374,7 +1103,7 @@ REAL OPERATIONAL CHANGE.
 
 ---
 
-# 30. PRODUCTION WORKFLOW
+# 26. PRODUCTION WORKFLOW
 
 Current high-level workflow concept:
 
@@ -1404,116 +1133,16 @@ This is a working workflow.
 
 Actual customer workflows may differ.
 
-This is especially important because Mysoft MES can be customised according to customer industry and manufacturing workflow.
+The Brain must adapt according to:
 
-The Brain must NOT assume:
-
-ONE STANDARD WORKFLOW = EVERY CUSTOMER.
-
-For every customer, investigate:
-
-- how the work order starts
-- how materials are issued
-- production stages
-- routing
-- operators
-- machines
-- QC points
-- rework
-- rejection
-- packing
-- completion
-- reporting
-- traceability
-- exceptions
-
-The Digiwin supplier document confirms supplier-side Manufacturing Order creation/management and job dispatch, but does not establish that the complete workflow above is the standard Digiwin or Mysoft workflow.
+- customer process
+- industry
+- production model
+- implementation requirements
 
 ---
 
-# 31. INDUSTRY-SPECIFIC MES CUSTOMISATION
-
-Mysoft MES can be customised according to the customer's industry and manufacturing requirements.
-
-Status:
-
-MYSOFT VERIFIED.
-
-This is an important characteristic of the Mysoft MES solution.
-
-Different manufacturing industries may operate differently.
-
-Examples may include:
-
-- semiconductor
-- electronics manufacturing
-- precision engineering
-- automotive-related manufacturing
-- CNC / machining
-- plastic injection
-- other discrete manufacturing environments
-
-The Brain must NOT assume these industries require identical:
-
-- production workflows
-- Job Order structures
-- routings
-- processes
-- production records
-- quality checkpoints
-- traceability
-- machine information
-- reports
-- dashboards
-- user interactions
-
-The correct reasoning is:
-
-CUSTOMER INDUSTRY
-
-↓
-
-CUSTOMER MANUFACTURING PROCESS
-
-↓
-
-ACTUAL PRODUCTION WORKFLOW
-
-↓
-
-CUSTOMER PROBLEM
-
-↓
-
-REQUIRED INFORMATION
-
-↓
-
-CURRENT MYSOFT CAPABILITY
-
-↓
-
-CONFIGURATION
-
-OR
-
-CUSTOMISATION
-
-OR
-
-INTEGRATION
-
-OR
-
-NEW DEVELOPMENT.
-
-Customisation should solve an actual manufacturing requirement.
-
-Do not customise simply because a customer requests a feature without understanding the underlying problem.
-
----
-
-# 32. PRODUCT USERS AND BENEFICIARIES
+# 27. PRODUCT USERS AND BENEFICIARIES
 
 Potential users, beneficiaries, influencers and decision-makers include:
 
@@ -1539,22 +1168,7 @@ Operational users may additionally include:
 
 - production supervisors
 - operators
-- production clerks
-- planners
 - authorised shop-floor personnel
-
-The Digiwin documentation specifically provides examples of:
-
-- Operator
-- Supervisor
-- Planner
-- Production Clerk
-
-as system roles.
-
-Status:
-
-DIGIWIN / SUPPLIER VERIFIED AS EXAMPLES.
 
 Not every decision-maker directly operates the system.
 
@@ -1562,45 +1176,38 @@ Some consume information produced by the system.
 
 Detailed audience knowledge belongs in:
 
-02_AUDIENCE/
+`02_AUDIENCE/`
 
 ---
 
-# 33. PROBLEM → CAPABILITY MAP
+# 28. PROBLEM → CAPABILITY MAP
 
-| Customer Problem | Potential Relevant Solution | Evidence Status |
-|---|---|---|
-| Paper Job Order | Mysoft Digital Job Order | MYSOFT VERIFIED |
-| Manual Job Order recording | Mysoft Digital Job Order | MYSOFT VERIFIED |
-| Different industry/workflow requirements | Mysoft MES Customisation | MYSOFT VERIFIED AT PRINCIPLE LEVEL |
-| Job Order data needs to connect with AIoT layer | Mysoft → Digiwin AIoT Upload | MYSOFT + SUPPLIER INTEGRATED |
-| Need organization/user access control | Digiwin Organization / Roles / Users / Rights | DIGIWIN / SUPPLIER VERIFIED |
-| Need Manufacturing Order management | Digiwin MO management | DIGIWIN / SUPPLIER VERIFIED |
-| Need work-order issue / dispatch | Digiwin AIoT Web | DIGIWIN / SUPPLIER VERIFIED |
-| Need operational production actions | Digiwin AIoT Apps / operating functions | DIGIWIN / SUPPLIER VERIFIED |
-| Need dashboard visibility | Digiwin Kanban / Dashboard | DIGIWIN / SUPPLIER VERIFIED AT HIGH LEVEL |
-| Need equipment-related data control | Digiwin Equipment functions | DIGIWIN / SUPPLIER VERIFIED AT HIGH LEVEL |
-| Cannot see production progress | Shop Floor Tracking / Production Visibility | MYSOFT SCOPE TO VERIFY |
-| Cannot locate job or WIP status | Shop Floor Tracking | TO VERIFY |
-| Human recording errors | Structured Digital Recording | POTENTIAL VALUE |
-| Production claims difficult to verify | Digital Records / Traceability | EXACT SCOPE TO VERIFY |
-| Difficult to identify who performed work | Production Traceability | TO VERIFY |
-| Difficult to identify when activity occurred | Production Traceability | TO VERIFY |
-| Production history difficult to reconstruct | Production Traceability | TO VERIFY |
-| Production reports delayed | Digital Recording / Production Visibility | TO VERIFY |
-| Planned production differs from actual execution | Shop Floor Tracking / Production Visibility | TO VERIFY |
-| ERP lacks shop-floor execution information | MES / Integration | TO VERIFY |
-| Machine information disconnected | IIoT where applicable and verified | TO VERIFY FOR MYSOFT |
-| Management depends on verbal updates | Production Visibility | TO VERIFY |
-| Production information fragmented | MES / Integration / Digital Records | TO VERIFY |
+| Customer Problem | Potential Relevant Solution |
+|---|---|
+| Paper Job Order | Mysoft Digital Job Order |
+| Manual Job Order recording | Mysoft Digital Job Order |
+| Job Order data needs to connect with AIoT layer | Mysoft → Digiwin AIoT Upload |
+| Cannot see production progress | Shop Floor Tracking / Production Visibility |
+| Cannot locate job or WIP status | Shop Floor Tracking |
+| Human recording errors | Structured Digital Recording |
+| Production claims difficult to verify | Digital Records / Traceability |
+| Difficult to identify who performed work | Production Traceability |
+| Difficult to identify when activity occurred | Production Traceability |
+| Production history difficult to reconstruct | Production Traceability |
+| Production reports delayed | Digital Recording / Production Visibility |
+| Planned production differs from actual execution | Shop Floor Tracking / Production Visibility |
+| ERP lacks shop-floor execution information | MES / Integration |
+| Machine information disconnected | IIoT where applicable and verified |
+| Management depends on verbal updates | Production Visibility |
+| Production information fragmented | MES / Integration / Digital Records |
 
 This is a working map.
 
-Supplier verification does not automatically establish Mysoft implementation scope.
+Specific capabilities must still be verified.
 
 ---
 
-# 34. FEATURE → VALUE LOGIC
+# 29. FEATURE → VALUE LOGIC
 
 The Brain must use:
 
@@ -1644,26 +1251,6 @@ Evidence required for quantified benefits.
 
 Another example:
 
-Different industry workflow
-
-↓
-
-Mysoft MES Configuration / Customisation
-
-↓
-
-MES implementation is adapted to relevant manufacturing requirements
-
-↓
-
-Better fit between system workflow and actual production environment
-
-↓
-
-Exact customer result requires evidence.
-
-Another example:
-
 Digital Job Order data exists separately from AIoT information
 
 ↓
@@ -1684,7 +1271,7 @@ Exact resulting capability must be verified.
 
 ---
 
-# 35. PRODUCT CLAIM SAFETY
+# 30. PRODUCT CLAIM SAFETY
 
 Before publishing a product claim, ask:
 
@@ -1698,17 +1285,9 @@ IS IT AN INTEGRATED CAPABILITY?
 
 IS IT VERIFIED?
 
-IS IT PART OF THE ACTUAL MYSOFT OFFERING?
-
 DOES IT APPLY TO EVERY IMPLEMENTATION?
 
-IS IT CUSTOMER-SPECIFIC?
-
-DOES IT REQUIRE CUSTOMISATION?
-
 DOES IT REQUIRE AN ADDITIONAL MODULE?
-
-DOES IT REQUIRE A PURCHASED USER LICENCE?
 
 DOES IT REQUIRE HARDWARE?
 
@@ -1730,7 +1309,7 @@ QUALIFY THE CLAIM.
 
 ---
 
-# 36. PROHIBITED UNVERIFIED CLAIMS
+# 31. PROHIBITED UNVERIFIED CLAIMS
 
 Unless evidence exists, the Brain must not automatically claim:
 
@@ -1743,8 +1322,6 @@ Unless evidence exists, the Brain must not automatically claim:
 - automatic machine integration
 - compatibility with every ERP
 - compatibility with every machine
-- ability to customise absolutely any requirement
-- unlimited customisation
 - automatic AI optimisation
 - predictive maintenance
 - regulatory compliance
@@ -1755,43 +1332,23 @@ Unless evidence exists, the Brain must not automatically claim:
 
 ---
 
-# 37. IMPLEMENTATION
+# 32. IMPLEMENTATION
 
 MES implementation may depend on:
 
-- customer industry
 - customer workflow
 - production process
 - existing systems
-- organization structure
-- factory structure
-- users
-- roles
-- authorized modules
 - ERP
 - machines
 - infrastructure
 - data requirements
 - reporting requirements
 - traceability requirements
+- user roles
 - integration requirements
-- customisation requirements
 
-The Digiwin setup document confirms supplier-side initial setup involving:
-
-- organization
-- roles and functions
-- users
-- user groups
-- authorized applications/modules
-- production basic data
-- Manufacturing Order management
-
-Status:
-
-DIGIWIN / SUPPLIER VERIFIED.
-
-Exact Mysoft implementation methodology:
+Exact implementation methodology:
 
 TO VERIFY.
 
@@ -1799,149 +1356,37 @@ Typical implementation timeline:
 
 TO VERIFY.
 
-Because Mysoft MES can be customised, implementation scope may vary between customers.
-
-The Brain must not assume that:
-
-ONE IMPLEMENTATION
-
-=
-
-ANOTHER IMPLEMENTATION.
-
 ---
 
-# 38. CONFIGURATION AND CUSTOMISATION
+# 33. CONFIGURATION AND CUSTOMISATION
 
-Mysoft MES is not intended to operate as a rigid one-size-fits-all manufacturing system.
+Current configuration capability:
 
-My Software Solutions can customise the MES solution according to the customer's industry, manufacturing environment and operational requirements.
+TO VERIFY.
 
-Status:
+Current customisation capability:
 
-MYSOFT VERIFIED.
+TO VERIFY.
 
-Potential areas that may influence the required MES design include:
+The Brain should distinguish:
 
-- industry
-- manufacturing process
-- production workflow
-- Job Order workflow
-- operational requirements
-- information requirements
-- user requirements
-- reporting requirements
-- traceability requirements
-- integration requirements
+STANDARD MYSOFT FEATURE
 
-Different manufacturing industries may require different:
+DIGIWIN FEATURE
 
-- workflows
-- production records
-- process structures
-- data fields
-- traceability requirements
-- user interactions
-- reports
-- system behaviour
-
-Therefore:
-
-ONE CUSTOMER'S MES IMPLEMENTATION
-
-DOES NOT AUTOMATICALLY REPRESENT
-
-EVERY MYSOFT MES IMPLEMENTATION.
-
-The Brain must distinguish between:
-
-CORE PRODUCT CAPABILITY
-
-+
-
-STANDARD CONFIGURATION
-
-+
-
-CUSTOMER-SPECIFIC CONFIGURATION
-
-+
+CONFIGURATION
 
 CUSTOMISATION
 
-+
-
 INTEGRATION
 
-+
+NEW DEVELOPMENT.
 
-NEW PRODUCT DEVELOPMENT.
-
-The Digiwin documentation separately verifies supplier-side configuration for areas such as:
-
-- organization
-- roles
-- rights
-- users
-- modules
-
-Status:
-
-DIGIWIN / SUPPLIER VERIFIED.
-
-Customisation does NOT mean that every requested feature, workflow or integration can automatically be delivered.
-
-The exact:
-
-- customisation scope
-- technical limitations
-- development effort
-- implementation time
-- additional cost
-- supported integrations
-- customer-specific dependencies
-
-must be evaluated for each implementation.
-
-When analysing a customer requirement, the Brain should ask:
-
-WHAT INDUSTRY IS THIS CUSTOMER IN?
-
-↓
-
-HOW DOES THEIR PRODUCTION ACTUALLY WORK?
-
-↓
-
-WHAT PROBLEM ARE THEY TRYING TO SOLVE?
-
-↓
-
-WHAT CAN THE CURRENT MYSOFT MES ALREADY HANDLE?
-
-↓
-
-WHAT CAN BE CONFIGURED?
-
-↓
-
-WHAT REQUIRES CUSTOMISATION?
-
-↓
-
-WHAT REQUIRES INTEGRATION?
-
-↓
-
-WHAT WOULD REQUIRE NEW DEVELOPMENT?
-
-Customisation should be treated as a Mysoft solution capability.
-
-The exact boundaries and technical scope remain implementation-dependent.
+These are not interchangeable.
 
 ---
 
-# 39. HARDWARE
+# 34. HARDWARE
 
 Hardware requirements:
 
@@ -1963,17 +1408,15 @@ Do not automatically assume requirements involving:
 
 until verified.
 
-Different customer workflows may require different hardware environments.
-
 ---
 
-# 40. DATA CAPTURE
+# 35. DATA CAPTURE
 
 Currently verified:
 
 Job Order information can be digitally recorded using the Mysoft-developed system.
 
-Additional Mysoft data-capture methods:
+Additional data-capture methods:
 
 TO VERIFY.
 
@@ -1984,17 +1427,11 @@ Potential methods may include:
 - system integration
 - machine / IIoT data
 
-Do not classify potential methods as current Mysoft features until verified.
-
-The Digiwin documentation confirms operational activities can be performed using AIoT Apps based on Basic Data and MO information from AIoT Web.
-
-Status:
-
-DIGIWIN / SUPPLIER VERIFIED.
+Do not classify potential methods as current features until verified.
 
 ---
 
-# 41. REPORTING AND DASHBOARDS
+# 36. REPORTING AND DASHBOARDS
 
 Current Mysoft reporting capabilities:
 
@@ -2002,41 +1439,22 @@ TO VERIFY.
 
 Current Digiwin reporting/dashboard capabilities:
 
-DIGIWIN / SUPPLIER VERIFIED AT HIGH LEVEL.
+RESEARCH FROM OFFICIAL DIGIWIN SOURCE + VERIFY AGAINST MYSOFT OFFERING.
 
-The supplied Digiwin documentation confirms:
+Potential information may include:
 
-- standard production reports in AIoT Web
-- a Kanban Module
-- Dashboard as an example Kanban function
+- production status
+- work-order progress
+- quantities
+- process progress
+- operator activity
+- production history
 
-Exact:
-
-- report names
-- report fields
-- report calculations
-- dashboard screens
-- dashboard metrics
-- filters
-- export functions
-- update frequency
-- customization
-
-remain:
-
-TO VERIFY.
-
-Whether these capabilities are included in the current Mysoft MES customer offering:
-
-TO VERIFY.
-
-Customer-specific reporting may also depend on implementation and customisation.
-
-Do not invent dashboard or reporting functionality.
+Do not invent dashboard functionality.
 
 ---
 
-# 42. ANALYTICS AND AI
+# 37. ANALYTICS AND AI
 
 Current Mysoft-owned AI capability:
 
@@ -2044,9 +1462,7 @@ TO VERIFY.
 
 Current Digiwin AIoT capabilities:
 
-PARTIALLY DIGIWIN / SUPPLIER VERIFIED.
-
-The supplied Digiwin setup documentation verifies selected platform capabilities, but does not establish generative AI, autonomous optimisation or predictive analytics.
+RESEARCH / VERIFY.
 
 The term:
 
@@ -2071,7 +1487,7 @@ Any AI claim must identify:
 
 ---
 
-# 43. PRODUCT PROOF
+# 38. PRODUCT PROOF
 
 Product claims should eventually be supported by:
 
@@ -2084,7 +1500,6 @@ Product claims should eventually be supported by:
 - customer results
 - approved testimonials
 - Digiwin official documentation
-- Digiwin product/setup documentation
 - Digiwin case studies where relevant
 
 The Brain must distinguish:
@@ -2097,25 +1512,9 @@ SUPPLIER PROOF.
 
 A Digiwin customer case study is not automatically a Mysoft customer case study.
 
-Current primary supplier evidence available:
-
-DIGIWIN AIOT CLOUD SETUP AND TASK CREATION.
-
-This document can support only the Digiwin capabilities explicitly evidenced within it.
-
-Customer-specific Mysoft implementations may also become valuable evidence of:
-
-- industry fit
-- workflow customisation
-- implementation knowledge
-- customer problems solved
-- product capability
-
-but only when properly documented and approved for use.
-
 ---
 
-# 44. PRODUCT INTELLIGENCE FOR FUTURE DEVELOPMENT
+# 39. PRODUCT INTELLIGENCE FOR FUTURE DEVELOPMENT
 
 My Software Solutions plans to continue developing its own MES technology.
 
@@ -2142,10 +1541,6 @@ WON DEALS
 +
 
 IMPLEMENTATION EXPERIENCE
-
-+
-
-CUSTOMISATION REQUESTS
 
 +
 
@@ -2190,8 +1585,6 @@ MANUFACTURING REQUIREMENTS.
 Look for:
 
 - repeated customer requests
-- repeated customisation requirements
-- industry-specific requirements
 - workflow problems
 - reporting problems
 - usability problems
@@ -2208,31 +1601,13 @@ These become:
 
 PRODUCT OPPORTUNITIES.
 
-Repeated customisation requests are especially important.
-
-If many customers repeatedly request the same customisation, the Brain should ask:
-
-IS THIS STILL A CUSTOMER-SPECIFIC CUSTOMISATION?
-
-OR
-
-SHOULD THIS BECOME A STANDARD MYSOFT PRODUCT CAPABILITY?
-
 ---
 
-# 45. PRODUCT DEVELOPMENT LEARNING LOOP
+# 40. PRODUCT DEVELOPMENT LEARNING LOOP
 
 The Brain should eventually support:
 
 OBSERVE CUSTOMER
-
-↓
-
-UNDERSTAND INDUSTRY
-
-↓
-
-UNDERSTAND MANUFACTURING WORKFLOW
 
 ↓
 
@@ -2249,10 +1624,6 @@ MEASURE BUSINESS IMPACT
 ↓
 
 STUDY CURRENT MYSOFT SOLUTION
-
-↓
-
-STUDY CURRENT CUSTOMISATION OPTIONS
 
 ↓
 
@@ -2280,7 +1651,7 @@ ROADMAP DECISION
 
 ↓
 
-BUILD / CONFIGURE / CUSTOMISE / INTEGRATE
+BUILD / TEST
 
 ↓
 
@@ -2290,7 +1661,7 @@ CUSTOMER FEEDBACK
 
 LEARN.
 
-Do not recommend building something merely because competitors or Digiwin have it.
+Do not recommend building something merely because competitors have it.
 
 Ask:
 
@@ -2298,7 +1669,7 @@ WHAT CUSTOMER PROBLEM IS IMPORTANT ENOUGH FOR US TO SOLVE?
 
 ---
 
-# 46. FUTURE MYSOFT-OWNED MES
+# 41. FUTURE MYSOFT-OWNED MES
 
 My Software Solutions is not starting from zero.
 
@@ -2338,15 +1709,7 @@ CUSTOMER NEED
 
 +
 
-INDUSTRY REQUIREMENTS
-
-+
-
 MANUFACTURING WORKFLOW
-
-+
-
-CUSTOMISATION EXPERIENCE
 
 +
 
@@ -2372,13 +1735,9 @@ COMPETITOR WEAKNESSES
 
 TECHNOLOGY OPPORTUNITIES.
 
-Customisation experience is an important product-learning source.
-
-Repeated customer-specific solutions may reveal opportunities to create stronger reusable Mysoft-owned capabilities.
-
 ---
 
-# 47. SUPPLIER LEARNING PRINCIPLE
+# 42. SUPPLIER LEARNING PRINCIPLE
 
 Digiwin serves two intelligence purposes.
 
@@ -2393,15 +1752,9 @@ Learn how an established manufacturing technology provider approaches:
 - AIoT
 - MES
 - Shop Floor Tracking
-- organization design
-- users and roles
-- module authorization
-- Manufacturing Orders
-- job dispatch
-- equipment information
+- machine connectivity
 - production visibility
-- dashboards
-- production reports
+- traceability
 - manufacturing workflows
 - manufacturing data
 
@@ -2423,13 +1776,7 @@ WHAT LIMITATIONS DO WE OBSERVE?
 
 WHAT DO OUR CUSTOMERS ACTUALLY NEED?
 
-WHAT INDUSTRY-SPECIFIC REQUIREMENTS DO WE SEE?
-
 WHAT SHOULD MYSOFT OWN?
-
-WHAT SHOULD BE CONFIGURED?
-
-WHAT SHOULD BE CUSTOMISED?
 
 WHAT SHOULD REMAIN INTEGRATED?
 
@@ -2437,7 +1784,7 @@ WHAT COULD MYSOFT EVENTUALLY DO BETTER?
 
 ---
 
-# 48. PRODUCT ROADMAP GOVERNANCE
+# 43. PRODUCT ROADMAP GOVERNANCE
 
 The Brain may:
 
@@ -2465,8 +1812,6 @@ Recommended opportunity format:
 
 PROBLEM
 
-INDUSTRY
-
 WHO EXPERIENCES IT
 
 EVIDENCE
@@ -2478,10 +1823,6 @@ BUSINESS IMPACT
 CURRENT WORKAROUND
 
 CURRENT MYSOFT SOLUTION
-
-CAN CURRENT PRODUCT BE CONFIGURED?
-
-CAN IT BE CUSTOMISED?
 
 CURRENT SUPPLIER SOLUTION
 
@@ -2509,74 +1850,60 @@ YES / NO.
 
 ---
 
-# 49. PRODUCT KNOWLEDGE GAPS
+# 44. PRODUCT KNOWLEDGE GAPS
 
 The Brain must actively resolve:
 
 1. Exact fields recorded by the Mysoft Digital Job Order system
 2. Exact Digital Job Order workflow
-3. Exact relationship between Digital Job Order and Digital Job Traveller
-4. Exact Mysoft user roles
-5. Exact Job Order statuses
-6. Exact process recording capability
-7. Exact quantity recording capability
-8. Exact operator recording capability
-9. Exact timestamps captured
-10. Exact traceability created by the Mysoft system
-11. Exact data uploaded to Digiwin AIoT
-12. Upload method
-13. Upload frequency
-14. Whether data flow is one-way or two-way beyond the known upload
-15. Integration architecture
-16. Error-handling process
-17. Authentication method for Mysoft → Digiwin integration
-18. Exact Digiwin modules currently purchased/used by Mysoft
-19. Exact Digiwin modules currently sold/offered by Mysoft
-20. Exact Digiwin capabilities currently implemented for customers
-21. Exact Mysoft Shop Floor Tracking capabilities
-22. Exact Mysoft production visibility capabilities
-23. Exact Mysoft reporting capabilities
-24. Exact Mysoft dashboards
-25. Exact Digiwin standard production report names/functions
-26. Exact Digiwin Kanban/dashboard functions
-27. Exact Digiwin Product Routing functionality
-28. Exact Digiwin Manufacturing Order workflow
-29. Exact relationship between Mysoft Digital Job Order and Digiwin MO
-30. Exact Mysoft ERP integrations
-31. Exact Mysoft IIoT capabilities
-32. Exact machine connectivity
-33. Supported devices
-34. Supported protocols
-35. Hardware requirements
-36. Exact boundaries of Mysoft configuration capabilities
-37. Exact boundaries of Mysoft customisation capabilities
-38. Customisation limitations
-39. Customisation development effort
-40. Customisation pricing model
-41. Industry-specific standard configurations
-42. Which repeated customisations should become standard product features
-43. Quality functionality
-44. Planning functionality
-45. Material functionality
-46. WIP functionality
-47. Downtime functionality
-48. Analytics capabilities
-49. AI capabilities
-50. Deployment model
-51. Infrastructure requirements
-52. Security capabilities
-53. Mysoft implementation methodology
-54. Implementation timeline
-55. Support model
-56. Mysoft pricing structure
-57. Mysoft licensing structure
-58. Exact commercial relationship between Digiwin module users and Mysoft customer licensing
-59. Existing customer industries
-60. Proven customer outcomes
-61. Product limitations
-62. Supplier dependencies
-63. Mysoft-owned technology currently under development
-64. Future product opportunities
+3. Exact user roles
+4. Exact Job Order statuses
+5. Exact process recording capability
+6. Exact quantity recording capability
+7. Exact operator recording capability
+8. Exact timestamps captured
+9. Exact traceability created by the Mysoft system
+10. Exact data uploaded to Digiwin AIoT
+11. Upload method
+12. Upload frequency
+13. Whether data flow is one-way or two-way
+14. Integration architecture
+15. Error-handling process
+16. Exact Digiwin modules currently used
+17. Exact Digiwin capabilities currently sold by Mysoft
+18. Exact Shop Floor Tracking capabilities
+19. Exact production visibility capabilities
+20. Exact reporting capabilities
+21. Exact dashboards
+22. ERP integrations
+23. IIoT capabilities
+24. Machine connectivity
+25. Supported devices
+26. Supported protocols
+27. Hardware requirements
+28. Configuration capabilities
+29. Customisation capabilities
+30. Quality functionality
+31. Planning functionality
+32. Material functionality
+33. WIP functionality
+34. Downtime functionality
+35. Analytics capabilities
+36. AI capabilities
+37. Deployment model
+38. Infrastructure requirements
+39. Security capabilities
+40. Implementation methodology
+41. Implementation timeline
+42. Support model
+43. Pricing structure
+44. Licensing structure
+45. Existing customer industries
+46. Proven customer outcomes
+47. Product limitations
+48. Supplier dependencies
+49. Mysoft-owned technology currently under development
+50. Future product opportunities
 
 Until verified:
 
@@ -2588,7 +1915,7 @@ TO VERIFY.
 
 ---
 
-# 50. PRODUCT KNOWLEDGE UPDATE RULE
+# 45. PRODUCT KNOWLEDGE UPDATE RULE
 
 This file is a living product knowledge document.
 
@@ -2597,14 +1924,10 @@ Update it when:
 - Mysoft develops new capabilities
 - existing capabilities are verified
 - technical architecture is clarified
-- Digiwin documentation is received
 - Digiwin integration changes
 - supplier offerings change
 - integrations are added
 - implementation knowledge improves
-- customisation knowledge improves
-- repeated customisation patterns appear
-- industry-specific requirements are discovered
 - limitations are discovered
 - customer use cases are validated
 - product proof becomes available
@@ -2618,14 +1941,6 @@ DIGIWIN CAPABILITY
 into
 
 MYSOFT CAPABILITY.
-
-Do not silently convert:
-
-CUSTOMER-SPECIFIC CUSTOMISATION
-
-into
-
-STANDARD PRODUCT CAPABILITY.
 
 Do not silently convert:
 
@@ -2663,29 +1978,9 @@ SOURCE
 
 LAST VERIFIED DATE.
 
-For customised implementations, where relevant also record:
-
-CUSTOMER INDUSTRY
-
-+
-
-WORKFLOW
-
-+
-
-CUSTOMISATION TYPE
-
-+
-
-DEPENDENCIES
-
-+
-
-REUSABILITY.
-
 ---
 
-# 51. FINAL PRODUCT PRINCIPLE
+# 46. FINAL PRODUCT PRINCIPLE
 
 The Brain must understand the current reality:
 
@@ -2715,115 +2010,7 @@ INTEGRATION
 
 +
 
-IMPLEMENTATION EXPERIENCE
-
-+
-
-INDUSTRY-SPECIFIC CONFIGURATION / CUSTOMISATION.
-
-Current Digiwin supplier documentation gives the Brain supplier-side evidence involving:
-
-DIGIWIN CLOUD
-
-+
-
-AIOT WEB
-
-+
-
-AIOT APPS
-
-+
-
-ORGANIZATIONS
-
-+
-
-USERS
-
-+
-
-ROLES & RIGHTS
-
-+
-
-MODULE AUTHORIZATION
-
-+
-
-PRODUCTION BASIC DATA
-
-+
-
-EQUIPMENT
-
-+
-
-PRODUCT ROUTINGS
-
-+
-
-MANUFACTURING ORDER MANAGEMENT
-
-+
-
-WORK-ORDER ISSUE / DISPATCH
-
-+
-
-OPERATING ACTIVITIES
-
-+
-
-KANBAN / DASHBOARD EXAMPLE
-
-+
-
-STANDARD PRODUCTION REPORTS.
-
-These remain:
-
-DIGIWIN / SUPPLIER VERIFIED
-
-unless separate evidence establishes their status within the Mysoft offering.
-
-Mysoft MES also has an important implementation characteristic:
-
-CUSTOMER INDUSTRY
-
-+
-
-MANUFACTURING WORKFLOW
-
-+
-
-CUSTOMER REQUIREMENTS
-
-↓
-
-CONFIGURATION / CUSTOMISATION / INTEGRATION
-
-↓
-
-CUSTOMER-SPECIFIC MES IMPLEMENTATION.
-
-Status:
-
-MYSOFT VERIFIED AT PRINCIPLE LEVEL.
-
-This means:
-
-MYSOFT MES SHOULD NOT BE UNDERSTOOD AS A ONE-SIZE-FITS-ALL SYSTEM.
-
-However:
-
-CUSTOMISABLE
-
-does not mean:
-
-EVERYTHING IS POSSIBLE.
-
-The exact customisation delivered must still be verified for each customer and implementation.
+IMPLEMENTATION EXPERIENCE.
 
 At the same time, My Software Solutions intends to expand its own MES technology in the future.
 
@@ -2835,31 +2022,13 @@ Accurately understand and market what Mysoft MES can currently provide.
 
 ## OBJECTIVE 2 — LEARN CONTINUOUSLY
 
-Capture intelligence from:
-
-- customers
-- customer industries
-- manufacturing workflows
-- implementations
-- customisation requests
-- sales
-- suppliers
-- competitors
-- market changes
+Capture intelligence from customers, implementations, sales, suppliers, competitors and the market.
 
 ## OBJECTIVE 3 — BUILD TOMORROW
 
 Use accumulated intelligence to identify where My Software Solutions should develop stronger proprietary MES capabilities.
 
 The reasoning sequence is:
-
-CUSTOMER INDUSTRY
-
-↓
-
-MANUFACTURING WORKFLOW
-
-↓
 
 CUSTOMER PROBLEM
 
@@ -2877,19 +2046,7 @@ CURRENT DIGIWIN / SUPPLIER CAPABILITY
 
 ↓
 
-CAN WE CONFIGURE IT?
-
-↓
-
-CAN WE CUSTOMISE IT?
-
-↓
-
-DO WE NEED INTEGRATION?
-
-↓
-
-IS THERE A REPEATED PRODUCT GAP?
+CURRENT GAP
 
 ↓
 
@@ -2901,7 +2058,7 @@ HUMAN DECISION
 
 ↓
 
-BUILD / CONFIGURE / CUSTOMISE / INTEGRATE / PARTNER / IGNORE
+BUILD / INTEGRATE / PARTNER / IGNORE
 
 ↓
 
@@ -2921,10 +2078,6 @@ OWN EVERYTHING.
 
 The goal is not:
 
-CUSTOMISE EVERYTHING.
-
-The goal is not:
-
 COPY DIGIWIN.
 
 The goal is not:
@@ -2933,7 +2086,7 @@ COPY COMPETITORS.
 
 The goal is:
 
-UNDERSTAND WHAT EACH MANUFACTURER ACTUALLY NEEDS
+UNDERSTAND WHAT MANUFACTURERS ACTUALLY NEED
 
 AND
 
