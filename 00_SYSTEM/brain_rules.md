@@ -1307,3 +1307,10 @@ The Marketing Intelligence + Content Decision Brain exists to help the business:
 > CREATE SMARTER.
 > LEARN FASTER.
 > AND OUTPERFORM THE MARKET.
+
+## Related Notes
+
+- [[00_SYSTEM/evidence_rules]]
+- [[02_AUDIENCE/audience_matrix]]
+- [[04_COMPETITORS/competitor_index]]
+- [[08_DECISIONS/decision_log]]
