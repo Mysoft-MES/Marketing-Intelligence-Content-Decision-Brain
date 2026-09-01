@@ -1,0 +1,21 @@
+# Google Business Profile
+
+_(Platform intelligence not yet populated.)_
+
+## Research Template
+
+- Strategic role:
+- Audience and intent:
+- Discovery/search behaviour:
+- Strong and weak formats:
+- Post structure:
+- Tone and visual style:
+- CTA behaviour:
+- Local SEO relevance:
+- Internal performance findings:
+- Current hypotheses:
+- Validated learnings:
+- Experiments:
+- Things to avoid:
+- Sources and last updated:
+
