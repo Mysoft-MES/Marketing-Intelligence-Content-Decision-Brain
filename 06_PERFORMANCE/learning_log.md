@@ -7,3 +7,6 @@ _(placeholder)_
 
 ## 2026-08-31
 testing sync after token fix
+
+## 2026-09-01
+Confirmed .env-based token loading resolved the persistent GITHUB_TOKEN environment variable issue.
