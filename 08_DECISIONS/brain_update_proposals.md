@@ -92,3 +92,48 @@ Neither sync tool exposes a deletion parameter, so these cannot be removed from 
 
 Root cause of the three numeric files: `create_dated_file` names files day+month with no separator and will keep colliding. Use `write_doc` with explicit `YYYY-MM-DD` filenames instead — now recorded in `00_SYSTEM/daily_operating_spec.md`.
 
+
+
+## 2026-09-02 — APPLIED (not a proposal): routing_rules.md rewrite
+
+**Status: APPLIED under explicit human instruction this session.** `update_rules.md`
+permits protected-file changes on explicit human instruction OR a proposal; this was
+the former. Recorded here for the audit trail.
+
+**File:** `00_SYSTEM/routing_rules.md` (was sha256 `2b952d33…`, 14,632 chars).
+
+**Why:** the v1 file predated the 2026-09-02 restructuring and had drifted out of sync
+with the actual repository, with `taxonomy.md`, and with `update_rules.md`'s own
+routing table. ~30 existing files/folders had no defined home.
+
+**What changed:**
+- Added `Last updated` line.
+- 00_SYSTEM: added `routing_rules.md`, `taxonomy.md`, `update_rules.md`,
+  `content_benchmark.md`, `daily_operating_spec.md`; stated the protected-folder rule.
+- 01_BUSINESS: added `sales_insights.md`; stated the protected-folder rule.
+- 02_AUDIENCE: generalised to "one file per taxonomy role"; listed all 7 personas
+  (added general_manager, operations_manager, supply_chain_planner, it_manager) +
+  `audience_index.md`.
+- 03_PLATFORM: added `website.md`, `whatsapp.md`, `google_business.md`,
+  `platform_index.md`.
+- 04_COMPETITORS: added `competitor_patterns.md`, `competitor_gaps.md`,
+  `competitor_template.md`.
+- 05_CREATIVE: added `creative_strategy.md`, `storytelling_patterns.md`,
+  `losing_patterns.md`, `content_calendars/`, `generation_prompts/`,
+  `prompting_rules.md`, `prompt_library.md`, `prompt_templates.md`. Replaced the
+  `winning_patterns.md` section with a pointer to `06_PERFORMANCE/validated_patterns.md`
+  (resolves Proposal 1 from the 2026-09-02 pass and the earlier content_calendars
+  proposal).
+- 06_PERFORMANCE: added `performance_framework.md`, `content_performance.md`,
+  `validated_patterns.md`.
+- 07_RESEARCH: added `competitor_updates.md`, the `YYYY-MM-DD-<topic>.md` dated-pass
+  convention, and the standard research metadata block.
+- 08_DECISIONS: added `recommended_content.md`, `rejected_ideas.md`,
+  `brain_update_proposals.md`, `YYYY-MM-DD-session-record.md`.
+- Added a "ROOT FILES — not routing targets" section (README.md, CLAUDE.md, prompt.md).
+- Added Step 7 (index-maintenance duty) to "BEFORE WRITING ANY DATA".
+- Preserved verbatim: FACT/INSIGHT/ACTION, PRIMARY FILE RULE, IF YOU ARE UNSURE.
+
+**Still open (not resolved by this edit):** Proposal 3 (prompt.md vs
+daily_operating_spec.md overlap), Proposal 2 (social scorecard), Proposals 4–6.
+
