@@ -1,10 +1,8 @@
 # Operations Manager
 
-_(Evidence-backed profile not yet populated.)_
+## Profile
 
-## Profile Template
-
-_(Evidence-backed profile — first pass, external/industry research. Not yet validated against Mysoft's own sales or customer data.)_
+_(Evidence-backed profile — first pass, external/industry research. Not yet validated against Mysoft's own sales or customer data. Last updated: 2026-09-02.)_
 
 - **Role and responsibilities:** Operational performance, productivity, cross-functional coordination, resource utilisation, delivery, operational efficiency. VERIFIED FACT (internal business knowledge, `01_BUSINESS/company_profile.md` §10-19), HIGH confidence.
 - **KPIs:** OEE, unplanned downtime, bottleneck frequency/duration. INDUSTRY SOURCE — OxMaint, "Improving OEE Through a Smarter Maintenance Strategy," accessed 2026-09-02: cites typical plant OEE sitting between 55-65% against an 85% "world-class" benchmark. LOW confidence (single vendor case-study source, methodology not independently verified, not Malaysia-specific).
@@ -21,4 +19,3 @@ _(Evidence-backed profile — first pass, external/industry research. Not yet va
 - **Language used / messages to avoid:** Favour cross-functional/coordination language over single-department framing, since this audience's core frustration is inter-departmental visibility gaps rather than any one team's performance.
 - **Funnel considerations:** Likely PROBLEM AWARE — lives the bottleneck/coordination pain directly, may act as an internal influencer or champion more than final budget owner (per `01_BUSINESS/company_profile.md` §18-19).
 - **Evidence and customer observations:** UNKNOWN — no direct Mysoft operations-manager customer interviews on file yet, and no Malaysia-specific source was found for this role this pass. Evidence gap: all vendor-reported percentage figures above (55-65% OEE, 15-25%/30-50% gains) lack disclosed methodology and should not be repeated in outward-facing claims without independent verification.
-

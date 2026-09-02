@@ -1,10 +1,8 @@
 # IT Manager
 
-_(Evidence-backed profile not yet populated.)_
+## Profile
 
-## Profile Template
-
-_(Evidence-backed profile — first pass, external/industry research. Not yet validated against Mysoft's own sales or customer data.)_
+_(Evidence-backed profile — first pass, external/industry research. Not yet validated against Mysoft's own sales or customer data. Last updated: 2026-09-02.)_
 
 - **Role and responsibilities:** Architecture, integration, ERP connectivity, infrastructure, security, deployment, maintenance, data flow, system reliability. VERIFIED FACT (internal business knowledge, `01_BUSINESS/company_profile.md` §16), HIGH confidence. May not originate the MES need but often has significant influence over whether a proposed solution is technically accepted (same source).
 - **KPIs:** System uptime, security-patch currency, successful integration with existing ERP/machine systems. INFERENCE from role scope, MEDIUM confidence.
@@ -21,4 +19,3 @@ _(Evidence-backed profile — first pass, external/industry research. Not yet va
 - **Language used / messages to avoid:** Avoid marketing-style claims about "seamless integration" without technical specificity; this audience is a technical evaluator, not the primary emotional buyer.
 - **Funnel considerations:** Typically a Technical Evaluator rather than initiator or final decision-maker (per `01_BUSINESS/company_profile.md` §18-19) — engages later in the buying process to validate technical fit.
 - **Evidence and customer observations:** UNKNOWN — no direct Mysoft IT-manager customer interviews on file yet. Evidence gap: the 79% cyberattack-exposure figure is a secondary citation and needs primary-source verification; no data found this pass on how often Malaysian manufacturing IT managers actively block vs. approve MES purchases.
-

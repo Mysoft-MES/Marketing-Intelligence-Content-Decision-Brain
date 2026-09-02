@@ -1,10 +1,8 @@
 # Production Manager
 
-_(placeholder)_
+## Profile
 
-## Profile Template
-
-_(Evidence-backed profile — first pass, external/industry research. Not yet validated against Mysoft's own sales or customer data. This is Mysoft's core problem-owner audience per `01_BUSINESS/company_profile.md` §10-19.)_
+_(Evidence-backed profile — first pass, external/industry research. Not yet validated against Mysoft's own sales or customer data. This is Mysoft's core problem-owner audience per `01_BUSINESS/company_profile.md` §10-19. Last updated: 2026-09-02.)_
 
 - **Role and responsibilities:** Production execution, job/work-order status, manpower, shop-floor coordination, production reporting. VERIFIED FACT (internal business knowledge, `01_BUSINESS/company_profile.md` §10-19), HIGH confidence.
 - **KPIs:** On-time job completion, output vs. plan, downtime, scrap/rework rate. INDUSTRY SOURCE — general manufacturing-reporting literature (Jodoo Blog, "Production Reporting Software," accessed 2026-09-02; Harmoni, "Manufacturing Production Reports," accessed 2026-09-02), not Malaysia-specific. LOW-MEDIUM confidence.

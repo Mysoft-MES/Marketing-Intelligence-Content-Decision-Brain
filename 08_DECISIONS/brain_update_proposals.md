@@ -52,3 +52,43 @@ Duplicating the same instructions across both files would breach the Primary Fil
 
 `05_CREATIVE/prompt_templates.md` is flagged as a placeholder by `audit_knowledge_freshness` despite containing four usable templates. Worth checking whether the placeholder marker is stale — it may be suppressing a file that is actually ready to use.
 
+
+## 2026-09-02
+## Proposed 00_SYSTEM changes — housekeeping pass, 2026-09-02
+
+**Status: PROPOSED — NOT APPLIED.**
+
+### Proposal 5 — Fix the placeholder detector in server.py
+
+**This is the highest-value fix available in the repository, and it is code rather than content.**
+
+**Problem:** the placeholder detector matches on a heading containing the word "Template", not on whether the file has content. Verified 2026-09-02 on `02_AUDIENCE/factory_owner.md`: removing the `_(placeholder)_` marker changed nothing, renaming `## Profile Template` to `## Profile` cleared the flag, and the file content was byte-identical at 5,790 characters throughout.
+
+**Impact:** eight populated files carrying roughly 36,000 characters of cited research were reported as empty. `build_recommendation_context` reads that status, lists them as critical evidence gaps, and caps `maximum_confidence` at LOW — which is part of why every September content recommendation was capped at LOW confidence. The detector also produced false negatives: `current_priorities.md` (38 chars), `experiments.md` (31 chars) and `campaign_history.md` (36 chars) are effectively empty and were not flagged at all.
+
+**Workaround applied 2026-09-02:** the eight affected files had their "Template" headings renamed to accurate ones. This is legitimate on its own terms — a filled-in profile should not be headed "Profile Template" — but it is not the fix.
+
+**Proposed fix:** detect placeholders by content volume and substance, not by heading text. A file should be considered a placeholder when it has no content beyond headings and an unfilled field list, regardless of what its headings are called. Requires a human to approve a code change to `server.py`.
+
+### Proposal 6 — Add dates to undated 00_SYSTEM files
+
+`content_benchmark.md`, `routing_rules.md`, `taxonomy.md` and `update_rules.md` carry no parseable date, so `audit_knowledge_freshness` cannot measure staleness on any of them. This is why `stale_files` always returns empty — not because nothing is stale, but because nothing can be measured.
+
+Proposed: add a `Last updated: YYYY-MM-DD` line beneath the title of each. Content otherwise unchanged.
+
+### Note on the remaining undated files
+
+Undated files in `02_AUDIENCE` through `08_DECISIONS` that hold real content have been dated in this pass. The remainder are genuinely empty templates — `losing_patterns.md`, `content_performance.md`, `validated_patterns.md`, `recommended_content.md`, `rejected_ideas.md`, the three trend files, `whatsapp.md`, `google_business.md` and others. Dating an empty template records nothing useful; they should be dated when first filled. No action taken on them deliberately.
+
+### Deletion candidates — require human action
+
+Neither sync tool exposes a deletion parameter, so these cannot be removed from this session. They exist on GitHub but not locally:
+
+- `07_RESEARCH/19.md` — `create_dated_file` naming-collision artifact
+- `07_RESEARCH/308.md` — same
+- `07_RESEARCH/318.md` — same
+- `07_RESEARCH/trends.md` — superseded catch-all; `routing_rules.md` says not to recreate it
+- `01_BUSINESS/competitor_analysis.md` — superseded by `04_COMPETITORS/`, but still cited by `competitor_index.md`. **Archive rather than delete, and fix the reference.**
+
+Root cause of the three numeric files: `create_dated_file` names files day+month with no separator and will keep colliding. Use `write_doc` with explicit `YYYY-MM-DD` filenames instead — now recorded in `00_SYSTEM/daily_operating_spec.md`.
+

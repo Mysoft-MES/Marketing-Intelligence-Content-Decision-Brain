@@ -1,10 +1,8 @@
 # Supply Chain Planner
 
-_(Evidence-backed profile not yet populated.)_
+## Profile
 
-## Profile Template
-
-_(Evidence-backed profile — first pass, external/industry research. Not yet validated against Mysoft's own sales or customer data.)_
+_(Evidence-backed profile — first pass, external/industry research. Not yet validated against Mysoft's own sales or customer data. Last updated: 2026-09-02.)_
 
 - **Role and responsibilities:** Production status, material requirements, schedule changes, WIP status, delivery impact, reliability of production updates feeding planning. VERIFIED FACT (internal business knowledge, `01_BUSINESS/company_profile.md` §14), HIGH confidence.
 - **KPIs:** Schedule adherence, inventory turns, on-time delivery, plan-vs-actual variance. INDUSTRY SOURCE — Method, "Production planning and scheduling: A 2026 guide for manufacturers," accessed 2026-09-02; Onepint, "What Is Production Planning?," accessed 2026-09-02. LOW-MEDIUM confidence (international, not Malaysia-specific).
@@ -21,4 +19,3 @@ _(Evidence-backed profile — first pass, external/industry research. Not yet va
 - **Language used / messages to avoid:** Lead with plan/schedule/WIP-accuracy language rather than general "visibility" abstractions.
 - **Funnel considerations:** Likely PROBLEM AWARE — experiences the plan-vs-actual gap directly, more likely an influencer/user than final budget owner (per `01_BUSINESS/company_profile.md` §14, §18-19).
 - **Evidence and customer observations:** UNKNOWN — no direct Mysoft supply-chain-planner customer interviews on file yet, and no Malaysia-specific source was found for this role this pass. Evidence gap: the 16%-real-time-WIP and 18-24%-more-inventory figures both come from vendor/industry sources without disclosed methodology and should be treated as directional only.
-

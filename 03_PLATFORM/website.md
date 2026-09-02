@@ -1,8 +1,8 @@
 # Website
 
-_(Platform intelligence not yet populated.)_
+## Platform Intelligence
 
-## Research Template
+_(First-pass external/industry research. Not yet validated against Mysoft's own website analytics or Malaysian buyer behaviour. Last updated: 2026-09-02.)_
 
 - **Strategic role:** Owned source of truth for product understanding, manufacturing problems, solution explanations, use cases, FAQs, proof and conversion, per `01_BUSINESS/company_profile.md` §26. Increasingly also the primary evidence source that AI answer engines (ChatGPT, Perplexity, Google AI Overviews) cite when OEM/manufacturing buyers research suppliers before ever visiting a website directly. INDUSTRY SOURCE — OneIMS, "AEO and SEO for Manufacturing Companies: Getting the Sequence Right," accessed 2026-09-02 (manufacturing-marketing-agency content, cites Ahrefs keyword analysis for the AI Overviews click-through stat below). LOW-MEDIUM confidence (agency-authored, not Malaysia-specific, but the underlying dynamic — AI answer engines as a supplier-shortlisting research surface — is corroborated by the general GEO/AEO literature below).
 - **Audience and intent:** B2B manufacturing buyers now research technical/process-specific questions (materials, tolerances, certifications, processes) rather than only branded terms; a majority of B2B/industrial buyers review a supplier's website closely before submitting an RFI, and 71% reportedly start with a generic (not branded) search. INDUSTRY SOURCE — Web Tonic, "SEO for Manufacturers: Complete Playbook for 2026," accessed 2026-09-02. LOW-MEDIUM confidence (marketing-agency-published statistic, methodology/sample not disclosed).
@@ -18,4 +18,3 @@ _(Platform intelligence not yet populated.)_
 - **Experiments:** None yet proposed — a first step would be a basic technical/content audit of the current Mysoft MES website against the four-stage framework described above (crawl errors, thin content, schema, page speed) before investing further in AEO/GEO-specific structuring.
 - **Things to avoid:** Generic, templated "MES services" pages without specific technical detail; treating AEO/GEO as separate initiatives from foundational SEO/content quality; expecting FAQ schema to produce Google SERP rich results (deprecated May 2026).
 - **Sources and last updated:** OneIMS (oneims.com), Web Tonic (webtonic.io), accessed 2026-09-02. No Malaysia-specific or Mysoft-specific website research exists yet — this is a general industry-practice pass, flagged for revalidation once internal website analytics and a Malaysia-specific search-behaviour source are available.
-

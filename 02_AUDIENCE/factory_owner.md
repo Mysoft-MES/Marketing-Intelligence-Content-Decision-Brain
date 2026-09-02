@@ -1,10 +1,8 @@
 # Factory Owner
 
-_(placeholder)_
+## Profile
 
-## Profile Template
-
-_(Evidence-backed profile — first pass, external/industry research. Not yet validated against Mysoft's own sales or customer data.)_
+_(Evidence-backed profile — first pass, external/industry research. Not yet validated against Mysoft's own sales or customer data. Last updated: 2026-09-02.)_
 
 - **Role and responsibilities:** In Malaysian manufacturing SMEs, the Factory Owner frequently also functions as the General Manager / Managing Director — overall business performance, delivery, investment decisions, and (per `01_BUSINESS/company_profile.md` §17) typically holds Final Decision Maker / Budget Owner / Executive Sponsor roles in a Mysoft MES buying committee. VERIFIED FACT (internal business knowledge), HIGH confidence.
 - **KPIs:** Profitability/margin, on-time delivery, production output, cost control. INFERENCE from `01_BUSINESS/company_profile.md` business-model context, MEDIUM confidence.

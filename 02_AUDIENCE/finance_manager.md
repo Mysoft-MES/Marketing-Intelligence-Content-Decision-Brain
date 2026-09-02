@@ -1,10 +1,8 @@
 # Finance Manager
 
-_(placeholder)_
+## Profile
 
-## Profile Template
-
-_(Evidence-backed profile — first pass, external/industry research. Not yet validated against Mysoft's own sales or customer data.)_
+_(Evidence-backed profile — first pass, external/industry research. Not yet validated against Mysoft's own sales or customer data. Last updated: 2026-09-02.)_
 
 - **Role and responsibilities:** Cost control, production costing, ROI justification, budget ownership or influence. VERIFIED FACT (internal business knowledge, `01_BUSINESS/company_profile.md` §10-19), HIGH confidence.
 - **KPIs:** Cost variance (actual vs. standard/budgeted), COGS accuracy, margin by product/line/customer, labour cost variance. INDUSTRY SOURCE — Triad ("How Manufacturing ERP Improves Production Cost Control," accessed 2026-09-02), OneAdvanced ("Manufacturing Accounting: How to Track Costs, Inventory and Profitability," accessed 2026-09-02). LOW-MEDIUM confidence (general international manufacturing-finance content, not Malaysia-specific).

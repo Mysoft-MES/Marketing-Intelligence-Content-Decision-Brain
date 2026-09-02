@@ -1,10 +1,8 @@
 # General Manager
 
-_(Evidence-backed profile not yet populated.)_
+## Profile
 
-## Profile Template
-
-_(Evidence-backed profile — first pass, external/industry research. Not yet validated against Mysoft's own sales or customer data.)_
+_(Evidence-backed profile — first pass, external/industry research. Not yet validated against Mysoft's own sales or customer data. Last updated: 2026-09-02.)_
 
 - **Role and responsibilities:** Business performance, operational control, productivity, delivery, investment ROI, digital transformation, management visibility; may be Final Decision Maker / Budget Owner / Executive Sponsor. VERIFIED FACT (internal business knowledge, `01_BUSINESS/company_profile.md` §17), HIGH confidence.
 - **KPIs:** Plant-level KPIs — OEE, output attainment, scrap rate, downtime loss — as distinct from the shift-level or trend-level detail relevant to production managers. INDUSTRY SOURCE — Jodoo Blog, "Production Reporting Software," accessed 2026-09-02. LOW-MEDIUM confidence (international MES-vendor content, not Malaysia-specific).
@@ -21,4 +19,3 @@ _(Evidence-backed profile — first pass, external/industry research. Not yet va
 - **Language used / messages to avoid:** Avoid vague "digital transformation" framing; lead with concrete visibility/control/ROI outcomes.
 - **Funnel considerations:** Likely spans PROBLEM AWARE (knows visibility is a problem) to SOLUTION AWARE/PRODUCT AWARE depending on prior digitalisation exposure; often the final approver even when not the initiator (per `01_BUSINESS/company_profile.md` §18-19).
 - **Evidence and customer observations:** UNKNOWN — no direct Mysoft GM/MD customer interviews on file yet. Evidence gap: none of the sources above are Malaysia-specific or MES-specific; the "16% real-time WIP" and "week-late Excel reports" figures should be treated as directional industry framing, not validated benchmarks for Mysoft's actual prospect base.
-
