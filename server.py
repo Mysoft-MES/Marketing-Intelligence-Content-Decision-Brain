@@ -8,8 +8,9 @@ import subprocess
 import sys
 import urllib.request
 import urllib.error
-from datetime import datetime, date
+from datetime import datetime, date, timedelta, timezone as datetime_timezone
 from typing import Optional
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 from dotenv import load_dotenv
 from fastmcp import FastMCP
 
@@ -27,7 +28,9 @@ mcp = FastMCP(
                   "findings, and never treat an AI recommendation as an approved decision."
                   " For GitHub synchronization, use check_github_connection, then "
                   "preview_github_api_sync, and only call sync_to_github_atomic after "
-                  "explicit human confirmation of the preview and remote SHA."
+                  "explicit human confirmation of the preview and remote SHA. Before "
+                  "creating an operational prompt, call build_prompt_context and treat "
+                  "00_SYSTEM and 01_BUSINESS as read-only grounding."
 )
 
 WORKSPACE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -114,12 +117,20 @@ def _read_markdown(filepath: str) -> str:
 
 def _is_placeholder(content: str) -> bool:
     meaningful = content.strip().lower()
-    if not meaningful or "_(placeholder)_" in meaningful or "not yet populated" in meaningful:
+    if not meaningful:
         return True
-    level_two_headings = re.findall(r"(?m)^##[ \t]+(.+?)\s*$", content)
+    cleaned_lines = [
+        line for line in content.splitlines()
+        if "_(placeholder)_" not in line.lower()
+        and "not yet populated" not in line.lower()
+    ]
+    cleaned = "\n".join(cleaned_lines).strip()
+    if not cleaned:
+        return True
+    level_two_headings = re.findall(r"(?m)^##[ \t]+(.+?)\s*$", cleaned)
     if level_two_headings and all(heading.lower().endswith("template") for heading in level_two_headings):
         return True
-    nonblank_lines = [line.strip() for line in content.splitlines() if line.strip()]
+    nonblank_lines = [line.strip() for line in cleaned.splitlines() if line.strip()]
     table_lines = [line for line in nonblank_lines if line.startswith("|") and line.endswith("|")]
     non_table_body = [line for line in nonblank_lines[1:] if not (line.startswith("|") and line.endswith("|"))]
     if table_lines and len(table_lines) <= 2 and not non_table_body:
@@ -135,7 +146,7 @@ def read_doc(filepath: str) -> str:
     
     Pass the path relative to the repo root, including its folder, e.g.:
       - "01_BUSINESS/company_profile.md"
-      - "07_RESEARCH/trends.md"
+      - "07_RESEARCH/market_trends.md"
       - "05_CREATIVE/hook_library.md"
     
     If you pass a folder instead of a file, this returns a message telling
@@ -169,7 +180,7 @@ def write_doc(filepath: str, content: str, overwrite: bool = False, human_approv
     """Creates a Markdown file and preserves existing files by default.
     
     Pass the path relative to the repo root, including its folder, e.g.:
-      - "07_RESEARCH/trends.md"
+      - "07_RESEARCH/market_trends.md"
       - "05_CREATIVE/hook_library.md"
     
     Same folder structure as read_doc. IMPORTANT: 00_SYSTEM/ and 01_BUSINESS/ are
@@ -270,7 +281,7 @@ def create_dated_file(folder: str = "07_RESEARCH", content: str = "") -> str:
 
 
 @mcp.tool()
-def list_docs(folder: str = "") -> str:
+def list_docs(folder: str = "", include_archive: bool = False) -> str:
     """Lists markdown files in the marketing-brain knowledge base.
     Pass a folder name (e.g. '07_RESEARCH') to list just that folder,
     or leave empty to list the whole structure."""
@@ -282,6 +293,8 @@ def list_docs(folder: str = "") -> str:
         return f"Folder {folder} does not exist yet."
     result = []
     for root, dirs, files in os.walk(base):
+        if not include_archive:
+            dirs[:] = [directory for directory in dirs if directory != "_archive"]
         if ".git" in root or "__pycache__" in root:
             continue
         for file in sorted(files):
@@ -369,7 +382,7 @@ def inspect_doc(filepath: str) -> str:
 
 
 @mcp.tool()
-def search_knowledge(query: str, folder: str = "", limit: int = 10) -> str:
+def search_knowledge(query: str, folder: str = "", limit: int = 10, include_archive: bool = False) -> str:
     """Searches Markdown knowledge and returns compact, source-linked excerpts."""
     if not query.strip():
         return json.dumps({"error": "query is required"}, indent=2)
@@ -381,7 +394,10 @@ def search_knowledge(query: str, folder: str = "", limit: int = 10) -> str:
     needle = query.strip().lower()
     results = []
     for root, dirs, files in os.walk(base):
-        dirs[:] = [directory for directory in dirs if directory not in {".git", ".mcp_data", "__pycache__"}]
+        excluded = {".git", ".mcp_data", "__pycache__"}
+        if not include_archive:
+            excluded.add("_archive")
+        dirs[:] = [directory for directory in dirs if directory not in excluded]
         for filename in sorted(files):
             if not filename.endswith(".md"):
                 continue
@@ -403,7 +419,7 @@ def search_knowledge(query: str, folder: str = "", limit: int = 10) -> str:
 
 
 @mcp.tool()
-def find_knowledge_conflicts(topic: str, limit: int = 50) -> str:
+def find_knowledge_conflicts(topic: str, limit: int = 50, include_archive: bool = False) -> str:
     """Collects topic passages carrying potentially conflicting status language.
 
     This is a triage tool, not an automatic truth judge. The connected LLM must
@@ -420,7 +436,10 @@ def find_knowledge_conflicts(topic: str, limit: int = 50) -> str:
     matches = []
     topic_key = topic.lower()
     for root, dirs, files in os.walk(WORKSPACE_DIR):
-        dirs[:] = [directory for directory in dirs if directory not in {".git", ".mcp_data", "__pycache__"}]
+        excluded = {".git", ".mcp_data", "__pycache__"}
+        if not include_archive:
+            excluded.add("_archive")
+        dirs[:] = [directory for directory in dirs if directory not in excluded]
         for filename in files:
             if not filename.endswith(".md"):
                 continue
@@ -456,7 +475,7 @@ def find_knowledge_conflicts(topic: str, limit: int = 50) -> str:
 
 
 @mcp.tool()
-def audit_knowledge_freshness(folder: str = "", maximum_age_days: int = 90) -> str:
+def audit_knowledge_freshness(folder: str = "", maximum_age_days: int = 90, include_archive: bool = False) -> str:
     """Finds placeholder files and Markdown files with missing or stale YYYY-MM-DD dates."""
     try:
         base = _resolve_workspace_path(folder, require_markdown=False) if folder else WORKSPACE_DIR
@@ -467,7 +486,10 @@ def audit_knowledge_freshness(folder: str = "", maximum_age_days: int = 90) -> s
     missing_dates = []
     placeholders = []
     for root, dirs, files in os.walk(base):
-        dirs[:] = [directory for directory in dirs if directory not in {".git", ".mcp_data", "__pycache__"}]
+        excluded = {".git", ".mcp_data", "__pycache__"}
+        if not include_archive:
+            excluded.add("_archive")
+        dirs[:] = [directory for directory in dirs if directory not in excluded]
         for filename in files:
             if not filename.endswith(".md"):
                 continue
@@ -576,7 +598,8 @@ def know_yourself() -> str:
         "00_SYSTEM/routing_rules.md",
         "00_SYSTEM/taxonomy.md",
         "00_SYSTEM/update_rules.md",
-        "01_BUSINESS/company_profile.md"
+        "01_BUSINESS/company_profile.md",
+        "05_CREATIVE/prompting_rules.md"
     ]
     combined = []
     for f in files:
@@ -656,13 +679,35 @@ def scaffold_repo_structure() -> str:
     """Creates the standard marketing-brain folders (02_AUDIENCE through 08_DECISIONS)
     with placeholder markdown files, without touching 00_SYSTEM or 01_BUSINESS."""
     structure = {
-        "02_AUDIENCE": ["factory_owner.md", "production_manager.md", "finance_manager.md", "audience_matrix.md"],
-        "03_PLATFORM": ["facebook.md", "instagram.md", "linkedin.md", "xiaohongshu.md", "reddit.md", "youtube.md"],
-        "04_COMPETITORS": ["competitor_index.md"],
-        "05_CREATIVE": ["hook_library.md", "video_formats.md", "creative_rules.md", "winning_patterns.md"],
-        "06_PERFORMANCE": ["campaign_history.md", "video_performance.md", "ad_performance.md", "learning_log.md"],
-        "07_RESEARCH": ["trends.md", "government_updates.md", "industry_news.md", "customer_insights.md"],
-        "08_DECISIONS": ["content_backlog.md", "current_priorities.md", "experiments.md", "decision_log.md", "brain_update_proposals.md"],
+        "02_AUDIENCE": [
+            "audience_index.md", "audience_matrix.md", "factory_owner.md", "finance_manager.md",
+            "general_manager.md", "it_manager.md", "operations_manager.md",
+            "production_manager.md", "supply_chain_planner.md"
+        ],
+        "03_PLATFORM": [
+            "platform_index.md", "facebook.md", "google_business.md", "instagram.md",
+            "linkedin.md", "reddit.md", "website.md", "whatsapp.md", "xiaohongshu.md", "youtube.md"
+        ],
+        "04_COMPETITORS": [
+            "competitor_index.md", "competitor_template.md", "competitor_patterns.md", "competitor_gaps.md"
+        ],
+        "05_CREATIVE": [
+            "creative_strategy.md", "creative_rules.md", "hook_library.md", "video_formats.md",
+            "storytelling_patterns.md", "winning_patterns.md", "losing_patterns.md", "creative_experiments.md",
+            "prompting_rules.md", "prompt_templates.md", "prompt_library.md"
+        ],
+        "06_PERFORMANCE": [
+            "performance_framework.md", "content_performance.md", "video_performance.md",
+            "ad_performance.md", "campaign_history.md", "learning_log.md", "validated_patterns.md"
+        ],
+        "07_RESEARCH": [
+            "research_index.md", "market_trends.md", "social_trends.md", "search_trends.md",
+            "industry_news.md", "government_updates.md", "customer_insights.md", "competitor_updates.md"
+        ],
+        "08_DECISIONS": [
+            "current_priorities.md", "content_backlog.md", "recommended_content.md",
+            "experiments.md", "decision_log.md", "rejected_ideas.md", "brain_update_proposals.md"
+        ],
     }
     created = []
     for folder, files in structure.items():
@@ -859,6 +904,43 @@ def _next_id(prefix: str, records: list) -> str:
     return f"{prefix}-{year}-{sequence:04d}"
 
 
+def _resolve_timezone(timezone_name: str):
+    if timezone_name == "Asia/Kuala_Lumpur":
+        return datetime_timezone(timedelta(hours=8), name="MYT")
+    if timezone_name in {"UTC", "Etc/UTC"}:
+        return datetime_timezone.utc
+    try:
+        return ZoneInfo(timezone_name)
+    except ZoneInfoNotFoundError as error:
+        raise ValueError(f"Unknown IANA timezone: {timezone_name}") from error
+
+
+def _publication_fields(published_at: str, timezone_name: str) -> dict:
+    """Normalize a publication timestamp and derive local scheduling dimensions."""
+    if not published_at or not published_at.strip():
+        raise ValueError("published_at is required and must be an ISO 8601 timestamp.")
+    local_zone = _resolve_timezone(timezone_name)
+    try:
+        parsed = datetime.fromisoformat(published_at.strip().replace("Z", "+00:00"))
+    except ValueError as error:
+        raise ValueError("published_at must use ISO 8601, for example 2026-09-09T16:00:00+08:00.") from error
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=local_zone)
+    local_time = parsed.astimezone(local_zone)
+    return {
+        "published_at": local_time.isoformat(timespec="seconds"),
+        "timezone": timezone_name,
+        "day_of_week": local_time.strftime("%A"),
+        "hour_local": local_time.hour,
+        "date_local": local_time.date().isoformat(),
+    }
+
+
+def _numeric_average(records: list, metric: str) -> Optional[float]:
+    values = [record.get(metric) for record in records if isinstance(record.get(metric), (int, float))]
+    return sum(values) / len(values) if values else None
+
+
 @mcp.tool()
 def record_video_performance(
     platform: str,
@@ -888,16 +970,24 @@ def record_video_performance(
     sales: Optional[float] = None,
     spend: Optional[float] = None,
     notes: Optional[str] = None,
+    timezone: str = "Asia/Kuala_Lumpur",
 ) -> str:
     """Appends one structured video result without modifying prior records."""
     records = _read_jsonl("video_performance.jsonl")
     record_id = video_id or _next_id("VID", records)
     if any(record.get("id") == record_id for record in records):
         return f"Refused: video ID {record_id} already exists."
+    try:
+        publication = _publication_fields(published_at, timezone) if published_at else {
+            "published_at": None, "timezone": timezone, "day_of_week": None,
+            "hour_local": None, "date_local": None,
+        }
+    except ValueError as error:
+        return json.dumps({"saved": False, "error": str(error)}, ensure_ascii=False, indent=2)
     record = {
         "id": record_id,
         "recorded_at": datetime.now().isoformat(timespec="seconds"),
-        "published_at": published_at,
+        **publication,
         "platform": platform,
         "audience": audience,
         "objective": objective,
@@ -960,6 +1050,114 @@ def query_video_performance(
         "metric_sample_sizes": sample_sizes,
         "warning": "Averages are descriptive. They do not establish causation unless variables were controlled.",
         "records": records,
+    }, ensure_ascii=False, indent=2)
+
+
+@mcp.tool()
+def record_post_performance(
+    platform: str,
+    audience: str,
+    content_type: str,
+    published_at: str,
+    objective: Optional[str] = None,
+    funnel_stage: Optional[str] = None,
+    topic: Optional[str] = None,
+    post_id: Optional[str] = None,
+    timezone: str = "Asia/Kuala_Lumpur",
+    impressions: Optional[float] = None,
+    reach: Optional[float] = None,
+    engagements: Optional[float] = None,
+    clicks: Optional[float] = None,
+    leads: Optional[float] = None,
+    saves: Optional[float] = None,
+    shares: Optional[float] = None,
+    notes: Optional[str] = None,
+) -> str:
+    """Append one post result with normalized local time fields; never rewrites history."""
+    records = _read_jsonl("content_performance.jsonl")
+    record_id = post_id or _next_id("POST", records)
+    if any(record.get("id") == record_id for record in records):
+        return json.dumps({"saved": False, "error": f"Post ID {record_id} already exists."}, indent=2)
+    try:
+        publication = _publication_fields(published_at, timezone)
+    except ValueError as error:
+        return json.dumps({"saved": False, "error": str(error)}, ensure_ascii=False, indent=2)
+    record = {
+        "id": record_id,
+        "recorded_at": datetime.now().isoformat(timespec="seconds"),
+        **publication,
+        "platform": platform.strip().lower(),
+        "audience": audience.strip().lower().replace(" ", "_"),
+        "content_type": content_type.strip().lower(),
+        "objective": objective,
+        "funnel_stage": funnel_stage,
+        "topic": topic,
+        "impressions": impressions,
+        "reach": reach,
+        "engagements": engagements,
+        "clicks": clicks,
+        "leads": leads,
+        "saves": saves,
+        "shares": shares,
+        "notes": notes,
+    }
+    if isinstance(engagements, (int, float)) and isinstance(reach, (int, float)) and reach > 0:
+        record["engagement_rate"] = engagements / reach
+    else:
+        record["engagement_rate"] = None
+    _append_jsonl("content_performance.jsonl", record)
+    return json.dumps({"saved": True, "post_id": record_id, "record": record}, ensure_ascii=False, indent=2)
+
+
+@mcp.tool()
+def analyze_posting_time_performance(
+    platform: Optional[str] = None,
+    audience: Optional[str] = None,
+    content_type: Optional[str] = None,
+    metric: str = "engagement_rate",
+    minimum_sample_size: int = 4,
+) -> str:
+    """Compare local day/hour slots and label only sufficiently sampled slots as validated."""
+    allowed_metrics = {"impressions", "reach", "engagements", "engagement_rate", "clicks", "leads", "saves", "shares"}
+    if metric not in allowed_metrics:
+        return json.dumps({"error": f"Unsupported metric. Choose one of: {sorted(allowed_metrics)}"}, indent=2)
+    minimum_sample_size = max(2, min(int(minimum_sample_size), 100))
+    records = _read_jsonl("content_performance.jsonl")
+    filters = {"platform": platform, "audience": audience, "content_type": content_type}
+    for key, value in filters.items():
+        if value:
+            normalized = value.strip().lower().replace(" ", "_") if key == "audience" else value.strip().lower()
+            records = [record for record in records if str(record.get(key, "")).lower() == normalized]
+    usable = [record for record in records if isinstance(record.get(metric), (int, float))]
+    slots = {}
+    for record in usable:
+        key = (record.get("day_of_week", "Unknown"), record.get("hour_local"))
+        slots.setdefault(key, []).append(record)
+    results = []
+    for (day, hour), slot_records in slots.items():
+        sample_size = len(slot_records)
+        results.append({
+            "day_of_week": day,
+            "hour_local": hour,
+            "sample_size": sample_size,
+            "average": _numeric_average(slot_records, metric),
+            "status": "VALIDATED" if sample_size >= minimum_sample_size else "TESTING",
+        })
+    results.sort(key=lambda item: (item["status"] != "VALIDATED", -(item["average"] or 0), -item["sample_size"]))
+    validated = [result for result in results if result["status"] == "VALIDATED"]
+    return json.dumps({
+        "filters": {key: value for key, value in filters.items() if value},
+        "metric": metric,
+        "record_count": len(records),
+        "usable_record_count": len(usable),
+        "minimum_sample_size": minimum_sample_size,
+        "can_claim_best_time": bool(validated),
+        "best_validated_slot": validated[0] if validated else None,
+        "slots": results,
+        "instruction": (
+            "Use VALIDATED slots as internal evidence. Treat TESTING slots and external benchmarks as hypotheses. "
+            "Do not claim a best time when can_claim_best_time is false."
+        ),
     }, ensure_ascii=False, indent=2)
 
 
@@ -1041,7 +1239,95 @@ def close_experiment(experiment_id: str, learning: str, outcome: str) -> str:
     return json.dumps(event, ensure_ascii=False, indent=2)
 
 
-# ----------------- 8. RECOMMENDATION CONTEXT -----------------
+# ----------------- 8. PROMPT AND RECOMMENDATION CONTEXT -----------------
+
+@mcp.tool()
+def build_prompt_context(
+    task_type: str,
+    task_description: str,
+    audience: Optional[str] = None,
+    platform: Optional[str] = None,
+    product: Optional[str] = None,
+) -> str:
+    """Returns the mandatory read-only 00/01 grounding manifest for prompt creation.
+
+    This tool does not write files or generate the final prompt. The connected LLM
+    must read the returned required files before constructing an operational prompt.
+    """
+    if not task_type.strip() or not task_description.strip():
+        return json.dumps({"error": "task_type and task_description are required"}, indent=2)
+
+    governance_files = [
+        "00_SYSTEM/brain_rules.md",
+        "00_SYSTEM/decision_framework.md",
+        "00_SYSTEM/evidence_rules.md",
+        "00_SYSTEM/routing_rules.md",
+        "00_SYSTEM/taxonomy.md",
+        "00_SYSTEM/update_rules.md",
+        "05_CREATIVE/prompting_rules.md",
+    ]
+    business_files = [
+        "01_BUSINESS/company_profile.md",
+        "01_BUSINESS/products.md",
+        "01_BUSINESS/positioning.md",
+        "01_BUSINESS/customer_objections.md",
+        "01_BUSINESS/sales_insights.md",
+        "01_BUSINESS/swot.md",
+    ]
+    status = {}
+    for filepath in governance_files + business_files:
+        content = _read_markdown(filepath)
+        status[filepath] = "MISSING" if not content else "TEMPLATE_ONLY" if _is_placeholder(content) else "AVAILABLE"
+
+    task_key = task_type.strip().lower().replace(" ", "_").replace("-", "_")
+    if task_key in {"content_recommendation", "content_creation", "campaign", "research", "prompt_creation"}:
+        required_business = business_files
+    elif task_key in {"competitor_research", "positioning"}:
+        required_business = [
+            "01_BUSINESS/company_profile.md", "01_BUSINESS/products.md",
+            "01_BUSINESS/positioning.md", "01_BUSINESS/swot.md"
+        ]
+    elif task_key in {"audience_research", "persona"}:
+        required_business = [
+            "01_BUSINESS/company_profile.md", "01_BUSINESS/products.md",
+            "01_BUSINESS/customer_objections.md", "01_BUSINESS/sales_insights.md"
+        ]
+    else:
+        required_business = ["01_BUSINESS/company_profile.md", "01_BUSINESS/positioning.md"]
+
+    evidence_gaps = [filepath for filepath in required_business if status[filepath] != "AVAILABLE"]
+    return json.dumps({
+        "task_type": task_key,
+        "task_description": task_description.strip(),
+        "audience": audience,
+        "platform": platform,
+        "product": product,
+        "mandatory_governance_reads": governance_files,
+        "required_business_reads": required_business,
+        "file_status": status,
+        "business_evidence_gaps": evidence_gaps,
+        "protection": {
+            "00_SYSTEM": "READ_ONLY",
+            "01_BUSINESS": "READ_ONLY",
+            "protected_change_route": "propose_brain_update",
+            "direct_write_allowed": False,
+        },
+        "permitted_prompt_write_scope": [
+            "02_AUDIENCE", "03_PLATFORM", "04_COMPETITORS", "05_CREATIVE",
+            "06_PERFORMANCE", "07_RESEARCH", "08_DECISIONS"
+        ],
+        "required_prompt_sections": [
+            "role", "objective", "grounding", "scope", "tool_order", "evidence_rules",
+            "routing", "write_authorization", "prohibited_actions", "output",
+            "stopping_conditions", "verification", "success_criteria"
+        ],
+        "instruction": (
+            "Read every mandatory_governance_reads and required_business_reads file before creating the prompt. "
+            "Use 00/01 as grounding only. Do not authorize direct writes to them. Explicitly label template-only "
+            "or missing business inputs as evidence gaps in the resulting prompt."
+        )
+    }, ensure_ascii=False, indent=2)
+
 
 @mcp.tool()
 def build_recommendation_context(
@@ -1167,6 +1453,102 @@ def build_recommendation_context(
     return json.dumps(header, ensure_ascii=False, indent=2) + "\n\n" + "\n\n".join(sections)
 
 
+@mcp.tool()
+def build_posting_schedule_context(
+    platforms: str = "linkedin,instagram,facebook",
+    audiences: str = "production_manager,general_manager,operations_manager",
+    objective: str = "awareness",
+    weeks: int = 4,
+    timezone: str = "Asia/Kuala_Lumpur",
+) -> str:
+    """Build evidence for an LLM-authored schedule without inventing dates, topics, or times."""
+    try:
+        _resolve_timezone(timezone)
+    except ValueError as error:
+        return json.dumps({"error": str(error)}, indent=2)
+    platform_slugs = list(dict.fromkeys(
+        item.strip().lower().replace(" ", "_").replace("-", "_")
+        for item in platforms.split(",") if item.strip()
+    ))
+    audience_slugs = list(dict.fromkeys(
+        item.strip().lower().replace(" ", "_").replace("-", "_")
+        for item in audiences.split(",") if item.strip()
+    ))
+    unsupported = [item for item in platform_slugs if item not in VALID_PLATFORMS]
+    if unsupported:
+        return json.dumps({"error": f"Unsupported platforms: {unsupported}"}, indent=2)
+    weeks = max(1, min(int(weeks), 12))
+    files = [
+        "00_SYSTEM/brain_rules.md", "00_SYSTEM/decision_framework.md", "00_SYSTEM/evidence_rules.md",
+        "01_BUSINESS/company_profile.md", "01_BUSINESS/products.md", "01_BUSINESS/positioning.md",
+        "05_CREATIVE/creative_strategy.md", "05_CREATIVE/hook_library.md", "05_CREATIVE/video_formats.md",
+        "05_CREATIVE/winning_patterns.md", "05_CREATIVE/losing_patterns.md",
+        "06_PERFORMANCE/content_performance.md", "06_PERFORMANCE/video_performance.md",
+        "06_PERFORMANCE/learning_log.md", "06_PERFORMANCE/validated_patterns.md",
+        "08_DECISIONS/current_priorities.md", "08_DECISIONS/content_backlog.md", "08_DECISIONS/experiments.md",
+    ]
+    files.extend(f"02_AUDIENCE/{audience}.md" for audience in audience_slugs)
+    files.extend(f"03_PLATFORM/{platform}.md" for platform in platform_slugs)
+    sections, evidence_gaps, input_status = [], [], {}
+    for filepath in dict.fromkeys(files):
+        try:
+            content = _read_markdown(filepath)
+        except ValueError as error:
+            evidence_gaps.append(f"{filepath}: {error}")
+            continue
+        status = "MISSING" if not content else "PLACEHOLDER" if _is_placeholder(content) else "AVAILABLE"
+        input_status[filepath] = status
+        if status != "AVAILABLE":
+            evidence_gaps.append(f"{filepath}: {status.lower()}")
+        if content:
+            sections.append(f"--- {filepath} ---\n{content}")
+    performance_records = _read_jsonl("content_performance.jsonl")
+    relevant_records = [
+        record for record in performance_records
+        if record.get("platform") in platform_slugs and record.get("audience") in audience_slugs
+    ]
+    timed_records = [record for record in relevant_records if record.get("day_of_week") and record.get("hour_local") is not None]
+    header = {
+        "purpose": "Evidence packet for the connected LLM to create its own posting schedule",
+        "platforms": platform_slugs,
+        "audiences": audience_slugs,
+        "objective": objective,
+        "weeks": weeks,
+        "timezone": timezone,
+        "input_status": input_status,
+        "evidence_gaps": evidence_gaps,
+        "relevant_performance_records": len(relevant_records),
+        "records_with_timing": len(timed_records),
+        "mysoft_specific_timing_validated": any(
+            sum(
+                1 for candidate in timed_records
+                if candidate.get("platform") == record.get("platform")
+                and candidate.get("audience") == record.get("audience")
+                and candidate.get("day_of_week") == record.get("day_of_week")
+                and candidate.get("hour_local") == record.get("hour_local")
+            ) >= 4
+            for record in timed_records
+        ),
+        "required_tool_order": [
+            "know_yourself",
+            "build_posting_schedule_context",
+            "analyze_posting_time_performance for each platform/audience combination",
+        ],
+        "required_schedule_columns": [
+            "date", "day", "time", "timezone", "platform", "audience", "objective", "funnel_stage",
+            "topic", "format", "hook", "cta", "evidence_basis", "confidence", "test_metric", "review_date",
+        ],
+        "instruction": (
+            "The LLM must create the schedule itself from this packet. It must not claim Mysoft-specific best timing "
+            "unless analyze_posting_time_performance returns can_claim_best_time=true for the relevant segment. "
+            "Otherwise it may use current externally sourced benchmarks as TEST hypotheses, cite them, keep them "
+            "separate from internal evidence, and design a controlled schedule that can collect comparable results. "
+            "Do not write or sync the schedule without explicit human authorization."
+        ),
+    }
+    return json.dumps(header, ensure_ascii=False, indent=2) + "\n\n" + "\n\n".join(sections)
+
+
 # ----------------- 9. GITHUB API SYNC TOOLS -----------------
 
 GITHUB_API_BASE = "https://api.github.com"
@@ -1268,6 +1650,12 @@ def _build_github_api_preview(include_code: bool, include_obsidian: bool) -> dic
             unchanged.append(filepath)
         else:
             changed.append(item)
+    local_paths = set(candidates)
+    deletions = sorted(
+        filepath for filepath in state["remote_blobs"]
+        if _path_is_sync_eligible(filepath, include_code, include_obsidian)
+        and filepath not in local_paths
+    )
     return {
         "preview_method": "github_git_data_api_hash_comparison",
         "repository": f"{REPO_OWNER}/{REPO_NAME}",
@@ -1281,8 +1669,9 @@ def _build_github_api_preview(include_code: bool, include_obsidian: bool) -> dic
         "changed_file_count": len(changed),
         "changed_files": changed,
         "unchanged_file_count": len(unchanged),
-        "deletions": [],
-        "deletion_policy": "Remote files are never deleted by this tool.",
+        "deletion_count": len(deletions),
+        "deletions": deletions,
+        "deletion_policy": "Deletions require an exact reviewed list, allow_deletions=true, and a deletion-specific confirmation phrase.",
         "secret_exclusions": {
             ".env": ".env" not in candidates,
             ".mcp_data": not any(path.startswith(".mcp_data/") for path in candidates),
@@ -1503,25 +1892,40 @@ def _git_changed_paths() -> list:
     return paths
 
 
+def _path_is_sync_eligible(filepath: str, include_code: bool, include_obsidian: bool) -> bool:
+    normalized = filepath.replace("\\", "/").lstrip("/")
+    parts = normalized.split("/")
+    if any(part in {".git", ".mcp_data", ".uv-cache", ".uv-python", "__pycache__"} for part in parts):
+        return False
+    if not include_obsidian and parts[0] == ".obsidian":
+        return False
+    if normalized == ".env" or normalized.endswith((".pyc", ".pyo")):
+        return False
+    managed_root = bool(re.match(r"^0[0-8]_[A-Z_]+/", normalized)) or normalized in {
+        ".gitignore", "README.md", "prompt.md", "server.py"
+    }
+    if not managed_root:
+        return False
+    extension = os.path.splitext(normalized)[1].lower()
+    if not include_code:
+        return extension == ".md"
+    return extension in {".md", ".py", ".json", ".toml", ".yaml", ".yml", ".txt"} or normalized == ".gitignore"
+
+
 def _workspace_sync_candidates(include_code: bool, include_obsidian: bool = False) -> list:
     """List bounded, non-secret workspace files without invoking Git."""
     excluded_directories = {".git", ".mcp_data", ".uv-cache", ".uv-python", "__pycache__"}
     if not include_obsidian:
         excluded_directories.add(".obsidian")
     excluded_files = {".env"}
-    allowed_code_extensions = {".md", ".py", ".json", ".toml", ".yaml", ".yml", ".txt"}
     candidates = []
     for root, dirs, files in os.walk(WORKSPACE_DIR):
         dirs[:] = [directory for directory in dirs if directory not in excluded_directories]
         for filename in files:
-            if filename in excluded_files or filename.endswith((".pyc", ".pyo")):
+            filepath = _relative_path(os.path.join(root, filename))
+            if filename in excluded_files or not _path_is_sync_eligible(filepath, include_code, include_obsidian):
                 continue
-            extension = os.path.splitext(filename)[1].lower()
-            if not include_code and extension != ".md":
-                continue
-            if include_code and extension not in allowed_code_extensions and filename != ".gitignore":
-                continue
-            candidates.append(_relative_path(os.path.join(root, filename)))
+            candidates.append(filepath)
     return sorted(candidates)
 
 
