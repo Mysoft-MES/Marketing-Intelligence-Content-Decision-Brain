@@ -1,3 +1,0 @@
-# Trends
-
-_(placeholder)_
