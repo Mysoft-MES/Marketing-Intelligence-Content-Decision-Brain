@@ -1117,7 +1117,18 @@ def analyze_posting_time_performance(
     metric: str = "engagement_rate",
     minimum_sample_size: int = 4,
 ) -> str:
-    """Compare local day/hour slots and label only sufficiently sampled slots as validated."""
+    """Compare local time slots by day+hour and by hour alone, and label only sufficiently sampled slots as validated.
+
+    Two groupings are reported, because a schedule can be designed for either one:
+
+      slots       - grouped by (day_of_week, hour_local). Use when the same slot is
+                    held constant, e.g. four posts all on Tuesday 20:00.
+      hour_slots  - grouped by hour_local alone. Use when day_of_week was deliberately
+                    counterbalanced across weeks so that time-of-day is not confounded
+                    with day-of-week. An hour is only validated here when its posts are
+                    actually spread evenly across days; otherwise it is reported
+                    CONFOUNDED_WITH_DAY and must not be read as a time-of-day result.
+    """
     allowed_metrics = {"impressions", "reach", "engagements", "engagement_rate", "clicks", "leads", "saves", "shares"}
     if metric not in allowed_metrics:
         return json.dumps({"error": f"Unsupported metric. Choose one of: {sorted(allowed_metrics)}"}, indent=2)
@@ -1145,18 +1156,57 @@ def analyze_posting_time_performance(
         })
     results.sort(key=lambda item: (item["status"] != "VALIDATED", -(item["average"] or 0), -item["sample_size"]))
     validated = [result for result in results if result["status"] == "VALIDATED"]
+
+    hour_groups = {}
+    for record in usable:
+        hour_groups.setdefault(record.get("hour_local"), []).append(record)
+    hour_results = []
+    for hour, hour_records in hour_groups.items():
+        distribution = {}
+        for record in hour_records:
+            day = record.get("day_of_week", "Unknown")
+            distribution[day] = distribution.get(day, 0) + 1
+        counts = list(distribution.values())
+        counterbalanced = len(distribution) >= 2 and (max(counts) - min(counts)) <= 1
+        sample_size = len(hour_records)
+        if sample_size < minimum_sample_size:
+            status = "TESTING"
+        elif not counterbalanced:
+            status = "CONFOUNDED_WITH_DAY"
+        else:
+            status = "VALIDATED"
+        hour_results.append({
+            "hour_local": hour,
+            "sample_size": sample_size,
+            "average": _numeric_average(hour_records, metric),
+            "day_distribution": dict(sorted(distribution.items())),
+            "day_counterbalanced": counterbalanced,
+            "status": status,
+        })
+    hour_results.sort(key=lambda item: (item["status"] != "VALIDATED", -(item["average"] or 0), -item["sample_size"]))
+    validated_hours = [result for result in hour_results if result["status"] == "VALIDATED"]
+    comparable_hours = [result for result in hour_results if result["sample_size"] >= minimum_sample_size]
+    hour_comparison_is_balanced = len(comparable_hours) >= 2 and all(
+        result["day_distribution"] == comparable_hours[0]["day_distribution"] for result in comparable_hours
+    )
     return json.dumps({
         "filters": {key: value for key, value in filters.items() if value},
         "metric": metric,
         "record_count": len(records),
         "usable_record_count": len(usable),
         "minimum_sample_size": minimum_sample_size,
-        "can_claim_best_time": bool(validated),
+        "can_claim_best_time": bool(validated or validated_hours),
         "best_validated_slot": validated[0] if validated else None,
+        "best_validated_hour": validated_hours[0] if validated_hours else None,
+        "hour_comparison_is_balanced": hour_comparison_is_balanced,
         "slots": results,
+        "hour_slots": hour_results,
         "instruction": (
-            "Use VALIDATED slots as internal evidence. Treat TESTING slots and external benchmarks as hypotheses. "
-            "Do not claim a best time when can_claim_best_time is false."
+            "Use VALIDATED slots and VALIDATED hour_slots as internal evidence. Treat TESTING slots and external "
+            "benchmarks as hypotheses. Do not claim a best time when can_claim_best_time is false. A validated "
+            "best_validated_slot is a day-and-time claim; a validated best_validated_hour is a time-of-day claim only, "
+            "and is comparable across hours only when hour_comparison_is_balanced is true. Never read a "
+            "CONFOUNDED_WITH_DAY hour as a time-of-day result - its posts were not spread evenly across days."
         ),
     }, ensure_ascii=False, indent=2)
 
