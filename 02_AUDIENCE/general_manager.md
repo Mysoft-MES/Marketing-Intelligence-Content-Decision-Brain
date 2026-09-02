@@ -4,19 +4,21 @@ _(Evidence-backed profile not yet populated.)_
 
 ## Profile Template
 
-- Role and responsibilities:
-- KPIs:
-- Daily frustrations:
-- Operational problems:
-- Business risks:
-- Emotional pressures:
-- Questions and objections:
-- Purchase motivations and triggers:
-- Rejection triggers:
-- Information needed before buying:
-- Preferred content and platforms:
-- Content angles and hooks:
-- Language used / messages to avoid:
-- Funnel considerations:
-- Evidence and customer observations:
+_(Evidence-backed profile — first pass, external/industry research. Not yet validated against Mysoft's own sales or customer data.)_
+
+- **Role and responsibilities:** Business performance, operational control, productivity, delivery, investment ROI, digital transformation, management visibility; may be Final Decision Maker / Budget Owner / Executive Sponsor. VERIFIED FACT (internal business knowledge, `01_BUSINESS/company_profile.md` §17), HIGH confidence.
+- **KPIs:** Plant-level KPIs — OEE, output attainment, scrap rate, downtime loss — as distinct from the shift-level or trend-level detail relevant to production managers. INDUSTRY SOURCE — Jodoo Blog, "Production Reporting Software," accessed 2026-09-02. LOW-MEDIUM confidence (international MES-vendor content, not Malaysia-specific).
+- **Daily frustrations:** Reliant on reports that are already stale by the time they're seen — e.g. a yield problem visible on the floor at 10am may not reach a decision-maker until the afternoon shift summary. INDUSTRY SOURCE — Jodoo Blog, accessed 2026-09-02. LOW confidence (illustrative example, not a measured statistic).
+- **Operational problems:** Decisions made on weekly Excel-style reports are "by definition, a week late for anything that matters operationally"; when a shift leader, plant manager and managing director look at their respective numbers, they frequently do not see the same production reality. INDUSTRY SOURCE — Symestic, "Manufacturing Visibility: Shopfloor Transparency Explained," accessed 2026-09-02 (industry-practitioner content, self-described "since the 1990s" experience). LOW-MEDIUM confidence (international, vendor-authored).
+- **Business risks:** Poor production visibility is framed in analyst commentary as a strategic risk — undermining agility, delaying innovation, eroding competitiveness — not merely an operational inconvenience. INDUSTRY SOURCE — Panorama Consulting, "Why Digital Transformation Hasn't Solved Production Visibility In Manufacturing," accessed 2026-09-02 (independent ERP consultancy). MEDIUM confidence (reputable independent source, but general/international, not Malaysia- or MES-specific).
+- **Emotional pressures:** Accountable for business results while depending on production information that may be delayed, incomplete or unverifiable — echoes the "cannot be certain reported info reflects what actually happened" problem already documented in `01_BUSINESS/company_profile.md` §4.
+- **Questions and objections:** Only 16% of manufacturing leaders report real-time work-in-process (WIP) monitoring across the full production process — suggesting this audience may not realise real-time visibility is achievable, or may assume it requires disruptive/expensive change. INDUSTRY SOURCE — NetSuite, "5 Top Challenges in Production Planning," accessed 2026-09-02. LOW-MEDIUM confidence (statistic's underlying methodology not disclosed in the source).
+- **Purchase motivations and triggers:** Desire for a single, shared, real-time view of plant performance rather than department-specific, time-lagged reports; interest in cross-site/cross-department comparison dashboards. INDUSTRY SOURCE — Symestic and Syspro ("Real-Time Visibility for Manufacturing Operations," accessed 2026-09-02). LOW-MEDIUM confidence.
+- **Rejection triggers:** Belief that existing ERP already provides sufficient visibility; underestimating that ERP tells you what should happen while shop-floor execution data (MES) shows what is actually happening — a distinction already flagged as a positioning priority in `01_BUSINESS/company_profile.md` §14.
+- **Information needed before buying:** Clear differentiation between MES and ERP capability; proof that real-time visibility is achievable without a lengthy, disruptive rollout.
+- **Preferred content and platforms:** Per existing `02_AUDIENCE/audience_matrix.md` synthesis, Facebook is the highest-reach/best-converting channel for this decision-maker demographic (skews 35+), MEDIUM-HIGH confidence; LinkedIn is a confirmed white-space opportunity (zero visible founder-led LinkedIn presence among 14 verified competitors).
+- **Content angles and hooks:** Case studies with quantified outcomes and non-promotional technical breakdowns of a real production problem are indicated as strong LinkedIn formats for this and adjacent decision-maker audiences per existing platform research.
+- **Language used / messages to avoid:** Avoid vague "digital transformation" framing; lead with concrete visibility/control/ROI outcomes.
+- **Funnel considerations:** Likely spans PROBLEM AWARE (knows visibility is a problem) to SOLUTION AWARE/PRODUCT AWARE depending on prior digitalisation exposure; often the final approver even when not the initiator (per `01_BUSINESS/company_profile.md` §18-19).
+- **Evidence and customer observations:** UNKNOWN — no direct Mysoft GM/MD customer interviews on file yet. Evidence gap: none of the sources above are Malaysia-specific or MES-specific; the "16% real-time WIP" and "week-late Excel reports" figures should be treated as directional industry framing, not validated benchmarks for Mysoft's actual prospect base.
 

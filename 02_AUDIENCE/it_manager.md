@@ -4,18 +4,21 @@ _(Evidence-backed profile not yet populated.)_
 
 ## Profile Template
 
-- Role and responsibilities:
-- KPIs:
-- Daily frustrations:
-- Technical and business risks:
-- Security/integration concerns:
-- Questions and objections:
-- Purchase motivations and triggers:
-- Rejection triggers:
-- Information needed before buying:
-- Preferred content and platforms:
-- Content angles and hooks:
-- Language used / messages to avoid:
-- Funnel considerations:
-- Evidence and customer observations:
+_(Evidence-backed profile — first pass, external/industry research. Not yet validated against Mysoft's own sales or customer data.)_
+
+- **Role and responsibilities:** Architecture, integration, ERP connectivity, infrastructure, security, deployment, maintenance, data flow, system reliability. VERIFIED FACT (internal business knowledge, `01_BUSINESS/company_profile.md` §16), HIGH confidence. May not originate the MES need but often has significant influence over whether a proposed solution is technically accepted (same source).
+- **KPIs:** System uptime, security-patch currency, successful integration with existing ERP/machine systems. INFERENCE from role scope, MEDIUM confidence.
+- **Daily frustrations:** Many Malaysian factories still rely on spreadsheets or legacy systems that don't communicate with each other, creating limited real-time visibility and manual data-entry error risk. INDUSTRY SOURCE — Kladana, "Malaysia Manufacturing Software: Top Solutions & Buyer Guide," accessed 2026-09-02 (Malaysia-market-focused vendor content). MEDIUM confidence.
+- **Technical and business risks:** Legacy machines/PLCs often use serial or proprietary protocols requiring translation/bridging between IT and OT; ERP, MES, SCADA, PLC and IoT systems each "think" in fundamentally different data models (business terms vs. production terms vs. control terms vs. machine terms vs. sensor terms), making integration a genuine technical challenge rather than a simple connector job. INDUSTRY SOURCE — Bluenet Inc, "ERP, MES, SCADA, PLC & IoT Integration Challenges in Manufacturing," accessed 2026-09-02; Priority Software, "MES Integration Guide For Manufacturers," accessed 2026-09-02. LOW-MEDIUM confidence (international IT-consulting content, not Malaysia-specific).
+- **Security/integration concerns:** Malaysian factories face material cybersecurity exposure — ransomware targeting HMIs, MES and file servers is cited as a leading threat, alongside legacy OT vulnerabilities, unsecured IoT/IIoT devices, insider risk and weak supply-chain controls. A cited BlackBerry-sourced figure states over 79% of Malaysian software supply chains were subject to cyberattacks in the prior 12 months. INDUSTRY SOURCE — SmartOSC, "Top 5 Threats in Manufacturing Cybersecurity for Malaysian Factories," accessed 2026-09-02 (Malaysia-focused cybersecurity vendor). MEDIUM confidence for the general threat pattern (Malaysia-specific, consistent with broader industry commentary); LOW confidence specifically for the 79% figure, which is a secondary citation of a BlackBerry report rather than the primary source — per `00_SYSTEM/evidence_rules.md` §15 this should be traced to BlackBerry directly before being repeated in outward-facing content.
+- **Business risks:** Integrating MES exposes industrial (OT) networks to broader enterprise connectivity, which is itself a new attack surface if not designed with security in mind from the start. INDUSTRY SOURCE — Priority Software, accessed 2026-09-02. LOW-MEDIUM confidence.
+- **Questions and objections:** How will this integrate with our existing ERP/legacy machines without a costly rip-and-replace? What is the security posture of the integration points? Will heavy customization create long-term maintenance burden?
+- **Purchase motivations and triggers:** Preference for standardized integration frameworks (e.g. ISA-95 data models), scalable middleware that centralizes integration logic, avoiding over-customization where configurable options exist, and starting with a defined, limited scope before scaling. INDUSTRY SOURCE — Priority Software, accessed 2026-09-02.
+- **Rejection triggers:** Perceived security risk from opening OT networks to enterprise connectivity; past experience with highly customized integrations that became difficult to maintain during upgrades.
+- **Information needed before buying:** Concrete integration architecture (protocols, middleware, data model), security controls at integration points, and a phased/limited-scope rollout plan.
+- **Preferred content and platforms:** Not yet role-specific in existing platform research — see `02_AUDIENCE/audience_matrix.md` for company-wide channel findings.
+- **Content angles and hooks:** Technical, non-promotional breakdowns of actual integration architecture are indicated as a stronger direction for technical-evaluator audiences generally, consistent with existing LinkedIn tone findings in `02_AUDIENCE/audience_matrix.md`.
+- **Language used / messages to avoid:** Avoid marketing-style claims about "seamless integration" without technical specificity; this audience is a technical evaluator, not the primary emotional buyer.
+- **Funnel considerations:** Typically a Technical Evaluator rather than initiator or final decision-maker (per `01_BUSINESS/company_profile.md` §18-19) — engages later in the buying process to validate technical fit.
+- **Evidence and customer observations:** UNKNOWN — no direct Mysoft IT-manager customer interviews on file yet. Evidence gap: the 79% cyberattack-exposure figure is a secondary citation and needs primary-source verification; no data found this pass on how often Malaysian manufacturing IT managers actively block vs. approve MES purchases.
 

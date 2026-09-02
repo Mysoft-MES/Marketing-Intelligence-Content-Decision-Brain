@@ -4,18 +4,18 @@ _(Platform intelligence not yet populated.)_
 
 ## Research Template
 
-- Strategic role:
-- Audience and intent:
-- Discovery/search behaviour:
-- Strong and weak formats:
-- Post structure:
-- Tone and visual style:
-- CTA behaviour:
-- Local SEO relevance:
-- Internal performance findings:
-- Current hypotheses:
-- Validated learnings:
-- Experiments:
-- Things to avoid:
-- Sources and last updated:
+- **Strategic role:** Local-search "trust layer" between a buyer's first search and an RFQ/enquiry submission for manufacturers with physical facilities — not a side channel. INDUSTRY SOURCE — Web Tonic, "Manufacturing Local SEO Stats 2026," accessed 2026-09-02 (aggregates third-party benchmarks: BrightLocal LCRS 2026, AFFiNCO, HMM Agency, SearchLab 2026 — see caveats below). LOW-MEDIUM confidence (aggregator/agency-published stat compilation, not Malaysia-specific, underlying methodologies not independently verified).
+- **Audience and intent:** Local intent reportedly drives 46% of all Google searches, and 84% of procurement professionals are stated to prefer working with local vendors. INDUSTRY SOURCE — same Web Tonic compilation, accessed 2026-09-02, citing "99 Coupons Journal." LOW confidence (statistic attributed to a secondary aggregator rather than a primary research source; per `00_SYSTEM/evidence_rules.md` §15 this should be traced further before use in outward claims).
+- **Discovery/search behaviour:** 88% of local searchers reportedly take action within a week of searching, and B2B researchers average around 12 searches before engaging on a brand's site. INDUSTRY SOURCE — same compilation (AFFiNCO, HMM Agency), accessed 2026-09-02. LOW confidence, same sourcing caveat as above.
+- **Strong and weak formats:** Google Posts (updates, offers, events, announcements) with consistent — not necessarily frequent — cadence signal an actively managed profile; photo/video quality, relevance and recency are increasingly evaluated across both local search and AI search visibility per Whitespark's 2026 research (cited secondhand). INDUSTRY SOURCE — Honeycomb India, "Local SEO & Google Business Profile Optimization Guide 2026," accessed 2026-09-02. LOW-MEDIUM confidence.
+- **Post structure:** Include a relevant keyword in the first 100 characters of every post; attach a call-to-action button; attach a high-quality image. Category selection matters more than description: choose the specific, commonly-searched category (analogous example given: "electrician" vs. "electrical contractor" vs. "electrical installation service" — the plainer, more-searched term usually wins) and list services/products individually rather than generically, since each listed service is a chance to match a specific search query. INDUSTRY SOURCE — J-A-B Graphics and BigRedSEO, accessed 2026-09-02. LOW-MEDIUM confidence, general local-SEO practice content, not manufacturing- or Malaysia-specific.
+- **Tone and visual style:** Not yet researched this pass.
+- **CTA behaviour:** Reviews function as both a direct ranking signal (an estimated 20% of local-pack ranking weight, per the Web Tonic compilation) and a trust signal that determines whether a buyer actually contacts the business after finding the listing. LOW confidence, same secondary-sourcing caveat.
+- **Local SEO relevance:** For a multi-plant/multi-facility manufacturer, a properly configured, NAP-consistent (name/address/phone) Google Business Profile for every facility — not just headquarters — is described as one of the highest-leverage, lowest-cost items in a manufacturer's SEO program. Separately, AI tool usage for local business recommendations is reported to have jumped from 6% to 45% year-over-year, with the same Whitespark/BrightLocal-style sources arguing that clean GBP data (structured schema, accurate listings) increasingly feeds AI-crawler-based recommendations, not just traditional local-pack rankings. INDUSTRY SOURCE — Web Tonic (webtonic.io), two articles, accessed 2026-09-02. LOW-MEDIUM confidence — the 6%→45% jump in particular should be treated as a striking but unverified claim pending a primary source.
+- **Internal performance findings:** UNKNOWN — Mysoft MES's own Google Business Profile has not been reviewed this pass.
+- **Current hypotheses:** A complete, NAP-consistent, review-active Google Business Profile for Mysoft MES's Penang/Northern Malaysia location(s) (per `01_BUSINESS/company_profile.md` §29 geographic focus) may support both local-pack visibility and, per the sources above, downstream AI-recommendation visibility — UNTESTED.
+- **Validated learnings:** None yet.
+- **Experiments:** None yet proposed — a first step would be auditing whether Mysoft MES currently has a claimed, complete Google Business Profile listing at all.
+- **Things to avoid:** Generic category selection; inconsistent NAP data across locations/listings; letting reviews go unmanaged or unanswered with generic replies.
+- **Sources and last updated:** Web Tonic (webtonic.io), J-A-B Graphics, BigRedSEO, Honeycomb India — accessed 2026-09-02. No Malaysia-specific or manufacturing-B2B-specific GBP source was found this pass; most cited statistics trace to secondary aggregation rather than primary research and should be treated as directional only.
 

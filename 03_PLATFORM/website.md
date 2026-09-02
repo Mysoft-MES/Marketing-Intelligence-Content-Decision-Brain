@@ -4,18 +4,18 @@ _(Platform intelligence not yet populated.)_
 
 ## Research Template
 
-- Strategic role:
-- Audience and intent:
-- Discovery/search behaviour:
-- Strong and weak formats:
-- Page/content structure:
-- Tone and visual style:
-- CTA behaviour:
-- SEO/AEO/GEO relevance:
-- Internal performance findings:
-- Current hypotheses:
-- Validated learnings:
-- Experiments:
-- Things to avoid:
-- Sources and last updated:
+- **Strategic role:** Owned source of truth for product understanding, manufacturing problems, solution explanations, use cases, FAQs, proof and conversion, per `01_BUSINESS/company_profile.md` §26. Increasingly also the primary evidence source that AI answer engines (ChatGPT, Perplexity, Google AI Overviews) cite when OEM/manufacturing buyers research suppliers before ever visiting a website directly. INDUSTRY SOURCE — OneIMS, "AEO and SEO for Manufacturing Companies: Getting the Sequence Right," accessed 2026-09-02 (manufacturing-marketing-agency content, cites Ahrefs keyword analysis for the AI Overviews click-through stat below). LOW-MEDIUM confidence (agency-authored, not Malaysia-specific, but the underlying dynamic — AI answer engines as a supplier-shortlisting research surface — is corroborated by the general GEO/AEO literature below).
+- **Audience and intent:** B2B manufacturing buyers now research technical/process-specific questions (materials, tolerances, certifications, processes) rather than only branded terms; a majority of B2B/industrial buyers review a supplier's website closely before submitting an RFI, and 71% reportedly start with a generic (not branded) search. INDUSTRY SOURCE — Web Tonic, "SEO for Manufacturers: Complete Playbook for 2026," accessed 2026-09-02. LOW-MEDIUM confidence (marketing-agency-published statistic, methodology/sample not disclosed).
+- **Discovery/search behaviour:** AI Overviews reportedly cut position-one click-through rate by 34.5% across a 300,000-keyword analysis, with the effect running higher for B2B research queries. INDUSTRY SOURCE — Ahrefs keyword analysis, as cited by OneIMS, accessed 2026-09-02. LOW-MEDIUM confidence (secondary citation — per `00_SYSTEM/evidence_rules.md` §15, should be traced to the original Ahrefs analysis before being repeated in outward content).
+- **Strong and weak formats:** Google's own May 15, 2026 guidance states there is no separate AEO/GEO playbook for its AI surfaces — the same signals that drive organic rankings also drive AI citations on Google specifically; it explicitly calls out "non-commodity" content (original, expert-authored, more specific than a generative model could produce independently) as advantaged, and confirms llms.txt files, content chunking and special AI markup are NOT required. As of May 7, 2026, Google also deprecated FAQ rich results — FAQ schema no longer produces SERP features on Google, though FAQ content blocks reportedly retain real extraction value for ChatGPT, Perplexity and Google AI Mode specifically. INDUSTRY SOURCE — OneIMS, citing Google's May 15, 2026 official guidance, accessed 2026-09-02. MEDIUM confidence (traces to a named, dated Google announcement, though not fetched directly from Google — recommend verifying against Google's own documentation before treating as settled).
+- **Page/content structure:** TLDR summaries directly under H1s, FAQ content sections, and HTML (not image) comparison/spec tables are indicated as the practical structure that helps AI systems extract and cite content, per the same OneIMS "MAPS" framework (Model buyer intent, Answer clearly, Prove with structure, Stay fresh with schema). LOW-MEDIUM confidence, agency framework, not independently validated.
+- **Tone and visual style:** Not yet researched this pass — see `01_BUSINESS/company_profile.md` §31 for existing brand-theme assets; website tone/style should align with the "technical, evidence-based, non-promotional" direction already validated across LinkedIn/Reddit research in `02_AUDIENCE/audience_matrix.md`.
+- **CTA behaviour:** Not yet researched this pass. See `03_PLATFORM/whatsapp.md` for the click-to-WhatsApp CTA pattern already validated for Malaysian lead capture from paid social — a plausible model for website CTAs pending dedicated research.
+- **SEO/AEO/GEO relevance:** Google's position (per its May 2026 guidance) is that AEO/GEO are not separate disciplines from SEO on Google's own surfaces — the distinction remains useful as a *sequencing* diagnostic (fix crawl/technical issues and thin content first, then structure for AI extraction, then build external entity trust) rather than as three competing strategies. INDUSTRY SOURCE — OneIMS, accessed 2026-09-02. MEDIUM confidence for the sequencing logic itself (traces to a named Google announcement); LOW-MEDIUM confidence for agency-specific framework details (MAPS, stage boundaries).
+- **Internal performance findings:** UNKNOWN — no Mysoft website analytics reviewed this pass.
+- **Current hypotheses:** A Mysoft MES website that is (1) technically clean and crawlable, (2) has substantive, specific capability/process pages (not generic "MES services" copy), and (3) includes clear TLDRs, FAQ blocks and HTML comparison tables, is more likely to be cited by AI answer engines that Malaysian manufacturing buyers may increasingly use for supplier research — UNTESTED against Mysoft's own site or Malaysian buyer behaviour specifically.
+- **Validated learnings:** None yet.
+- **Experiments:** None yet proposed — a first step would be a basic technical/content audit of the current Mysoft MES website against the four-stage framework described above (crawl errors, thin content, schema, page speed) before investing further in AEO/GEO-specific structuring.
+- **Things to avoid:** Generic, templated "MES services" pages without specific technical detail; treating AEO/GEO as separate initiatives from foundational SEO/content quality; expecting FAQ schema to produce Google SERP rich results (deprecated May 2026).
+- **Sources and last updated:** OneIMS (oneims.com), Web Tonic (webtonic.io), accessed 2026-09-02. No Malaysia-specific or Mysoft-specific website research exists yet — this is a general industry-practice pass, flagged for revalidation once internal website analytics and a Malaysia-specific search-behaviour source are available.
 

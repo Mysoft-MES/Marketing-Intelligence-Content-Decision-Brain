@@ -4,19 +4,21 @@ _(Evidence-backed profile not yet populated.)_
 
 ## Profile Template
 
-- Role and responsibilities:
-- KPIs:
-- Daily frustrations:
-- Operational problems:
-- Business risks:
-- Emotional pressures:
-- Questions and objections:
-- Purchase motivations and triggers:
-- Rejection triggers:
-- Information needed before buying:
-- Preferred content and platforms:
-- Content angles and hooks:
-- Language used / messages to avoid:
-- Funnel considerations:
-- Evidence and customer observations:
+_(Evidence-backed profile — first pass, external/industry research. Not yet validated against Mysoft's own sales or customer data.)_
+
+- **Role and responsibilities:** Operational performance, productivity, cross-functional coordination, resource utilisation, delivery, operational efficiency. VERIFIED FACT (internal business knowledge, `01_BUSINESS/company_profile.md` §10-19), HIGH confidence.
+- **KPIs:** OEE, unplanned downtime, bottleneck frequency/duration. INDUSTRY SOURCE — OxMaint, "Improving OEE Through a Smarter Maintenance Strategy," accessed 2026-09-02: cites typical plant OEE sitting between 55-65% against an 85% "world-class" benchmark. LOW confidence (single vendor case-study source, methodology not independently verified, not Malaysia-specific).
+- **Daily frustrations:** Recurring bottlenecks framed explicitly as "a visibility problem, not a capacity problem" — when the same constraints surface week after week, the information needed to prevent them isn't reaching decision-makers in time to act; different departments frequently work from different versions of operational reality, creating decision latency at every handoff. INDUSTRY SOURCE — Logility, "5 Signs Decision Latency Is Costing Your Factory," accessed 2026-09-02. LOW-MEDIUM confidence (vendor blog, international, no disclosed methodology).
+- **Operational problems:** Siloed data and fragmented systems mean many manufacturers don't spot bottlenecks until it's too late, leading to rushed fixes and delayed orders. INDUSTRY SOURCE — NetSuite, "Bottlenecks in Manufacturing: How to Identify and Eliminate," accessed 2026-09-02. LOW-MEDIUM confidence.
+- **Business risks:** Bottlenecks span multiple teams with many handoffs between them, so fixing them requires cross-functional alignment rather than a single-department fix. INDUSTRY SOURCE — DealHub, "What are Operational Bottlenecks?," accessed 2026-09-02. LOW confidence (general business-process content, not manufacturing-specific in origin).
+- **Emotional pressures:** Described as "walking a tightrope while juggling" — balancing inventory levels, speed vs. quality, and constant trade-offs where solving one problem tends to surface another. INDUSTRY SOURCE — PlanetTogether, "Operations Management Challenges," accessed 2026-09-02. LOW confidence (vendor framing, not a measured finding).
+- **Questions and objections:** Likely skeptical that new software will meaningfully reduce bottlenecks vs. requiring cross-team process change first — worth testing rather than assuming.
+- **Purchase motivations and triggers:** Desire for a unified operational data model giving every function access to the same real-time information, replacing today's siloed departmental reports; vendor-reported directional gains of 15-25% OEE improvement and 30-50% reduction in unplanned downtime when closing the planning-to-execution gap. INDUSTRY SOURCE — Logility, accessed 2026-09-02. LOW confidence (vendor-reported outcome range, no disclosed methodology or sample — treat as a hypothesis to test, not a claim to repeat as fact).
+- **Rejection triggers:** Belief that bottleneck issues are people/process problems that software cannot fix; concern about disruption during rollout.
+- **Information needed before buying:** Evidence that visibility gains translate into fewer/faster bottleneck resolutions in practice.
+- **Preferred content and platforms:** Not yet role-specific in existing platform research — see `02_AUDIENCE/audience_matrix.md` for company-wide channel findings.
+- **Content angles and hooks:** "Recurring bottleneck" or "same problem every week" framing is a plausible hook not yet tested — HYPOTHESIS.
+- **Language used / messages to avoid:** Favour cross-functional/coordination language over single-department framing, since this audience's core frustration is inter-departmental visibility gaps rather than any one team's performance.
+- **Funnel considerations:** Likely PROBLEM AWARE — lives the bottleneck/coordination pain directly, may act as an internal influencer or champion more than final budget owner (per `01_BUSINESS/company_profile.md` §18-19).
+- **Evidence and customer observations:** UNKNOWN — no direct Mysoft operations-manager customer interviews on file yet, and no Malaysia-specific source was found for this role this pass. Evidence gap: all vendor-reported percentage figures above (55-65% OEE, 15-25%/30-50% gains) lack disclosed methodology and should not be repeated in outward-facing claims without independent verification.
 

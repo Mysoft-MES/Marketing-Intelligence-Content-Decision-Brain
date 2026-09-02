@@ -369,13 +369,12 @@ Do not put detailed research here.
 
 ---
 
-### `competitor_a.md`
+### `<competitor-name>.md`
 
-### `competitor_b.md`
-
-### `competitor_c.md`
-
-Each competitor gets its own detailed file.
+Each verified or actively researched competitor gets a descriptively named file,
+for example `bizit-systems.md` or `critical-manufacturing-malaysia.md`.
+Use `competitor_template.md` when creating a new profile. Do not create generic
+`competitor_a.md`, `competitor_b.md`, or `competitor_c.md` placeholders.
 
 Put:
 
@@ -584,19 +583,26 @@ If repeated strongly enough, the learning can later be added to:
 
 # 07_RESEARCH — WHAT IS HAPPENING OUTSIDE
 
-### `trends.md`
+### `market_trends.md`
 
-Store relevant market/social/search/content trends.
+Store external market and industry-direction trends relevant to Mysoft.
 
-Examples:
+### `social_trends.md`
 
-* Emerging content formats.
-* Trending industry conversations.
-* New customer interests.
-* Search trends.
-* Social trends.
+Store cross-platform social behaviour and emerging content-format trends.
+Platform-specific durable findings still belong in `03_PLATFORM/<platform>.md`.
 
-Only keep trends relevant to the business.
+### `search_trends.md`
+
+Store query, search-intent and discoverability trends supported by search evidence.
+
+### `research_index.md`
+
+Use this as the current research catalogue. Link active research, its category,
+date, confidence and review status. Do not list archived test material as active evidence.
+
+Only keep trends relevant to the business. Do not recreate the legacy catch-all
+`trends.md`; it is archived because its scope overlapped the three canonical files.
 
 ---
 
@@ -753,9 +759,9 @@ Something discovered or known.
 
 Example:
 
-"Competitor A published 8 videos about production tracking."
+"Bizit Systems published 8 videos about production tracking."
 
-→ `competitor_a.md`
+→ `04_COMPETITORS/bizit-systems.md`
 
 ## INSIGHT
 
