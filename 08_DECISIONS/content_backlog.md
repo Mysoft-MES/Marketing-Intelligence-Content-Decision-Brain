@@ -24,3 +24,26 @@ _(placeholder)_
 ## Status Update — 2026-09-02
 
 **Status: MONITOR** — confirmed by human review. See `08_DECISIONS/decision_log.md` (2026-09-02 entry) for the recorded decision. No production action authorized at this time.
+
+## 2026-09-02
+## Parked LinkedIn posts — 2026-09-02
+
+Three drafted posts from `05_CREATIVE/linkedin_content_calendar_2026-09.md` held back from the September cycle. All three are written and claim-checked — they are parked for audience/timing fit, not quality.
+
+**Post 5 — "How does this connect to what we already have?"**
+Audience: IT Manager / Digital Transformation Manager. Platform: LinkedIn.
+Reason parked: IT Manager is outside the September cycle's three audiences (production_manager, general_manager, operations_manager). Also partly dependent on `01_BUSINESS/products.md` §7, where the Digital Job Order → Digiwin AIoT upload mechanism is still TO VERIFY — the post handles this honestly by refusing to over-claim, but a verified architecture would make it stronger.
+Status: MONITOR. Schedule when an IT/technical-evaluator cycle runs, or once the integration mechanism is verified.
+
+**Post 10 — "How far back can you actually trace a defect?"**
+Audience: Engineering Manager / Continuous Improvement Manager. Platform: LinkedIn.
+Reason parked: outside the September cycle's audiences. The post itself notes it would be far stronger paired with an anonymised real customer example, which does not exist yet — no customer proof is on file.
+Status: MONITOR. Revisit after customer interviews produce a usable traceability example.
+
+**Post 11 — Penang / Northern Malaysia specificity**
+Audience: cross-functional. Platform: LinkedIn.
+Reason parked: strong local/geographic signal and good GEO value, but no specific audience slot in this cycle.
+Status: MONITOR. Best used alongside a local event, an Industry4WRD development, or a regional announcement rather than cold.
+
+All three remain AI-PROPOSED, not approved decisions, per `00_SYSTEM/brain_rules.md` §30.
+

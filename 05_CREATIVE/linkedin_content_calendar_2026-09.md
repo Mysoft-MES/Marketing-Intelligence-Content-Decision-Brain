@@ -419,3 +419,23 @@ We're happy to walk through this honestly, no-pressure — what's actually happe
 ## FILING NOTE
 
 As of September 2026, the Brain's `00_SYSTEM/routing_rules.md` does not define a dedicated file type for finished, dated, platform-specific content calendars (distinct from `05_CREATIVE/hook_library.md`'s reusable hooks and `08_DECISIONS/content_backlog.md`'s unprioritized ideas). This file was placed in `05_CREATIVE/` as the closest fit and named with a date suffix so future months don't overwrite this one. Recommend the human owner formalize a `05_CREATIVE/content_calendars/` convention if this becomes a recurring monthly deliverable.
+## 2026-09-02
+## ROLE UPDATE — 2026-09-02
+
+**This file is now the COPY BANK, not the schedule.**
+
+Human decision 2026-09-02: the 12 drafted posts here are retained and used, but the posting schedule has moved to:
+
+→ `05_CREATIVE/content_calendars/2026-09-linkedin.md`
+
+That file decides date, time, slot, audience and measurement. **This file remains the authoritative source of the post copy.** Do not schedule from this file, and do not edit the copy in the calendar file — edit it here.
+
+Mapping: Posts 1, 2, 3, 4, 6, 7, 8, 9 are scheduled as LI-01 to LI-08. Post 12 runs as LI-09, outside the timing experiment. Posts 5, 10 and 11 are parked in `08_DECISIONS/content_backlog.md`.
+
+Two notes on this file's own recommendations, now resolved:
+
+- The FILING NOTE below correctly identified that no convention existed for dated platform calendars. That convention now exists at `05_CREATIVE/content_calendars/` — this file's recommendation was adopted.
+- The suggestion to log results into a new `06_PERFORMANCE/linkedin_performance.md` is **superseded**. Use the `record_post_performance` tool instead; structured records are what `analyze_posting_time_performance` reads, and a hand-written file would not be visible to it.
+
+The Mon/Wed/Fri 3x/week cadence proposed here is **not** in use. The calendar runs Tue/Thu on a counterbalanced two-slot design so that posting time can actually be validated within one cycle.
+
