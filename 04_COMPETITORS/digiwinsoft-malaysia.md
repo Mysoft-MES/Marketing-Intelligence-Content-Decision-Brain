@@ -44,3 +44,16 @@ Digiwin is a substantially larger, better-resourced organization than most other
 ## NEXT VERIFICATION
 
 Worth a follow-up pass specifically auditing Digiwin's LinkedIn/Facebook content given the size of this competitor.
+
+
+---
+
+## 2026-09-03 — Observation: content & social activity (first-pass audit)
+
+- **Source:** DigiwinSoft Malaysia website (`digiwin.com.my` — `/category/news/`, `/category/resource/product/mes/`), Facebook (`facebook.com/Digiwinmalaysia`), YouTube (`youtube.com/channel/UCxAh1LLB9BvM0gaggPr21jQ`), DSC Consulting YouTube (May 2025). Web search only, accessed 2026-09-03. Cadence/engagement NOT measured.
+- **Observation:** DigiwinSoft is the **content leader among the tracked local MES vendors**. Multi-channel: Facebook page, YouTube channel, website blog with a dedicated MES category and dated news posts, named case studies, and a co-organised webinar series ("DIGINEWS") with APO / MPC / CPC. A JV — **DSC Consulting** with accounting firm Cheng & Co — bundles smart-manufacturing + financial/strategic advisory.
+- **Register:** Corporate / institutional / webinar-led. Vendor-published case studies. NOT founder-led, NOT shop-floor storytelling, NOT short-form vertical video.
+- **Possible implication:** "Competitors publish nothing" is too strong for the best-resourced players — but the specific white space (named-expert/founder LinkedIn, authentic shop-floor content, short vertical video) still looks open. Their case-study format is a creative benchmark worth studying (`decision_framework.md` §8).
+- **Confidence:** MEDIUM the operation exists; LOW on cadence/reach.
+- **Full context:** `07_RESEARCH/2026-09-03-competitor-content-activity-first-pass.md` F1.
+

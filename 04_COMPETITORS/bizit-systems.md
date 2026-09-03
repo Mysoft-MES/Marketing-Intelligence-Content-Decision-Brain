@@ -34,3 +34,15 @@ Johor Bahru / Kuala Lumpur / Singapore focus — south/central Malaysia, not dir
 ## NEXT VERIFICATION
 
 Revisit if pursuing JB/Singapore market expansion, or if this competitor appears in an actual sales deal.
+
+
+---
+
+## 2026-09-03 — Observation: social presence is robotics-branded, not MES-branded
+
+- **Source:** Facebook page metadata (`facebook.com/bizitsystemsUR` — "Bizit Systems - Universal Robots", Senai, Johor); bizits.com. Web search only, accessed 2026-09-03.
+- **Observation:** Bizit's public social identity is built around the **Universal Robots / cobot distribution** business, not i-MES. No MES-focused content channel surfaced.
+- **Possible implication:** Reinforces the market-wide pattern (`competitor_index.md`) — for the ~9 of 14 vendors selling MES as one line in a broader automation/robotics business, MES is not the social hero either. Bizit may compete for an MES *deal* but is not competing for the MES *content audience*.
+- **Confidence:** MEDIUM.
+- **Full context:** `07_RESEARCH/2026-09-03-competitor-content-activity-first-pass.md` F3.
+

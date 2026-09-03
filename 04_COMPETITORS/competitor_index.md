@@ -1,6 +1,6 @@
 # Competitor Index — Malaysian MES Market
 
-Last Updated: 2026-09-01
+Last Updated: 2026-09-03 (first-pass content/social audit added — see below and `07_RESEARCH/2026-09-03-competitor-content-activity-first-pass.md`)
 Research method: Official vendor websites (Tier 3) cross-checked against independent third-party sources (news coverage, business directories, credit-reporting records) where available, per `00_SYSTEM/evidence_rules.md`. Every entry below was checked to confirm the company actually sells/markets MES software — a name containing "MES" or "manufacturing" was not treated as sufficient on its own.
 
 ---
@@ -72,6 +72,11 @@ Research method unchanged from above: official vendor sites cross-checked agains
 ### RESEARCH GAPS / NOT YET DONE (updated)
 
 - Independent (non-self-reported) verification of Blue Ocean Data Solutions is still needed — flagged MEDIUM, not HIGH, confidence specifically because only the vendor's own site was checked.
-- Social media / content-marketing activity for all 6 new entries was NOT audited in this pass — same gap noted for the first 8 competitors.
+- **Social media / content activity — first pass done 2026-09-03** (web search only, top 5 competitors): see `07_RESEARCH/2026-09-03-competitor-content-activity-first-pass.md` and `competitor_patterns.md` Pattern 5. Still outstanding: a logged-in browser audit (cadence, recency, engagement, individual-employee posting) and the remaining 9 competitors.
 - No competitor from either pass has confirmed involvement in an actual Mysoft MES sales deal — all competitive-implication notes across all 14 profiles remain HYPOTHESES pending sales-team human intelligence, per `00_SYSTEM/evidence_rules.md`.
+
+## 2026-09-03
+## MATERIAL COMPETITOR ACTIVITY
+
+- **Critical Manufacturing × UST partnership (announced 2026-08-26)** — MES implementation partnership covering Southeast Asia + India, Malaysia named specifically, semiconductor/electronics focus. UST provides deployment + local support. Adds regional delivery scale to the most geographically relevant competitor (Penang). Detail in `critical-manufacturing-malaysia.md` (2026-09-03).
 

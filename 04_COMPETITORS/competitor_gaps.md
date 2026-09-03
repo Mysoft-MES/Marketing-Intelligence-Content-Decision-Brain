@@ -2,23 +2,42 @@
 
 Market white space supported by evidence. Routed here 2026-09-02 from `04_COMPETITORS/competitor_index.md` and `03_PLATFORM/` research.
 
-Last updated: 2026-09-02.
+Last updated: 2026-09-03.
 
-**Read this caveat first.** Competitor social and content activity has never been audited for any of the 14 tracked competitors. The gaps below are inferred from platform-side research (what exists on each platform) rather than from a competitor-side audit (what each competitor publishes). They are OBSERVATIONS, not verified absences. A dedicated social audit is the single highest-value next research pass for this folder.
+**Read this caveat first.** A **first-pass web-search audit of competitor content/social
+activity was done 2026-09-03** (top 5 competitors — see
+`07_RESEARCH/2026-09-03-competitor-content-activity-first-pass.md`). It found one genuine
+content operation (DigiwinSoft) and confirmed the others are institutional/absent — but it
+did not measure post cadence, recency or engagement, and 9 competitors are still unchecked.
+The gaps below are now partly evidenced from the competitor side, partly still inferred
+from platform-side research. A logged-in browser audit remains the highest-value next pass.
 
 ---
 
-## Gap 1 — No founder-led LinkedIn presence
+## Gap 1 — No founder-led / authentic / short-video content presence
 
-- **Gap:** No visible founder- or named-expert-led LinkedIn presence among the 14 verified competitors.
-- **Competitors reviewed:** All 14, via platform-side observation.
-- **Evidence:** `03_PLATFORM/linkedin.md` (2026-08-31) — named-person posts reportedly reach 6–10× company-page posts in 2026, and this is described as the defining shift of the year. Referenced again in `02_AUDIENCE/general_manager.md` as a confirmed white-space opportunity.
+- **Gap:** No named-expert- or founder-led LinkedIn presence, no authentic shop-floor
+  storytelling, and no short-form vertical video from any tracked Malaysian MES vendor.
+  Competitor content, where it exists, is corporate / webinar / institutional-partnership
+  led (`competitor_patterns.md` Pattern 5).
+- **Competitors reviewed:** All 14 via platform-side observation; top 5 via a first-pass
+  competitor-side web-search audit, 2026-09-03.
+- **Evidence:** `03_PLATFORM/linkedin.md` (2026-08-31) — named-person posts reportedly
+  reach 6–10× company-page posts in 2026, described as the defining shift of the year;
+  `07_RESEARCH/2026-09-03-competitor-content-activity-first-pass.md` — DigiwinSoft runs a
+  real corporate content operation (FB + YouTube + blog + DIGINEWS webinars) but nothing
+  founder-led or shop-floor; FSBM, Bizit, Critical Manufacturing, VISI show no
+  audience-facing content track.
 - **Audience:** General Manager, Operations Manager, Production Manager.
-- **Potential opportunity:** The highest-leverage format on the highest-value B2B channel appears unoccupied locally.
-- **Recommended experiment:** The counterbalanced founder/company-page split running in `05_CREATIVE/content_calendars/2026-09-linkedin.md` measures exactly this.
+- **Potential opportunity:** The highest-leverage format on the highest-value B2B channel
+  still looks unoccupied locally — even DigiwinSoft, the one content-active competitor,
+  leaves it open.
+- **Recommended experiment:** The counterbalanced founder/company-page split running in
+  `05_CREATIVE/content_calendars/2026-09-linkedin.md` measures exactly this.
 - **Priority:** HIGH.
-- **Confidence:** MEDIUM for the platform finding; LOW for the claimed competitor absence until a social audit confirms it.
-- **Last checked:** 2026-09-02.
+- **Confidence:** MEDIUM for the platform finding; LOW-MEDIUM for the competitor absence
+  (first-pass audit done; cadence not measured; 9 competitors unchecked).
+- **Last checked:** 2026-09-03.
 
 ## Gap 2 — Instagram is effectively empty for Malaysian MES
 

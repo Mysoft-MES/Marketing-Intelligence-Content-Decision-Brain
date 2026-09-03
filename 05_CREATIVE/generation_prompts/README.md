@@ -80,7 +80,7 @@ Secondary:
 
 ## Index
 
-Drafted 2026-09-02 from the September 2026 Facebook and Instagram calendars. **All DRAFT — none approved.** The parent calendars are themselves `AWAITING HUMAN APPROVAL`; these prompts do not change that. LinkedIn is not represented here — its September posts are text, with copy in `05_CREATIVE/linkedin_content_calendar_2026-09.md`.
+Drafted 2026-09-02 from the September 2026 Facebook and Instagram calendars. **All DRAFT — none approved.** The parent calendars are themselves `AWAITING HUMAN APPROVAL`; these prompts do not change that. LinkedIn's September posts are text (copy in `05_CREATIVE/linkedin_content_calendar_2026-09.md`); **LI-C1 (added 2026-09-03) is a new carousel-format TEST proposal with no calendar row yet** — derived from `07_RESEARCH/2026-09-03-competitor-content-activity-first-pass.md` and the 2026-09-03 LinkedIn algorithm findings. A human must add a row or approve it standalone before production.
 
 | Date | Post ID | Platform | Asset | Status |
 |---|---|---|---|---|
@@ -92,6 +92,7 @@ Drafted 2026-09-02 from the September 2026 Facebook and Instagram calendars. **A
 | 2026-09-17 | IG-02 | Instagram | 45–60s screen recording — Digital Job Order record tour | DRAFT |
 | 2026-09-23 | IG-03 | Instagram | 60–90s — traceability check, step by step | DRAFT |
 | 2026-09-30 | IG-04 | Instagram | 60–90s process-breakdown — what replaces the clipboard | DRAFT |
+| 2026-09-03 | LI-C1 | LinkedIn | 6-panel carousel — "a shift handover, panel by panel" (NEW format test; no calendar row yet) | DRAFT |
 
 ### Open dependencies before any of these can be produced
 

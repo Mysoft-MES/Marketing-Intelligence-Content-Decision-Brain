@@ -78,3 +78,32 @@ ROI or implementation-duration claims (`01_BUSINESS/products.md` §31).
 **Confidence:** LOW-MEDIUM (directional policy context; no first-party demand evidence; SWOT/sales_insights still empty).
 **Recommended next step:** MONITOR. Human decides whether to commission before 9 October. Not CREATE, not scheduled. No generation prompt drafted today.
 
+
+
+## 2026-09-03
+## LinkedIn carousel format test — "a shift handover, panel by panel" (2026-09-03)
+
+**Status:** AI-PROPOSED — NOT AN APPROVED DECISION (`00_SYSTEM/brain_rules.md` §30).
+
+**Idea:** Test the LinkedIn **carousel** format (not currently in the September plan, which
+is text posts only). 6-panel carousel walking through what happens to production
+information at shift handover on a paper floor vs a single digital job record. Production
+Manager primary, GM secondary. Problem-first, no hard sell.
+
+**Draft generation prompt:** `05_CREATIVE/generation_prompts/2026-09-03-linkedin-LI-C1.md` (DRAFT).
+
+**Derives from:** `07_RESEARCH/2026-09-03-competitor-content-activity-first-pass.md` (no local
+MES competitor uses carousel / shop-floor storytelling); `03_PLATFORM/linkedin.md` 2026-09-03
+addendum (2026 algo favours dwell time; carousels reportedly 2–3× dwell vs text);
+`08_DECISIONS/content_backlog.md` 2026-09-02 shift-change idea.
+
+**Why it's a test, not a recommendation:** `build_recommendation_context` →
+maximum_confidence LOW (swot / sales_insights / current_priorities empty). Carousel-vs-text
+dwell is an external benchmark, not Mysoft-measured. Real learning goal: does the format
+lift dwell/saves for this audience.
+
+**Recommended next step:** MONITOR. Human decides whether to (a) add a carousel row to the
+September LinkedIn calendar, (b) run it as a standalone test after the text cycle, or
+(c) reject. No production, no scheduling. Claim-safety checked against `products.md` §20/§31
+in the prompt file.
+

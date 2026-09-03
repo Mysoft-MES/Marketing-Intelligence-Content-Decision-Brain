@@ -45,3 +45,15 @@ Headquartered Kuala Lumpur/Shah Alam area — national reach, not Penang-specifi
 ## NEXT VERIFICATION
 
 Revisit pricing and package scope if Mysoft considers a competing low-end SME offer.
+
+
+---
+
+## 2026-09-03 — Observation: ecosystem-active, not content-active
+
+- **Source:** MarketScreener (FMM Mission-Based Project 2.1 partnership, effective 24 July 2024), thesun.my (MES Lite RM28,888), smart4wrd.my directory, fsbmmes.com, LinkedIn (FSBM Holdings Berhad company page). Web search only, accessed 2026-09-03.
+- **Observation:** FSBM MES Elite is visible mainly through **institutional channels** — an FMM strategic partnership tied to the 3,000-smart-factories-by-2030 target, a government-linked Smart4wrd directory listing, and its own site. Social visibility runs through parent **FSBM Holdings Berhad**'s LinkedIn page. No dedicated MES thought-leadership content cadence found.
+- **Possible implication:** FSBM competes on institutional credibility and named SME pricing, not audience-facing content. The content/channel white space holds against FSBM too.
+- **Confidence:** MEDIUM.
+- **Full context:** `07_RESEARCH/2026-09-03-competitor-content-activity-first-pass.md` F4.
+

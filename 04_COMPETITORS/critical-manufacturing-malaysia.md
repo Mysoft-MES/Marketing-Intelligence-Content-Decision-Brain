@@ -40,3 +40,17 @@ Critical Manufacturing Malaysia is physically based in Penang, the same city as 
 ## NEXT VERIFICATION
 
 High priority to monitor given geographic and industry overlap. Recommend asking sales/management directly whether this competitor has appeared in actual deals (Tier 2 human evidence would meaningfully upgrade confidence on competitive implications).
+
+
+---
+
+## 2026-09-03 — Observation: UST partnership for regional MES delivery
+
+- **Date:** 2026-08-26 (announcement) · **Platform/Source:** TechNode Global (RELIABLE INDEPENDENT, reporting a vendor announcement) — https://technode.global/2026/08/26/critical-manufacturing-ust-mes-southeast-asia-india/
+- **Topic:** Regional go-to-market / implementation capacity
+- **Audience:** High-tech (semiconductor, electronics) manufacturers in Southeast Asia and India, **Malaysia named specifically**
+- **Observation:** Critical Manufacturing partnered with **UST** (global digital-transformation services firm, 30,000+ staff, 30+ countries) as its "strategic implementation and engineering partner" for MES deployments across SEA + India — new deployments plus expansion/optimisation of existing lines. MD (Weng Keong Lan) quote stresses "implementation expertise and regional presence"; UST VP quote stresses shorter "deployment cycles".
+- **Possible implication:** The most geographically relevant competitor (Penang, same city as Mysoft) just bought large-scale local implementation + support capacity aimed at the Penang semiconductor/E&E segment (`07_RESEARCH/industry_news.md` #3). Enterprise-tier move; raises the credibility bar at the top of the market. Does not change Mysoft's likely segment (SME/mid-market, cost + speed + local relationship) but worth watching for whether UST's delivery muscle lets Critical Manufacturing chase mid-sized accounts. HYPOTHESIS — needs sales-team confirmation this competitor appears in real deals.
+- **Confidence:** HIGH on the announcement; LOW on any downmarket effect.
+- **Full context:** `07_RESEARCH/2026-09-03-competitor-content-activity-first-pass.md` F2.
+
