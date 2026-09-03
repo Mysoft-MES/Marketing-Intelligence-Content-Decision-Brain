@@ -46,6 +46,21 @@ Calm, precise, ASMR-adjacent screen demo. No motion graphics, no music sting. Re
 ## CTA
 "Save for your next floor walk." No hard CTA.
 
+## Caption (publish copy) — DRAFT
+
+One job. One screen. Station, operator, timestamp.
+
+A quiet tour of a Digital Job Order record:
+– Job number, current station, operator, timestamp, quantity, status — one field at a time
+– The history view: every entry stamped with who recorded it and when
+– Back to the job list, that one job highlighted
+
+It's a floor walk you can do from your desk.
+
+Save this for your next one.
+
+#manufacturing #productionmanagement #shopfloor #digitaljobtraveller #manufacturingmalaysia
+
 ## Hypothesis
 WE BELIEVE a quiet, honest screen tour of a real Digital Job Order record FOR production managers ON Instagram WILL drive saves and watch-through BECAUSE the "clean UI" format is a proven attention pattern, it fills a genuine local content gap, and practitioners save reference material.
 

@@ -29,7 +29,33 @@ The post ID ties the prompt to its row in `05_CREATIVE/content_calendars/`. One 
 2. **Every prompt cites the research it came from.** If you cannot name the file and finding that motivated it, it is not evidence-based and should not be produced.
 3. **Every prompt carries a hypothesis and a success metric** before production, per `decision_framework.md` §26.
 4. **Check every claim against `01_BUSINESS/products.md` §30–31** before writing the prompt. No percentage improvements, no guaranteed ROI, no implementation durations, no "works with any ERP", no zero-error claims.
-5. **Status starts at DRAFT.** Only a human moves it to APPROVED.
+5. **Status starts at DRAFT.** Only a human moves it to APPROVED — and only through the
+   approval Pull Request (see below). The daily run never sets APPROVED itself.
+
+---
+
+## Approval — the "human checking" gate
+
+New and regenerated DRAFT prompts are **not** pushed to `main` by the daily run. They go onto
+a branch `approvals/<YYYY-MM-DD>` and the run opens a Pull Request to `main`. The owner:
+
+- **merges** the PR to approve every prompt in it,
+- comments `deny <POST-ID>: <reason>` (then merges) to reject specific prompts,
+- **closes** the PR to reject all.
+
+The next run (or the same-day apply run) reads the PR and does the bookkeeping via
+`apply_prompt_decision` — flipping approved prompts to `APPROVED`, logging them to
+`08_DECISIONS/decision_log.md`, logging denied ones to `08_DECISIONS/rejected_ideas.md`, and
+regenerating the denied ones into the next PR. Full flow and the `server.py` tools:
+[`APPROVAL_UI.md`](../../APPROVAL_UI.md).
+
+Status strings set by the flow:
+
+| Status | Meaning |
+|---|---|
+| `DRAFT` | In (or awaiting) an approval PR; not yet decided |
+| `APPROVED (human via approval PR, <date>)` | Merged approval PR — asset may be produced, not published |
+| `REJECTED (human via approval PR, <date>) — see 08_DECISIONS/rejected_ideas.md` | Denied; regenerated into a later PR |
 
 ---
 

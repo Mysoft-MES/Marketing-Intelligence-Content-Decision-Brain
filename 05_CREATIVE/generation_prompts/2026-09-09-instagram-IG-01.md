@@ -42,6 +42,20 @@ Observational, quiet, respectful of operators — the drift is normal human beha
 ## CTA
 "Save this if it's your floor." No hard CTA, no link.
 
+## Caption (publish copy) — DRAFT
+
+Six stations. Five handwritten records. One number reaches your office.
+
+At each station, someone records by hand — a tally, a time, a quantity. And at each one the record drifts a little: an entry written 40 minutes later, a quantity rounded, an ambiguous initial, a field left blank, a line filled in from memory at break.
+
+None of it is negligence. It's what handwritten recording looks like under time pressure.
+
+Then a supervisor adds the sheets into one figure for the daily report — and that's the number the decisions get made on.
+
+Save this if it's your floor.
+
+#manufacturing #productionmanagement #shopfloor #manufacturingmalaysia #MES
+
 ## Hypothesis
 WE BELIEVE a station-by-station breakdown of how one number loses fidelity FOR production managers ON Instagram WILL earn high watch-through and saves BECAUSE practitioners recognise every step, the format rewards completion, and almost no local MES content exists in this style.
 
