@@ -1,9 +1,19 @@
 # DAILY OPERATING SPEC
 
-Version: 1.0
+Version: 2.0
 Created: 2026-09-02
 Authorised by: human owner (explicit instruction, 2026-09-02)
 Status: ACTIVE
+
+> **2026-09-03 — v2.0 change, authorised by the human owner in session.** The daily run
+> is now FULLY AUTONOMOUS: it sweeps all research areas every run (no single-theme
+> rotation), and it PUSHES research and generation prompts to GitHub `main` on its own
+> authority — no human confirmation, no manual sync step. The push-related restrictions in
+> §3, the rotation in §4, the file cap in §5, and §9–§10 were rewritten to match. The
+> limits that remain hard: no direct writes to `00_SYSTEM/` or `01_BUSINESS/`, no social
+> publishing, no spend, no "APPROVED"/"VALIDATED" without the stated gate. Owner accepts
+> the risk of unreviewed AI output on a public repo and will intervene if a problem
+> appears. Recorded in `08_DECISIONS/decision_log.md` (2026-09-03).
 
 ---
 
@@ -50,28 +60,47 @@ Confirmed by the human owner on 2026-09-02.
 
 Changes to these two folders are proposed in `08_DECISIONS/brain_update_proposals.md` with the exact intended text, and applied only after human approval. This matches `update_rules.md` — Protected Knowledge.
 
+## AUTONOMOUS GITHUB SYNC (authorised by the human owner, 2026-09-03)
+
+The daily run pushes to GitHub `main` on its own authority — research after the research
+stage, prompts after the prompting stage. No human confirmation. Mechanics: the scheduled
+task SKILL.md §7 (`check_github_connection` → `preview_github_api_sync` → verify every
+changed file is brain content and not a CRLF false positive → `sync_to_github_atomic` with
+the preview's `remote_commit_sha` and confirmation `CREATE ATOMIC GITHUB COMMIT` → local
+`git reset --hard origin/main`). Never deletes remote files. Never pushes secrets or
+untracked non-brain files.
+
 ## MUST NOT DO WITHOUT EXPLICIT HUMAN CONFIRMATION
 
-- Push to GitHub. `sync_changed_files_to_github` requires `dry_run=False` and the confirmation string. A run may write locally and preview, but never pushes on its own authority.
-- Publish or schedule any post for actual publication.
-- Mark any content calendar as approved.
-- Record a pattern as VALIDATED without the sample-size threshold being met by the analysis tool itself.
+- Publish to any social platform, schedule a post for actual publication, or send outreach. Pushing a DRAFT prompt file to the repo is allowed; publishing its output is not.
+- Mark any content calendar or prompt as APPROVED.
+- Spend money or trigger paid media.
+- Record a pattern as VALIDATED without the sample-size threshold being met by `analyze_posting_time_performance` itself.
+- Write directly to `00_SYSTEM/` or `01_BUSINESS/` (propose in `08_DECISIONS/brain_update_proposals.md`).
 
 ---
 
-# 4. DAILY ROTATION
+# 4. DAILY SCOPE — FULL SWEEP
 
-One theme per day. Rotation exists to prevent the brain filling with seven loosely-related files a week, per `brain_rules.md` §31 (Never Become A Content Factory).
+No single-theme rotation (changed 2026-09-03). Every weekday run sweeps ALL areas below
+and captures whatever materially changed since the last run. Depth is triaged by what
+actually moved — discipline against becoming a content factory (`brain_rules.md` §31) is
+enforced by the stopping rule in §5, not by restricting scope.
 
-| Day | Theme | Primary destination |
-|---|---|---|
-| Monday | Competitor activity | `04_COMPETITORS/<competitor>.md`, patterns and gaps files |
-| Tuesday | Platform behaviour and algorithm change | `03_PLATFORM/<platform>.md` |
-| Wednesday | Audience and customer signals | `02_AUDIENCE/<role>.md`, `07_RESEARCH/customer_insights.md` |
-| Thursday | Industry, government, grants, regulation | `07_RESEARCH/industry_news.md`, `government_updates.md` |
-| Friday | Search and social trends, then weekly synthesis and hygiene | `07_RESEARCH/search_trends.md`, `social_trends.md` |
+| Area | Primary destination |
+|---|---|
+| Competitor activity | `04_COMPETITORS/<competitor>.md`, `competitor_patterns.md`, `competitor_gaps.md` |
+| Platform behaviour and algorithm change | `03_PLATFORM/<platform>.md` |
+| Audience and customer signals | `02_AUDIENCE/<role>.md` (`07_RESEARCH/customer_insights.md` is first-party only) |
+| Industry, manufacturing, market | `07_RESEARCH/industry_news.md`, `07_RESEARCH/market_trends.md` |
+| Government, grants, regulation | `07_RESEARCH/government_updates.md` |
+| Search trends | `07_RESEARCH/search_trends.md` |
+| Social trends | `07_RESEARCH/social_trends.md` |
 
-Friday additionally runs: `audit_knowledge_freshness`, `find_knowledge_conflicts`, and an update of `07_RESEARCH/research_index.md`, `02_AUDIENCE/audience_index.md`, `03_PLATFORM/platform_index.md`, `04_COMPETITORS/competitor_index.md`.
+Every run also runs: `audit_knowledge_freshness`, `find_knowledge_conflicts`, and an update
+of `07_RESEARCH/research_index.md`, `02_AUDIENCE/audience_index.md`,
+`03_PLATFORM/platform_index.md`, `04_COMPETITORS/competitor_index.md`,
+`05_CREATIVE/content_calendars/calendar_index.md` for anything touched that run.
 
 Weekends: no scheduled run.
 
@@ -82,7 +111,7 @@ Weekends: no scheduled run.
 Applies every run, per `evidence_rules.md` §38.
 
 1. Before writing, search existing knowledge. If the finding already exists, **update the existing entry rather than creating a new one.**
-2. Maximum **one** new dated research file per run. Everything else updates existing files.
+2. Maximum **two** new dated research files per run (raised from one on 2026-09-03 for the full-sweep scope). Everything else updates existing files.
 3. Never duplicate the same paragraph across multiple files. Put the fact in its primary home and only the strategic implication elsewhere, per `routing_rules.md` — Primary File Rule.
 4. If a run finds nothing that materially changes the brain's understanding, **write nothing and say so.** A quiet day is a valid outcome. Volume is not the objective.
 5. Every entry records: source, publication date, evidence tier, confidence, and date checked.
@@ -131,21 +160,32 @@ Update the relevant index in the same run as any file it points to is created, r
 
 # 9. PROMPTING STAGE
 
-Runs after research, using that day's research plus the current refinement statement when one exists.
+Runs after research and its GitHub push, using that run's research plus recent unactioned
+findings and the current refinement statement when one exists. Runs whenever the evidence
+warrants a content asset; skipped (and said so) when nothing warrants one.
 
-1. Adapt every idea to its platform. Identical cross-posts are prohibited by `brain_rules.md` §7.
-2. One prompt file per platform per planned asset, in `05_CREATIVE/generation_prompts/`.
-3. Every prompt records the research entry it derives from, so the chain from evidence to creative is traceable.
-4. Every prompt carries a hypothesis and a success metric before it is produced, per `decision_framework.md` §26.
-5. No prompt may instruct generation of a claim prohibited by `products.md` §31.
+1. Call `build_recommendation_context`, then `build_prompt_context`, before constructing anything.
+2. Adapt every idea to its platform. Identical cross-posts are prohibited by `brain_rules.md` §7.
+3. One prompt file per platform per planned asset, in `05_CREATIVE/generation_prompts/`.
+4. Every prompt records the research entry it derives from, so the chain from evidence to creative is traceable.
+5. Every prompt carries a hypothesis and a success metric before it is produced, per `decision_framework.md` §26.
+6. No prompt may instruct generation of a claim prohibited by `products.md` §31.
+7. Status starts DRAFT. The run never sets APPROVED.
+8. After the prompting stage, the prompts are pushed to GitHub `main` (§3, and SKILL.md §6–§7).
 
 ---
 
 # 10. NOTIFICATION AND CALENDAR
 
-Pending connector installation. Gmail and Google Calendar are not connected as of 2026-09-02.
+Gmail and Google Calendar are connected (as of 2026-09-03).
 
-When connected: email the human owner on completion of the prompting stage, and create Google Calendar entries for media production dates. Until then, report in session and leave the prompts in the repository.
+Every run, after both GitHub pushes: create one all-day Google Calendar event on
+`posinsidernow@gmail.com` dated today with the full run summary, then send that same
+summary as a plain-text email to `posinsidernow@gmail.com` (sent directly, not a draft),
+including the calendar event's htmlLink and every commit SHA/URL from the run. If
+generation prompts were drafted, add a `[DRAFT]` all-day event per planned posting date.
+Do this even on a quiet day or a partial failure. Full mechanics in the scheduled task
+SKILL.md §9.
 
 ---
 

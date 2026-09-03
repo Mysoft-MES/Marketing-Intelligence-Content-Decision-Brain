@@ -49,3 +49,42 @@ A social scorecard is to be added alongside the existing website scorecard in `0
 
 **Still not decided:** whether the September calendars are approved for publication. All three remain AWAITING HUMAN APPROVAL.
 
+
+
+## 2026-09-03 — Daily run made fully autonomous (v2.0)
+
+**Decision:** APPROVED by the human owner in an interactive session, 2026-09-03.
+
+**What changed:**
+- The `marketing-brain-daily` scheduled run now does a **full sweep of all research areas
+  every run** (competitor, platform, audience, industry, government, market, search,
+  social) instead of one theme per day.
+- The run **pushes to GitHub `main` autonomously** — research after the research stage,
+  DRAFT generation prompts after the prompting stage — with **no human confirmation and
+  no manual sync step**.
+- The prompting stage is active every run when the evidence warrants an asset.
+- Email + calendar record still happen at the end of every run.
+
+**Files edited (direct, on explicit owner instruction):**
+- `00_SYSTEM/daily_operating_spec.md` → v2.0 (header note, §3, §4, §5, §9, §10)
+- `.claude/scheduled-tasks/marketing-brain-daily/SKILL.md` → rewritten
+- `CLAUDE.md` → autonomy boundaries + tooling-hazard note
+
+**Limits kept hard:** no direct writes to `00_SYSTEM/` or `01_BUSINESS/`; no social
+publishing / outreach / paid spend; nothing marked APPROVED or VALIDATED without the
+stated gate; no remote deletions.
+
+**Reason:** Owner wants hands-off daily operation and accepts the risk of unreviewed AI
+output landing on the public repo. Owner will intervene if a problem appears
+("we will check it once there is a problem").
+
+**Risk accepted:** LOW-confidence / secondary-source research and AI-drafted content
+prompts become publicly visible on GitHub `main` the same day, with no human review before
+publication to the repo. Mitigation retained: evidence classes and claim-safety §30–31
+still enforced in every entry and prompt; prompts stay DRAFT; nothing reaches an actual
+social platform without a human.
+
+**Expected result / review:** Monitor the first few autonomous runs via the daily email.
+Revisit if research quality drops, the repo fills with noise, or a claim-safety issue
+reaches `main`.
+
