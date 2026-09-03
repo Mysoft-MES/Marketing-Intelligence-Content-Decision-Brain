@@ -74,9 +74,10 @@ effective date, businesses affected and possible business/marketing impact.
 
 - **Update:**
   - **Phase 4** covers businesses with annual turnover **RM1m–RM5m**, mandatory from
-    **1 January 2026**, with a **relaxation period extended to 31 December 2027**.
-    During relaxation, consolidated e-invoices are permitted **except** individual
-    transactions above **RM10,000**, which must be issued individually.
+    **1 January 2026**, with a **relaxation period reported as running to end-2026 or
+    end-2027** (sources disagree — see Contradicting evidence). During relaxation,
+    consolidated e-invoices are permitted **except** individual transactions above
+    **RM10,000**, which must be issued individually.
   - **Exemption threshold raised from RM500,000 to RM1,000,000** turnover, effective
     **1 January 2026** — businesses below RM1m turnover are exempt.
   - **Phase 5 was cancelled** following a Prime Minister announcement on **7 December 2025**.
@@ -94,7 +95,12 @@ effective date, businesses affected and possible business/marketing impact.
   LOW-MEDIUM on enforcement/penalty dates.
 - **Contradicting evidence:** Sources differ on full-enforcement/penalty start for
   Phase 4 — variously "1 January 2027" (penalties) and "1 January 2028" (full
-  enforcement).
+  enforcement). **2026-09-03:** the relaxation *end date* is now itself contested —
+  some tax-advisory sources state the Phase 4 interim relaxation runs only to
+  **31 December 2026** (extended, enforcement held during that window), against the
+  "to 31 December 2027" figure recorded on 2026-09-02. Treat the relaxation cut-off as
+  unverified pending primary LHDN text. (ClearTax MY; JomeInvoice — LHDN e-Invoice
+  update Jan 2026; accessed 2026-09-03.)
 - **Evidence gaps:** No direct read of the current LHDN e-Invoice Guideline / SOP.
 - **Sources:** ClearTax MY — e-Invoice phases & relaxation
   (https://www.cleartax.com/my/en/different-phases-implementation-timelines-einvoicing-malaysia);
@@ -124,14 +130,31 @@ effective date, businesses affected and possible business/marketing impact.
 - **Confidence:** MEDIUM on direction; LOW-MEDIUM on exact MTLM timing and rates.
 - **Contradicting evidence:** MTLM start date has slipped before; 2026 not fully
   confirmed against a gazetted instrument here.
-- **Evidence gaps:** No primary MOHR / gazette text read; MTLM tier bands unknown.
+- **2026-09-03 update:** As of September 2026 the MTLM is **still not gazetted** — the
+  flat manufacturing levy (**RM1,850/year**, Peninsular Malaysia) continues to apply and
+  a dependency-scaled tier structure is not yet in force. MITI has **extended the
+  suspension of the manufacturing sector's 80:20 local-to-foreign employment ratio
+  requirement** until the MTLM is fully enforced. Government statements indicate MTLM
+  levy collections would be **channelled into a trust fund to encourage automation and
+  mechanisation**. This slightly weakens the earlier "confirmed for 2026" reading — the
+  policy *direction* holds, the *instrument* is delayed. Sources: MIDA — "MITI:
+  Suspension of foreign worker ratio in manufacturing extended until multi-tier levy is
+  enforced"
+  (https://www.mida.gov.my/mida-news/miti-suspension-of-foreign-worker-ratio-in-manufacturing-extended-until-multi-tier-levy-is-enforced/);
+  The Edge Malaysia — "13MP: Multi-tier levy mechanism roll-out pushed to 2026"
+  (https://theedgemalaysia.com/node/764721); Free Malaysia Today — "Multi-tier levy for
+  foreign workers delayed to 2026"
+  (https://www.freemalaysiatoday.com/category/nation/2025/07/31/multi-tier-levy-for-foreign-workers-delayed-to-2026).
+  Access date 2026-09-03.
+- **Evidence gaps:** No primary MOHR / gazette text read; MTLM tier bands unknown; no
+  confirmed enforcement date.
 - **Sources:** The Edge Malaysia — 10% foreign-worker cap by 2030, automation push
   (https://theedgemalaysia.com/node/815220);
   Human Resources Online — 10% cap by 2030
   (https://www.humanresourcesonline.net/malaysia-targets-10-cap-on-foreign-workforce-by-2030-as-government-pushes-businesses-to-invest-in-automation);
   Carriera — Foreign Worker Levy Malaysia 2026
   (https://carrieragroup.com.my/foreign-worker-levy-malaysia-2026-employer-guide.html).
-- **Last checked:** 2026-09-02.
+- **Last checked:** 2026-09-03.
 
 ### 4. NIMP 2030 — mid-term review due end-2026
 
@@ -156,3 +179,97 @@ effective date, businesses affected and possible business/marketing impact.
   The Star — "NIMP 2030 impetus for factory gate activity in 1Q"
   (https://www.thestar.com.my/business/business-news/2026/07/24/nimp-2030-impetus-for-factory-gate-activity-in-1q).
 - **Last checked:** 2026-09-02.
+
+
+---
+
+## 2026-09-03 — Research pass
+
+> Theme: industry / government / grants / regulation (Thursday rotation). This pass
+> mostly re-confirmed the 2026-09-02 entries; the two items below are new to the Brain.
+> Existing entries #2 (e-Invoice) and #3 (foreign-worker policy / MTLM) were updated in
+> place with 2026-09-03 notes rather than duplicated. Access date for every entry: 2026-09-03.
+
+### 5. Budget 2027 to be tabled 9 October 2026 — automation / digitalisation / outcome-based incentives continue
+
+- **Update:** The Ministry of Finance's **Pre-Budget Statement 2027** confirms **Budget 2027
+  will be tabled in Parliament on 9 October 2026**. MOF has outlined **ten focus areas**;
+  the ones relevant to Mysoft's market:
+  - #8 "Competitive home-grown entrepreneurs and 'Made by Malaysia'" — support "expected to
+    cover financing, technology, talent, certification, marketing networks and access to
+    larger-company supply chains".
+  - #9 "Outcome-based incentives for investments" — continues the shift from flat incentives
+    to incentives tied to measurable outcomes (see entry #6, New Incentive Framework).
+  - Explicit aim to **reduce reliance on low-skilled foreign labour "via greater automation
+    and improved workforce planning"**.
+  - "Spillover benefits for MSMEs through digitalisation and financing"; a reported
+    **RM10b BNM–CGC guarantee scheme** for MSME financing access.
+  - No specific grant amounts or new scheme names are given in the pre-budget document —
+    "detailed allocations expected in the October budget presentation".
+  Industry bodies (SME Malaysia, ACCCIM) are publicly lobbying for an integrated SME
+  Productivity & Capability Programme covering automation, robotics, AI and smart
+  manufacturing, and for outcome-driven (not grant-count-driven) support.
+- **Publication date:** Pre-Budget Statement 2027 — MOF (mid-2026); The Edge "Ten focus
+  areas in Budget 2027" — 2026-08-18; The Star "Budget 2027 seen offering more incentives
+  to SMEs" — 2026-08-18.
+- **Effective date:** Budget speech 9 October 2026; measures take effect 2027 year of
+  assessment / programme year unless stated otherwise.
+- **Businesses affected:** All Malaysian SMEs and manufacturers, including Mysoft's ICP.
+- **Possible marketing impact:** A **known, dated policy moment ~5 weeks out**. It is a
+  legitimate "why now" anchor for automation / shop-floor-digitalisation content in late
+  Sept / early Oct — framed as *context* ("national budget season, automation and MSME
+  digitalisation again in focus"), **not** as a Mysoft claim and **not** citing
+  unannounced figures. Best treated as a reason to have grant-navigation / "is now the
+  time to digitise the floor" content ready *before* 9 October, then a reactive follow-up
+  once actual allocations are known. Route concrete content ideas to
+  `08_DECISIONS/content_backlog.md`; do not schedule anything against the budget date
+  without human approval.
+- **Evidence type:** PRIMARY EXTERNAL (MOF Pre-Budget Statement 2027) + RELIABLE
+  INDEPENDENT (The Edge, The Star).
+- **Confidence:** HIGH on the tabling date and the direction; LOW on specific 2027
+  measures (not yet announced).
+- **Contradicting evidence:** None on the date. Analysts caution external conditions could
+  force reallocation; specifics may differ materially from lobby-group wish lists.
+- **Evidence gaps:** No actual Budget 2027 content until 9 October 2026. Whether the
+  existing 2026 grant stack (MSME Digital Grant MADANI, etc.) carries into 2027 unchanged
+  is unconfirmed.
+- **Sources:** MOF — Pre-Budget Statement 2027
+  (https://www.mof.gov.my/portal/en/news/press-release/pre-budget-statement-2027);
+  The Edge Malaysia — "Ten focus areas in upcoming Budget 2027 — MOF"
+  (https://theedgemalaysia.com/node/814941);
+  The Star — "Budget 2027 seen offering more incentives to SMEs"
+  (https://www.thestar.com.my/business/business-news/2026/08/18/budget-2027-seen-offering-more-incentives-to-smes);
+  Malaysia SME — "SME Malaysia calls for Budget 2027 to build Malaysian champions"
+  (https://www.malaysiasme.com.my/sme-malaysia-calls-for-budget-2027-to-build-malaysian-champions-not-just-fund-sme-programmes/).
+- **Last checked:** 2026-09-03.
+
+### 6. New Incentive Framework (NIF) — outcome-tied incentives, manufacturing first (in effect since 1 March 2026)
+
+- **Update:** MITI's **New Incentive Framework (NIF)** took effect **1 March 2026** for the
+  manufacturing sector (services followed in Q2 2026). It ties investment incentives to
+  **four measurable outcomes: job quality, technology transfer, supply-chain resilience,
+  and sustainability performance**, replacing the older activity-/product-list approach.
+  This is the mechanism behind the "outcome-based incentives" language now carried into
+  Budget 2027 (entry #5) and overlaps the "Outcome-Based Incentive Framework for SMEs"
+  noted in entry #1. Recorded now because it was missing from the Brain and is the
+  standing policy context for how manufacturers justify capex in 2026.
+- **Publication date:** The Star — "MITI to implement new incentive framework from March
+  2026" — 2026-01-29.
+- **Effective date:** 1 March 2026 (manufacturing); Q2 2026 (services).
+- **Businesses affected:** Companies applying for MITI/MIDA investment incentives —
+  larger and expanding manufacturers more than micro-SMEs.
+- **Possible marketing impact:** Low-to-moderate and indirect. Useful background for
+  authority-toned content aimed at GMs / owners weighing an automation investment case:
+  the incentive logic itself now rewards traceability, data and workforce upskilling —
+  adjacent to the MES value story. Not a strong standalone content trigger; do not overstate
+  Mysoft's relationship to any incentive.
+- **Evidence type:** RELIABLE INDEPENDENT (The Star) reporting a PRIMARY policy change.
+- **Confidence:** MEDIUM (single mainstream source read; primary MITI framework text not verified).
+- **Contradicting evidence:** None found.
+- **Evidence gaps:** No read of the primary MITI NIF document; interaction with
+  Industry4WRD and the SME grant stack not mapped.
+- **Sources:** The Star — "MITI to implement new incentive framework from March 2026"
+  (https://www.thestar.com.my/business/business-news/2026/01/29/miti-to-implement-new-incentive-framework-from-march-2026);
+  MITI — Investment incentives / Industry4WRD pages (https://www.miti.gov.my/).
+- **Last checked:** 2026-09-03.
+

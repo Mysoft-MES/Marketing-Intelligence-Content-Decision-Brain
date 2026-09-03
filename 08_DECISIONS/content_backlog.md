@@ -47,3 +47,34 @@ Status: MONITOR. Best used alongside a local event, an Industry4WRD development,
 
 All three remain AI-PROPOSED, not approved decisions, per `00_SYSTEM/brain_rules.md` §30.
 
+
+
+## 2026-09-03
+## Parked timing anchor — Budget 2027 / automation-funding window (2026-09-03)
+
+**Status:** AI-PROPOSED — NOT AN APPROVED DECISION (`00_SYSTEM/brain_rules.md` §30).
+
+**Idea:** Have one awareness/education asset ready for **late September / early October 2026**
+that uses Malaysia's budget season as a *context* anchor — not a Mysoft claim — for the
+question "is now the time to digitise the shop floor?" Angle options: (a) a plain-language
+"which type of grant/incentive fits a shop-floor digitalisation project" explainer
+(competitor vendor education on this is thin per `government_updates.md` #1); (b) a
+"budget season checklist: what to have in place before you apply for automation funding"
+piece for GMs/owners. A short reactive follow-up once Budget 2027 actual measures are
+announced (**tabled 9 October 2026**).
+
+**Derives from:** `07_RESEARCH/government_updates.md` #5 (Budget 2027) and #6 (New Incentive
+Framework); `07_RESEARCH/market_trends.md` T1.
+
+**Audience:** General Manager / Factory Owner (funding-decision holders); secondary Production Manager.
+**Platform:** LinkedIn primary (authority/explainer fits the platform); Facebook adaptation possible. Adapt per platform — no identical cross-post.
+**Product:** Mysoft MES (framed as one option a manufacturer might fund, never as grant-eligible-by-name).
+
+**Claim-safety notes:** Do NOT state specific grant amounts, coverage %, eligibility, or
+that Mysoft MES qualifies for any named scheme — all grant figures on file are unverified
+secondary sources. Quote as "reported" and point to the administering agency. No % improvement,
+ROI or implementation-duration claims (`01_BUSINESS/products.md` §31).
+
+**Confidence:** LOW-MEDIUM (directional policy context; no first-party demand evidence; SWOT/sales_insights still empty).
+**Recommended next step:** MONITOR. Human decides whether to commission before 9 October. Not CREATE, not scheduled. No generation prompt drafted today.
+

@@ -39,8 +39,12 @@ and date.
 - **Possible marketing impact:** Favour ROI-aware, low-disruption framing
   (fast to value, works alongside existing ERP/paper during rollout). Avoid
   boom-time "everyone is investing" language.
-- **Evidence type:** PRIMARY EXTERNAL (S&P Global) via news.
-- **Confidence:** HIGH on the data point; MEDIUM on forward read.
+- **2026-09-03 addendum:** A complementary capacity signal — **manufacturing capacity
+  utilisation rose to 83.7% in Q2 2026, up 1.2 percentage points year-on-year** (DOSM,
+  reported via The Star, Aug 2026). Consistent with the PMI picture: steady utilisation,
+  not a surge. Reinforces the "buyers scrutinise payback" read rather than changing it.
+- **Evidence type:** PRIMARY EXTERNAL (S&P Global; DOSM) via news.
+- **Confidence:** HIGH on the data points; MEDIUM on forward read.
 - **Contradicting evidence:** None — sources agree on 50.2.
 - **Evidence gaps:** No sub-sector (E&E vs machinery vs plastics) PMI breakdown.
 - **Sources:** New Straits Times — "Malaysia's manufacturing sector posts slight

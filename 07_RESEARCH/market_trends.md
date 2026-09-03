@@ -38,8 +38,15 @@ trends that change the Brain's understanding of the market.
   window) without inventing urgency. A grant-navigation explainer and a
   "labour-productivity without more clerks" angle are both well-supported. Route any
   concrete content ideas to `08_DECISIONS/content_backlog.md`.
+- **2026-09-03 note:** **Budget 2027 is tabled 9 October 2026** and its published focus
+  areas keep automation, MSME digitalisation and outcome-based investment incentives in
+  frame (see `government_updates.md` #5–#6). The near-term *instrument* picture is mixed:
+  the Multi-Tier Levy Model is still not gazetted (`government_updates.md` #3), so the
+  labour-cost lever is direction, not a dated shock. Net: the tailwind is intact and has
+  a concrete calendar moment ~5 weeks out, but do not tie content to unannounced Budget
+  2027 figures.
 - **Confidence:** MEDIUM.
-- **Last checked:** 2026-09-02.
+- **Last checked:** 2026-09-03.
 
 ### T2 — e-Invoice is normalising structured digital record-keeping among smaller manufacturers
 
@@ -110,3 +117,9 @@ trends that change the Brain's understanding of the market.
 - Trade-policy exposure (US tariffs) is currently mild for E&E/semis but volatile;
   a broader trade slowdown remains a downside scenario for demand.
 - NIMP 2030 execution is questioned by some analysts despite headline progress.
+- **Budget 2027 (tabled 9 Oct 2026)** — watch for whether the 2026 SME digitalisation/
+  automation grant stack carries forward, changes, or is replaced. Actual measures
+  unknown until budget day; revisit `government_updates.md` #5 after 9 October.
+- **Multi-Tier Levy Model** still not gazetted as of Sept 2026 (`government_updates.md` #3)
+  — the "labour cost forcing automation" argument is a slow structural trend, not an
+  imminent event; don't overclaim urgency.
