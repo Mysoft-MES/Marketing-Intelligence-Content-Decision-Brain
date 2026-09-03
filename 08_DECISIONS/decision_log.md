@@ -88,3 +88,31 @@ social platform without a human.
 Revisit if research quality drops, the repo fills with noise, or a claim-safety issue
 reaches `main`.
 
+
+
+## 2026-09-03 — swot.md restored, sales_insights.md populated (owner-instructed)
+
+**Decision:** APPROVED by the human owner in an interactive session, 2026-09-03. Both are
+`01_BUSINESS/` (protected) files; the owner gave explicit in-session instruction, which is
+the human approval the autonomy rule requires.
+
+**1. `01_BUSINESS/swot.md` — restored from GitHub commit `19bcc1f` ("Add SWOT analysis for
+Mysoft MES").** The full ~15-section SWOT was replaced with a placeholder template by a
+later "structure/templates" commit (`c14cd7a` / `b04e1b8`) and has been empty since. Owner
+asked for the `19bcc1f` content back, verbatim. Restored as-is (still dated "Last Updated:
+2026-09-01" — not changed). This clears the "swot.md empty" evidence gap that was capping
+`build_recommendation_context` at LOW.
+
+**2. `01_BUSINESS/sales_insights.md` — populated with the current sales stage** (first-party,
+stated by the owner 2026-09-03): Mysoft MES is **pre-revenue**; an initial workshop is done;
+**zero customers**; the sales motion is currently **demos with potential customers**, and no
+demo outcomes/objections/win-loss data exist yet. The file records this, reconciles it
+against the forward-looking "customer/implementation" language in swot.md / positioning.md /
+products.md ("direction, not proof"), lists what to capture from each demo going forward,
+and keeps an empty entry log.
+
+**Effect:** two of the three "blocking quality" files in `CLAUDE.md` are no longer empty.
+`08_DECISIONS/current_priorities.md` is still empty. Customer proof still does not exist
+(pre-customer), so the quantified case-study format stays unavailable and
+`customer_objections.md` stays all-HYPOTHESIS.
+
