@@ -488,3 +488,68 @@ posting about MES; Allied paid ads; any Mandarin / BM / Penang-local Allied cont
 login; whether Allied has appeared in a real Mysoft deal; whether the owner has named a
 founder / technical lead; whether Mysoft holds MD status.
 
+
+
+
+## 2026-09-04 (sixth run — quiet same-day re-check)
+
+### Half 1 — Our performance
+
+No change. Zero published posts; `analyze_posting_time_performance` returns nothing for every
+platform; `record_post_performance` has no records. PR #1's six prompts remain APPROVED for
+production (not published). Nothing to measure.
+
+### Half 2 — Competitor comparison
+
+Only tracked competitor: **Allied Solutions Global / ASPL**. No logged-in pass was possible
+this run (the scheduled run cannot authenticate). Public-source re-check returned nothing new
+versus the fifth-run entry: Singapore HQ, PJ Selangor + Penang (Menara Boustead, George Town)
+offices, Parsec TrakSYS partner, Xynersys-MES, Siemens FA/Digital partner, AI/IIoT platform
+language, full English website buyer-education funnel (what-is-MES → buyer's guide → how-to-choose
+→ MES-vs-ERP → implementation → ROI/cost). No new posts, ads, campaigns or named individuals
+observable without a login.
+
+**Where Mysoft is behind:** unchanged — Allied has a complete public buyer-education library and
+a same-city (Penang) presence; Mysoft has zero published assets.
+**Where competitors are weak / white space holds:** unchanged — Allied is English-only,
+corporate/unbylined, long-form, website/SEO-led, no named-person social, no short-form video, no
+carousel, no Mandarin/BM/Penang-local content visible. Every 2026 distribution shift (named
+people > pages, dwell > reach, short-form/carousel > articles, SEO captions > hashtags, local
+language > English) is one Allied is not making.
+**What competitors tried that flopped:** nothing new observed.
+
+### Suggestions to beat them (feed next Research + Prompting)
+
+Unchanged from the fifth run — this run adds no new suggestion because it found no new evidence:
+1. Produce LI-C1 and run it inside the September LinkedIn cycle (dwell/saves vs text-post median).
+2. Hold LI-C2 until LI-C1 has a first read, then run it (tests frame with format held constant).
+3. Shoot FB-05 alongside FB-01…04 to keep the first Mandarin asset cheap.
+4. Do the logged-in Allied audit — now **6 runs overdue**; only a human / authenticated pass can.
+5. Decide REC-6 (owned website explainer on the verification frame) — owner call.
+6. Name the founder / technical lead — still the single blocker on the whole named-person lane.
+
+### Refinement written to learning_log.md this run
+
+> **REFINEMENT (2026-09-04, sixth run):** When a run detects it is a **repeat pass on a day that
+> already has a completed run** (same-date entries already in `analysis_log.md` /
+> `competitive_benchmark.md`) **and** an approval PR from an earlier same-day pass is still
+> **open**, it should short-circuit after BOOTSTRAP + APPLY-DECISIONS: run the freshness/conflict
+> audits and a light external re-check, write one short "quiet re-check" record if (and only if)
+> something is worth noting, send the mandated status email, create the calendar record, and
+> stop — no new research files, no new strategy brief, no new prompts, no new approval PR. Five
+> full same-day passes on 2026-09-04 produced diminishing returns and left three DRAFT prompts
+> orphaned on `main`. The daily cadence is one run per weekday (`daily_operating_spec.md` §2); a
+> second same-day run should only be the narrow apply-approvals run (§14), not another full
+> sweep. Carried unchanged: logged-in Allied audit is the top research task (6 runs overdue);
+> named-person gate is a yes/no owner check only.
+> Source: `06_PERFORMANCE/competitive_benchmark.md` 2026-09-04 (sixth run).
+
+**Confidence:** LOW — Allied side public sources only, no engagement data, single competitor;
+Mysoft side zero first-party data; all platform figures external → TESTING. Nothing VALIDATED.
+
+**Needs a logged-in / human pass:** Allied LinkedIn (`allied-solutions-pte-ltd`) + Facebook
+(`alliedsolutionsg`) cadence / recency / engagement / format mix; individual Allied employees;
+Allied paid ads; any Mandarin / BM / Penang-local Allied content behind a login; whether Allied
+has appeared in a real Mysoft deal; whether the owner has named a founder / technical lead;
+whether Mysoft holds MD status.
+

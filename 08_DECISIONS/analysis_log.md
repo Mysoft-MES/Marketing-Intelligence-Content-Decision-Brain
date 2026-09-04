@@ -339,3 +339,80 @@ overdue; (2) first demo notes; (3) owner business priority; (4) named person yes
 status; (6) keyword-tool verification of the search clusters before REC-6 is written;
 (7) first-party audience-age data once a channel produces some.
 
+
+
+
+## 2026-09-04 (sixth run — quiet same-day re-check)
+
+**Full strategist reasoning:** none written this run. `08_DECISIONS/strategy_brief_2026-09-04.md`
+(fifth run) stands unchanged — nothing this run alters its Meaning, Opportunity/Gap, Marketing
+Decision, Content Recommendation, Platform Strategy or Timing sections.
+
+**Research read:** this run's checks only — WebSearch on (a) Malaysia manufacturing / MES news
+Sep 2026, (b) Malaysia e-Invoice / SME digitalisation grant news Sep 2026, (c) Allied Solutions
+MES Penang/Malaysia, (d) LinkedIn algorithm / organic reach Sep 2026. `audit_knowledge_freshness`
+and `find_knowledge_conflicts` both run. Context: the five earlier 2026-09-04 `analysis_log.md`
+entries, `06_PERFORMANCE/competitive_benchmark.md` 2026-09-04 (fifth run),
+`06_PERFORMANCE/learning_log.md` REFINEMENT (2026-09-04, fifth run), `list_generation_prompt_status`,
+`get_prompt_approval_pr` for PR #1 and PR #2.
+
+**Prior refinement applied:** `learning_log.md` REFINEMENT (2026-09-04, fifth run) — Analysis #1
+writes the dedicated strategy brief every run; Prompting executes its REC + Platform Strategy +
+Timing; each prompt cites its REC number and copy-style row; logged-in Allied audit is the top
+research task; named-person gate is a yes/no owner check only. **Gate checked this run: still NO
+named person** (nothing in `sales_insights.md` or `current_priorities.md` names a founder /
+technical lead). Not rebuilt. **Logged-in Allied audit: still not possible** — the scheduled run
+cannot authenticate to LinkedIn / Facebook; public sources only, and they returned nothing new.
+
+**What the findings mean:**
+- **This is the sixth run on the same calendar day and it is genuinely quiet.** Every external
+  signal checked this run matches what the Brain already recorded across runs 1–5 today:
+  - Malaysia manufacturing — August PMI 50.2, third month of expansion, "positive but moderate"
+    (S&P Global / Malay Mail / NST, 1–2 Sep 2026). Already in `07_RESEARCH/industry_news.md` #5.
+  - e-Invoice Phase 4 (RM1m–5m band) — penalty-free good-faith window to 31 Dec 2026; RM50k/yr
+    consultancy tax deduction to 2027; SME digitalisation grants continuing. Already in
+    `07_RESEARCH/government_updates.md` #2. No new September announcement found.
+  - LinkedIn — organic reach down ~50% YoY, dwell time the dominant 2026 signal (~15s read →
+    reach bonus), company-page posts ≈2% of feed, personal/expert posts favoured, AI/template
+    content and "comment for DM" penalised. Already in `03_PLATFORM/linkedin.md` (2026-09-04).
+  - Allied Solutions Global / ASPL — Singapore HQ, PJ Selangor office, Penang office (Menara
+    Boustead, George Town), Parsec TrakSYS partner, Xynersys-MES, Siemens partner, AI/IIoT
+    platform language. Already in `04_COMPETITORS/allied-solutions-global.md`. No public change.
+- **Per `daily_operating_spec.md` §5.4 and `brain_rules.md` §31 this run writes no new research
+  and no new content asset.** Nothing changed the Brain's understanding; volume is not the
+  objective.
+- **Approval PR #2 (FB-05, LI-C2) is OPEN and pending the owner.** Per the scheduled-run rule
+  for an open PR: record it as pending, apply nothing, and do **not** duplicate its prompts in a
+  new PR. No new approval PR opened this run.
+
+**Content decision:**
+- **Nothing this run.** No new generation prompt. No approval PR. Reasons (all three of the §9
+  "no new prompt is acceptable" conditions hold): (1) the September calendar + existing DRAFTs
+  (FB-01, FB-02, IG-03) + PR #1 approved set + PR #2 pending set already cover every opportunity
+  the fifth-run brief identified; (2) any new prompt would repeat LI-C2 / FB-05 which are already
+  awaiting the owner; (3) holding is strategically better — the pipeline is owner-blocked, not
+  evidence-blocked.
+- **PR #2 stays open, untouched.** LI-C2 (LinkedIn carousel, verification frame) and FB-05
+  (Facebook Mandarin Reel, owner-POV) await the owner's merge / deny / close.
+- **No status change to any prompt.** PR #1's six APPROVED prompts and the three standing DRAFTs
+  are unchanged.
+
+**Confidence:** LOW — `current_priorities.md` still carries no owner-set business priority;
+`sales_insights.md` still records pre-revenue / zero customers / zero demo notes; all
+platform/competitor figures are external benchmarks → TESTING. Nothing validated against Mysoft
+sales, customer or performance data.
+
+**Open questions handed to the next Research run:** unchanged from the fifth run —
+(1) logged-in Allied social audit (`allied-solutions-pte-ltd`, `alliedsolutionsg`): cadence,
+recency, engagement, format mix, individual employees, paid ads, any Mandarin/BM/Penang-local
+content — now 6 runs overdue and only doable by a human or an authenticated pass;
+(2) first demo notes / any first-party signal; (3) owner business priority for
+`current_priorities.md`; (4) named founder / technical lead — yes/no; (5) does Mysoft hold
+Malaysia Digital (MD) status (SmartMFG+ actionability); (6) keyword-tool verification of the
+search clusters before REC-6 (website verification-frame explainer) is written; (7) Budget 2027
+actual measures from 9 Oct 2026.
+**Operating note for the owner:** three DRAFT prompts (FB-01, FB-02, IG-03) are sitting on
+`main` with no open approval PR — a side effect of repeated same-day passes. They are valid
+drafts; they just need to be carried into an approval PR on the next full run (or the owner can
+fold them into the PR #2 decision).
+

@@ -101,3 +101,23 @@ is the top research task and is now 5 runs overdue; the named-person LinkedIn ga
 yes/no owner check only — do not re-analyse it.
 Source: `06_PERFORMANCE/competitive_benchmark.md` 2026-09-04 (fifth run).
 
+
+
+
+## 2026-09-04 (sixth run — quiet same-day re-check)
+**REFINEMENT (2026-09-04, sixth run):** When a run detects it is a **repeat pass on a day that
+already has a completed run** (same-date entries already in `analysis_log.md` /
+`competitive_benchmark.md`) **and** an approval PR from an earlier same-day pass is still
+**open**, short-circuit after BOOTSTRAP + APPLY-DECISIONS: run the freshness/conflict audits and
+a light external re-check, write one short "quiet re-check" record only if something is worth
+noting, send the mandated status email, create the calendar record, and stop — no new research
+files, no new strategy brief, no new prompts, no new approval PR. Five full same-day passes on
+2026-09-04 produced diminishing returns and left three DRAFT prompts (FB-01, FB-02, IG-03)
+orphaned on `main` with no open PR. The daily cadence is one run per weekday
+(`daily_operating_spec.md` §2); a legitimate second same-day run is the narrow apply-approvals
+run (§14), not another full sweep. Carried unchanged: the logged-in Allied Solutions Global
+social audit (`allied-solutions-pte-ltd`, `alliedsolutionsg`) is the top research task and is
+now 6 runs overdue; the named-person LinkedIn gate is a yes/no owner check only — do not
+re-analyse it.
+Source: `06_PERFORMANCE/competitive_benchmark.md` 2026-09-04 (sixth run).
+
