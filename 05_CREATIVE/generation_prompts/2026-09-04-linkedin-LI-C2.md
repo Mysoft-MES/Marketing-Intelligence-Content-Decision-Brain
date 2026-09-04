@@ -1,6 +1,6 @@
 # LI-C2 — LinkedIn — 2026-09-04
 
-**Status:** DRAFT
+**Status:** APPROVED (human via approval PR, 2026-09-04)
 **Calendar row:** none yet — sequence asset. Run only *after* LI-C1 has produced a first
 dwell/saves read, so the two carousels test the *frame* (shift-handover vs plan-vs-actual)
 with format held constant. Needs a human to add a carousel row or approve as a standalone

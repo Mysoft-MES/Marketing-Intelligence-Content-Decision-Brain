@@ -81,3 +81,11 @@ Access date 2026-09-04. Sources: Oktopost "LinkedIn carousel best practices for 
 - Widely-repeated recommendation: move ≥50% of LinkedIn output into carousel format.
 - **Net effect on the Brain: none.** Fourth independent confirmation of the carousel + dwell-time thesis and of the named-person / employee-advocacy signal. No new action; freshness only. Reinforces LI-C1.
 
+### 2026-09-04 (evening) — carousel slide count narrowed to 7–10; core figures re-verified
+
+Access date 2026-09-04. Sources: Oktopost "LinkedIn carousel best practices for 2026" (https://www.oktopost.com/blog/linkedin-carousel-pdf-best-practices/); carousels-generator "LinkedIn Carousel Statistics 2026"; usevisuals "LinkedIn Carousel Engagement Statistics 2026"; SocialPilot "LinkedIn Algorithm August 2026"; dsmn8 "LinkedIn Organic Reach For Company Pages". Aggregated marketer data, not Malaysia- or MES-specific.
+
+- **Optimal carousel length corrected from "8–12" to "7–10 slides"** — the more consistently cited 2026 figure; below ~5 slides dwell time is too low to trigger distribution. **LI-C1 is already set at 8–10 panels, which sits inside the 7–10 band — no change needed to the prompt.**
+- Re-verified, all consistent with the entries above and with independent 2026 sources: carousels **~596% more engagement than text-only, ~278% more than native video**; company-page organic reach **−60–66% (2024→2026)**, company pages now **~5% of feed allocation** vs personal profiles ~65%; employee-advocacy posts **+561% reach-per-post**, ~8× engagement vs the company page; dwell time / "Depth Score" the dominant ranking signal; off-platform links ~−60% reach; AI-generated / template content actively deprioritised (360Brew).
+- **Net effect on the Brain: none beyond the slide-count fix.** Freshness only. Named-person / employee-advocacy priority and the LI-C1 carousel test design stand.
+

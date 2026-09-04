@@ -39,3 +39,10 @@ Access date 2026-09-04. Sources: WE Interactive "Facebook Marketing Agency Malay
 - **Short vertical video 15–60s remains the highest-engagement format**; tutorials / testimonials / relatable short clips out-perform polished ads. Consistent with the 2026-08-31 entry.
 - **No directional change.** Confirms the working model: paid Click-to-WhatsApp vertical video, Malaysian-specific, Mandarin creative for Chinese-Malaysian owners. Status: TESTING.
 
+### 2026-09-04 (evening) — organic-reach figure corrected downward; Click-to-WhatsApp economics firmed
+
+Access date 2026-09-04. Sources: Fixgure "Social Media Marketing Malaysia 2026"; Xwork "B2B Lead Generation Malaysia 2026" (https://www.xwork.my/b2b-lead-generation-malaysia-2026/); Xwork "Facebook Ads Malaysia 2026". Agency content, Malaysia-specific, not MES-specific — directional.
+
+- **Correction to the 2026-09-03 entry above.** That entry put Facebook business-page organic reach at "under ~2.2% of followers". Current Malaysia-specific sources are lower still: **~0.15–0.48% for Facebook + Instagram organic**. The direction is unchanged and if anything stronger — **organic page posting is effectively dead for reach; plan no cadence expecting unpaid distribution.** The ~2.2% figure should be read as "≤0.5%, i.e. negligible".
+- **Click-to-WhatsApp economics (Malaysia, 2026):** ~USD 7 per qualified conversation vs ~USD 42 for landing-page traffic (~6× cheaper); reported ~USD 4.13 return per USD 1 on Meta click-to-WhatsApp ads — described as the highest-ROI paid acquisition path for most Malaysian B2B. Sequence with the lowest cost-per-qualified-lead: CTWA ad → opening qualifying question → human/automated qualification → consultation booking. Reply speed matters — >1 hour average response loses deals. Reinforces the working model; **still TESTING against Mysoft first-party data (zero to date).**
+

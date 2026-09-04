@@ -280,3 +280,21 @@ apply OS task; (3) `CLAUDE.md` still predates this — proposal in `brain_update
 **Context:** Human approval recorded via the approval Pull Request (human via approval PR #1 (merged 2026-09-04)).
 **Evidence:** As stated in the prompt's Evidence basis section. Approval authorises production of the asset, not publication.
 **Approved by:** human via approval PR #1 (merged 2026-09-04), 2026-09-04.
+
+## 2026-09-04
+## Decision — Generation prompt FB-05 (Facebook, 2026-09-04): APPROVED (2026-09-04)
+
+**Date:** 2026-09-04
+**Decision:** Move generation prompt `05_CREATIVE/generation_prompts/2026-09-04-facebook-FB-05.md` from DRAFT to APPROVED for production.
+**Context:** Human approval recorded via the approval Pull Request (human via approval PR).
+**Evidence:** As stated in the prompt's Evidence basis section. Approval authorises production of the asset, not publication.
+**Approved by:** human via approval PR, 2026-09-04.
+
+## 2026-09-04
+## Decision — Generation prompt LI-C2 (LinkedIn, 2026-09-04): APPROVED (2026-09-04)
+
+**Date:** 2026-09-04
+**Decision:** Move generation prompt `05_CREATIVE/generation_prompts/2026-09-04-linkedin-LI-C2.md` from DRAFT to APPROVED for production.
+**Context:** Human approval recorded via the approval Pull Request (human via approval PR).
+**Evidence:** As stated in the prompt's Evidence basis section. Approval authorises production of the asset, not publication.
+**Approved by:** human via approval PR, 2026-09-04.

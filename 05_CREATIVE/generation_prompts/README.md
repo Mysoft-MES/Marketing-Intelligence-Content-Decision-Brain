@@ -119,8 +119,8 @@ Drafted 2026-09-02 from the September 2026 Facebook and Instagram calendars. **A
 | 2026-09-23 | IG-03 | Instagram | 60–90s — traceability check, step by step | DRAFT |
 | 2026-09-30 | IG-04 | Instagram | 60–90s process-breakdown — what replaces the clipboard | APPROVED |
 | 2026-09-03 | LI-C1 | LinkedIn | 9-panel carousel — "a shift handover, panel by panel" (NEW format test; no calendar row yet) | APPROVED |
-| 2026-09-04 | LI-C2 | LinkedIn | 9-panel carousel — "The report says 500. The floor made 480." (plan-vs-actual / verification frame; sequence asset — run after LI-C1's first read) | DRAFT |
-| 2026-09-04 | FB-05 | Facebook | 30–45s Reel — Mandarin, "这张工单昨天做了多少?" (paper job traveller, owner POV, Click-to-WhatsApp) | DRAFT |
+| 2026-09-04 | LI-C2 | LinkedIn | 9-panel carousel — "The report says 500. The floor made 480." (plan-vs-actual / verification frame; sequence asset — run after LI-C1's first read) | APPROVED |
+| 2026-09-04 | FB-05 | Facebook | 30–45s Reel — Mandarin, "这张工单昨天做了多少?" (paper job traveller, owner POV, Click-to-WhatsApp) | APPROVED |
 
 **2026-09-04 (fifth run) additions.** LI-C2 and FB-05 drafted from the 2026-09-04 strategist
 brief (`08_DECISIONS/strategy_brief_2026-09-04.md`) and analysis (`08_DECISIONS/analysis_log.md`).

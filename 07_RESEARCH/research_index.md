@@ -63,3 +63,13 @@ day (`08_DECISIONS/brain_update_proposals.md`, owner-approved in session).
 
 No new dated research files this pass (cap respected — all in-place updates). New non-dated decision/analysis files: strategy brief, Mysoft-vs-Allied comparison.
 
+## 2026-09-04 — Verification pass (owner-requested accuracy check + 4 corrections)
+
+| Area | File(s) updated | Last researched | Confidence | Status |
+|---|---|---|---|---|
+| Independent re-verification of the current research against fresh sources | — (read-only check) | 2026-09-04 | — | Done — LinkedIn algo figures, Aug PMI 50.2, e-Invoice Phase 4 → 31 Dec 2027, foreign-worker cap 13%/MTLM, Click-to-WhatsApp economics, XHS Malaysia sizing, Allied buyer-education content + MES market endpoint (44.67b/13.3% by 2034) all confirmed accurate |
+| Correction — MES market base figures were blended across two aggregators | `07_RESEARCH/industry_news.md` (#5 addendum) | 2026-09-04 | LOW | Active — GlobeNewswire series is ~14.47b (2025) → 44.67b (2034) at 13.3%; the ~20.58b (2026) figure is Global Growth Insights, separate basis; 2026 range across sources ~USD 14–21b |
+| Correction — LinkedIn carousel optimal length 8–12 → **7–10 slides** | `03_PLATFORM/linkedin.md` (2026-09-04 evening); `03_PLATFORM/platform_index.md` | 2026-09-04 | LOW-MEDIUM → TESTING | Active — LI-C1 already at 8–10, inside the band, no prompt change |
+| Correction — Facebook organic page reach "<~2.2%" → **~0.15–0.5% (negligible)** | `03_PLATFORM/facebook.md` (2026-09-04 evening); `03_PLATFORM/platform_index.md` | 2026-09-04 | LOW-MEDIUM → TESTING | Active — direction unchanged, strengthened; Click-to-WhatsApp economics added |
+| Addition — Budget 2026 national AI line (~RM5.9b AI / ~RM2b sovereign AI cloud) | `07_RESEARCH/government_updates.md` (#1) | 2026-09-04 | LOW-MEDIUM | Active — recorded for completeness; NOT an SME/MES grant, not for customer-facing content |
+

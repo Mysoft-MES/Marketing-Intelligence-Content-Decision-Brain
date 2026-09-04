@@ -152,16 +152,23 @@ and date.
 - **Possible marketing impact:** Positioning angle — "start with visibility and the
   digital Job Traveller, expand later" fits the modular-adoption trend and the low
   current adoption base. Use market-size figures only as loose context, attributed.
-- **2026-09-04 addendum:** Re-checked. Another aggregator puts the **global MES market at
-  ~USD 20.58b in 2026** (from ~USD 19.09b in 2025), ~13.3% CAGR to ~USD 44.67b by 2034 —
-  a slightly higher point estimate, same growth story. The SME-relevant theme is
-  re-confirmed and sharper: modern MES described as **modular, cloud-based, fast to deploy,
-  designed for phased adoption — "start small with basic performance tracking on a single
-  line and scale only once value is proven."** This is a direct external tailwind for
-  Mysoft's "start with the Digital Job Order, expand later" framing. No directional change;
-  freshness only. Sources (accessed 2026-09-04): GlobeNewswire — "MES Market Expected to
-  Reach US$44.67 Billion at 13.3% CAGR by 2034" (2026-06-29); ITI Group — "Why MES should
-  be first on an SME's digital roadmap in 2026"
+- **2026-09-04 addendum:** Re-checked. Two aggregators, two different series — do not
+  blend them:
+  - GlobeNewswire (2026-06-29): **~USD 14.47b in 2025 → ~USD 44.67b by 2034 at ~13.3%
+    CAGR.**
+  - Global Growth Insights: a higher point estimate of **~USD 20.58b for 2026** (no
+    matching 2034 figure on the same basis).
+  Same growth story, different starting points; the ~13.3% CAGR belongs with the ~14.47b
+  base, not the ~20.58b one. The 2026 range across sources is ~USD 14–21b — treat only as
+  loose, attributed context, never a single figure.
+  The SME-relevant theme is re-confirmed and sharper regardless: modern MES described as
+  **modular, cloud-based, fast to deploy, designed for phased adoption — "start small with
+  basic performance tracking on a single line and scale only once value is proven."** This
+  is a direct external tailwind for Mysoft's "start with the Digital Job Order, expand
+  later" framing. No directional change; freshness only. Sources (accessed 2026-09-04,
+  re-verified 2026-09-04 evening): GlobeNewswire — "MES Market Expected to Reach US$44.67
+  Billion at 13.3% CAGR by 2034" (2026-06-29); ITI Group — "Why MES should be first on an
+  SME's digital roadmap in 2026"
   (https://www.itigroup.com/why-manufacturing-execution-systems-should-be-first-on-an-smes-digital-roadmap-in-2026/);
   Global Growth Insights — MES companies 2026 (USD 20.58b figure).
 - **Evidence type:** INDUSTRY SOURCE (vendor/analyst blogs) — weak.

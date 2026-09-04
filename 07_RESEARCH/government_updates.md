@@ -45,6 +45,14 @@ effective date, businesses affected and possible business/marketing impact.
   - **Outcome-Based Incentive Framework** for SMEs — targeted tax incentives tied to
     adopting automation, digitalisation and sustainability.
   - **50% tax deduction** for certified AI and cybersecurity training.
+  - **2026-09-04 addition — national AI line:** Belanjawan MADANI 2026 (tabled 10 Oct 2025)
+    also carried a **reported ~RM5.9b allocation to accelerate AI**, including a
+    **~RM2b "sovereign AI cloud"**. This is national AI-infrastructure spend, **not** an
+    SME/MES grant and **not** a buyer incentive — recorded for completeness only. Do not
+    cite it in customer-facing content as available funding. Source (accessed 2026-09-04):
+    OpenMinds Resources — "Digitalisation in Malaysia 2026: AI, 5G & Budget Report"
+    (https://www.openmindsresources.com/blog/digitalisation-in-malaysia-2026/). Secondary,
+    LOW-MEDIUM confidence; primary MOF text not verified.
 - **Effective date:** 2026 year of assessment / programme year; individual scheme windows
   vary and open through 2026.
 - **Businesses affected:** Malaysian SMEs and mid-tier manufacturers.
