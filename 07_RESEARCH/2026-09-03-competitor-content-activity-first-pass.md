@@ -139,3 +139,18 @@ MyKilang. The other 9 were not checked this pass.
 - [ ] Check the remaining 9 competitors' channels at least once.
 - [ ] Sales-team input: does Critical Manufacturing (or any of these) show up in real
       Mysoft deals? All competitive implications remain HYPOTHESIS without it.
+
+
+
+---
+
+## 2026-09-04 update — Allied Solutions Global (public sources only; logged-in pass still outstanding)
+
+Access date 2026-09-04. Sources: ManufacturingTomorrow (2026-04-30); alliedsolutionsglobal.com/news; parsec-corp.com.
+
+- **Penang Manufacturing Expo 2026 date/detail sharpened:** 22–24 July 2026, Setia SPICE Convention Centre, booths A43 & A53. (Earlier Brain note said only "July 2026".) Stated focus at the booth: modernising legacy systems, OT/IT integration, smart-factory planning.
+- **"MES vs ERP: What's the Difference, and Do You Need Both?"** explainer confirmed live on alliedsolutionsglobal.com/news — one of the highest-volume MES-buyer search queries. Allied's buyer-education funnel is now: what-is-MES → **MES-vs-ERP** → buyer's guide → how-to-choose → implementation guide → ROI/cost → web-based MES → OEE worked examples → "What is OT Cybersecurity".
+- **Product line Allied distributes is evolving toward "start small":** Parsec launched a **Connected Worker** solution built natively on TrakSYS (available 8 May 2026), pitched as "real-time execution with a scalable path to full MES." The "begin with one capability, grow into full MES" framing — which Mysoft's Digital-Job-Order-first story also uses — is now available in the platform Allied sells. Monitor; not a response trigger.
+- **Still unverified (needs a logged-in pass — now 4+ runs overdue):** LinkedIn `allied-solutions-pte-ltd` and Facebook `alliedsolutionsg` post cadence, recency, engagement, format mix; any individual Allied employees posting about MES; any Allied paid ads (Meta Ad Library / LinkedIn Ad Library); any Mandarin / BM / Penang-local content behind a login.
+- **White space unchanged:** named-person voice, short vertical video, document carousel, authentic shop-floor storytelling, Mandarin / BM / Penang-local, and the "can management verify what actually happened?" problem frame — Allied does none of these from public sources.
+

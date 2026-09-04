@@ -185,3 +185,15 @@ Second full-sweep pass this day. **PMI:** no new data — September figure not r
 (due early October); August 2026 = 50.2 already recorded in #1. **NIMP 2030 / Penang E&E /
 tariffs (#2–#4):** re-checked, no material change. **MES category (#5):** freshness addendum
 added above (higher point estimate, phased-adoption theme re-confirmed). No new dated file.
+
+
+
+## 2026-09-04 — Malaysia manufacturing: growth slowing but positive; Penang smart-factory pull
+
+Access date 2026-09-04.
+
+- **S&P Global Malaysia Manufacturing PMI = 50.2 in August 2026** (Malay Mail / NST / S&P Global, 1 Sep 2026) — third straight month above 50 but the weakest of the run, down from 50.7 in June and July. New-order growth slowed; respondents cited material shortages and "challenging economic conditions". First rise in factory employment in four months. Evidence: FACT (primary index). Confidence: HIGH for the number, directional for the cause.
+- **Penang investment / smart-factory framing** (Mordor Intelligence "Malaysia EMS Market"; market-report compilations, 2026): Penang drew ~MYR 12.5bn approved investment in 1H2025, ~+150% YoY. Report language: "local champions adopt smart-factory tools to compete on yield, not labour." Evidence: OBSERVATION (secondary market report). Confidence: LOW-MEDIUM.
+- **APAC MES market drivers** (marketsandmarkets; businessresearchinsights, 2026): smart-factory adoption, government digitalisation programmes, cloud/hybrid MES preference, semiconductor complexity (~68% of advanced-MES application). **Cloud-based MES cited as the route that makes MES "acceptable for SMEs"** — scalable, lower infrastructure cost. Evidence: vendor/analyst claim. Confidence: LOW-MEDIUM.
+- **So what:** the macro is soft-but-positive — not a boom to ride, not a collapse to hedge against. The durable signal is "compete on yield/traceability, not labour" and "cloud + start-small lowers the SME barrier" — both align with Mysoft's problem-first, Digital-Job-Order-first positioning. No content trigger on its own; it is context for the budget-season timing anchor already parked in `content_backlog.md`.
+

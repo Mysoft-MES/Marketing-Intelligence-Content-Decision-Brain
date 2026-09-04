@@ -69,3 +69,15 @@ or MES-specific.
 - **Net effect on the Brain: none.** Re-confirms the founder/named-person priority and the
   LI-C1 carousel test design. No new action; freshness only.
 
+
+
+
+## 2026-09-04 (afternoon) — carousel / Depth Score re-confirmed again (external → TESTING, no directional change)
+
+Access date 2026-09-04. Sources: Oktopost "LinkedIn carousel best practices for B2B 2026"; DataSlayer "LinkedIn Algorithm 2026"; Digital Applied "LinkedIn Algorithm 2026 Engagement Strategy Guide"; carousels-generator "LinkedIn Carousel Statistics 2026".
+
+- Document / PDF carousels cited at ~6.6% average engagement — highest of any format; ~7× text-only, ~9× static image. Cover slide must stop the scroll in <2s.
+- "Depth Score" = dwell time + comment depth + saves + private shares. External links ~−60% reach. Quality beats frequency.
+- Widely-repeated recommendation: move ≥50% of LinkedIn output into carousel format.
+- **Net effect on the Brain: none.** Fourth independent confirmation of the carousel + dwell-time thesis and of the named-person / employee-advocacy signal. No new action; freshness only. Reinforces LI-C1.
+

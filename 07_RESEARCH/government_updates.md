@@ -356,3 +356,15 @@ Second full-sweep pass this day (after a branch reconciliation — see run summa
   announced. Sources re-checked 2026-09-04 (BernamaBiz; cfotech.asia).
 - **NIF (#6), NIMP 2030 (#4):** no change.
 
+
+
+### 9. 2026-09-04 (afternoon) — Automation Capital Allowance sunset + Smart Automation Grant sizing (refines #1)
+
+Access date 2026-09-04. Secondary tax-advisory sources, not primary MOF/MIDA text.
+
+- **Automation Capital Allowance (ACA):** 200% allowance on qualifying automation capex **up to RM10m**, for companies with ≥36 months of manufacturing/services activity, available for **years of assessment 2023–2027**. The YA2027 end means this specific incentive has a **hard sunset ~15 months out** unless Budget 2027 extends it — a genuine, dated "why now" context anchor for capex-justification content aimed at GMs/owners. Source: PwC Malaysia Tax Summaries — Tax credits and incentives (https://taxsummaries.pwc.com/malaysia/corporate/tax-credits-and-incentives); CCS "Review of tax incentive for automation".
+- **Smart Automation Grant (SAG MADANI):** reported at **up to RM1,000,000 per company, 70% government / 30% applicant co-payment**, for SMEs and mid-tier companies investing in automation/tech upgrades. Source: SMI Funding; corporatetrainingmalaysia.com. Secondary — quote as "reported", point to the administering agency (MPC / MIDA), never state Mysoft MES is eligible for a named scheme.
+- **Pre-Budget Statement 2027 (MOF):** re-confirms the automation-to-reduce-low-skilled-foreign-labour theme and adds "AI literacy, digital capability and lifelong learning for workers and SMEs" plus expanded industry-led TVET. No new figures. Consistent with entry #5.
+- **So what:** no new content trigger, but the ACA YA2027 sunset + SAG sizing + budget season (9 Oct) together make a stronger, specifically-dated case for the "budget-season / is-now-the-time-to-digitise-the-floor" asset already parked in `08_DECISIONS/content_backlog.md` (2026-09-03). Confidence: LOW-MEDIUM (secondary), HIGH only on the ACA YA range.
+- **Last checked:** 2026-09-04.
+

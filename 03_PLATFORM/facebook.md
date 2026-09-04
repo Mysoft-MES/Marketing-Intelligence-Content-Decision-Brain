@@ -27,3 +27,15 @@ directional only.
   **Status: MONITOR**, not a recommendation.
 - **Status:** TESTING. Revisit against Mysoft first-party Facebook data.
 
+
+
+
+## 2026-09-04 — Malaysia 2026 discovery behaviour + localisation (external → TESTING)
+
+Access date 2026-09-04. Sources: WE Interactive "Facebook Marketing Agency Malaysia 2026"; Fixgure "Social Media Marketing Malaysia 2026"; leadgen-economy "Social Media Lead Generation 2026". Agency / marketer content, not MES-specific — directional only.
+
+- **~74% of Malaysian business leaders reportedly use Meta platforms (Facebook/Instagram) to discover new solutions in 2026** — reinforces Facebook as a genuine B2B discovery surface in this market, not only a consumer channel.
+- **Localised ad copy/creative for the Malaysian market is reported to convert materially better than generic global assets** (one vendor cites a ~28% uplift — do NOT repeat that figure in content, `products.md` §31). Direction only: Malaysian-specific phrasing, Malaysian shop-floor visuals, Mandarin where the owner audience is Chinese-Malaysian.
+- **Short vertical video 15–60s remains the highest-engagement format**; tutorials / testimonials / relatable short clips out-perform polished ads. Consistent with the 2026-08-31 entry.
+- **No directional change.** Confirms the working model: paid Click-to-WhatsApp vertical video, Malaysian-specific, Mandarin creative for Chinese-Malaysian owners. Status: TESTING.
+

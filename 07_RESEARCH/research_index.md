@@ -46,3 +46,20 @@ competitor(s) in `competitor_index.md`. `daily_operating_spec.md` aligned to v2.
 day (`08_DECISIONS/brain_update_proposals.md`, owner-approved in session).
 
 | Allied Solutions Global — content / social audit | Competitor/social | `08_DECISIONS/analysis_log.md` + `06_PERFORMANCE/competitive_benchmark.md` (2026-09-04 entries) — `04_COMPETITORS/allied-solutions-global.md` is kept 100% human-supplied / verbatim, so the Brain's own Allied research is held in the analysis + benchmark logs, not appended to that file | 2026-09-04 (re-confirmed evening sweep; MES-vs-ERP explainer added) | LOW-MEDIUM | Active — public sources only (vendor site blocks fetch, social needs logged-in pass). Allied runs a sustained plain-language MES buyer-education programme (now confirmed to include an MES-vs-ERP explainer) + Penang office (same city as Mysoft); named-person / short-form / shop-floor-story white space still holds | Logged-in audit of Allied LinkedIn (`allied-solutions-pte-ltd`) + Facebook (`alliedsolutionsg`) — cadence, engagement, format mix, individual employees, paid ads |
+
+
+## 2026-09-04 — Full sweep (fifth pass): platform copywriting styles + trends, competitor, industry, government, XHS/RED
+
+| Area | File(s) updated | Last researched | Confidence | Status |
+|---|---|---|---|---|
+| Instagram caption copywriting shift (SEO captions, <80-char hooks, DM/share-driven reach) | `03_PLATFORM/instagram.md` (2026-09-04) | 2026-09-04 | LOW-MEDIUM (external, non-MES) → TESTING | Active — folded into `03_PLATFORM/copywriting_style_and_audience_age.md` |
+| LinkedIn carousel / Depth Score | `03_PLATFORM/linkedin.md` (2026-09-04 afternoon) | 2026-09-04 | LOW-MEDIUM → TESTING | Active — 4th confirmation, no directional change |
+| Facebook — Malaysia 2026 discovery behaviour + localisation | `03_PLATFORM/facebook.md` (2026-09-04) | 2026-09-04 | LOW-MEDIUM → TESTING | Active — confirms working model |
+| Xiaohongshu / RED Malaysia — sizing + content style + audience-fit caveat | `03_PLATFORM/xiaohongshu.md` (2026-09-04) | 2026-09-04 | LOW-MEDIUM → TESTING | Active — MONITOR; consumer-discovery audience ≠ MES buyer |
+| Malaysia manufacturing — Aug PMI 50.2, Penang smart-factory pull, cloud MES lowers SME barrier | `07_RESEARCH/industry_news.md` (2026-09-04) | 2026-09-04 | LOW-MEDIUM | Active — context, no content trigger |
+| Automation Capital Allowance YA2027 sunset + Smart Automation Grant sizing | `07_RESEARCH/government_updates.md` (#9) | 2026-09-04 | LOW-MEDIUM (HIGH on ACA YA range) | Active — sharpens the budget-season timing anchor |
+| Allied Solutions Global — 2026-09-04 public-source refresh (Penang Expo detail, MES-vs-ERP, Parsec Connected Worker) | `07_RESEARCH/2026-09-03-competitor-content-activity-first-pass.md` (2026-09-04 update) | 2026-09-04 | LOW-MEDIUM | Active — logged-in social pass still outstanding |
+| Strategist synthesis of the above | `08_DECISIONS/strategy_brief_2026-09-04.md` (NEW), `08_DECISIONS/analysis_log.md`, `04_COMPETITORS/mysoft-vs-allied-comparison.md` (NEW) | 2026-09-04 | LOW | Active |
+
+No new dated research files this pass (cap respected — all in-place updates). New non-dated decision/analysis files: strategy brief, Mysoft-vs-Allied comparison.
+
