@@ -244,7 +244,6 @@ carousel test — all DRAFT / awaiting approval, none published.
 
 | Competitor | What they publish / run | Format & channel | Worked? (evidence) | Recency / cadence |
 |---|---|---|---|---|
-| DigiwinSoft Malaysia | Corporate news, named vendor-published case studies (EMICO, Wieson, RGT), co-branded webinars ("DIGINEWS" with APO/MPC/CPC) | Website blog + Facebook + YouTube; institutional | Unknown — not measured. Operation clearly exists and is multi-year | Not measured (logged-in pass outstanding) |
 | Critical Manufacturing (MY) | Enterprise MES positioning; UST partnership announcement (26 Aug 2026) for SEA+India semiconductor/E&E deployment | Press / independent tech media (TechNode) | Announcement got independent pickup | Event-driven, not a content cadence |
 | FSBM MES Elite | Institutional credibility (FMM MBP 2.1 partnership, Smart4wrd listing), named SME pricing ("MES Lite" RM28,888) | Parent (FSBM Holdings) LinkedIn; directories | Not measured; not a thought-leadership cadence | Sparse |
 | ASPL / Allied Solutions | "AI-driven optimization, IIoT" platform messaging; now a named Siemens FA/Digital partner | Own website; LinkedIn company page | Not measured | Not measured |
