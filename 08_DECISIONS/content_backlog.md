@@ -107,3 +107,29 @@ September LinkedIn calendar, (b) run it as a standalone test after the text cycl
 (c) reject. No production, no scheduling. Claim-safety checked against `products.md` §20/§31
 in the prompt file.
 
+
+
+
+## 2026-09-04 — Two new generation prompts on approval PR (fifth run)
+
+**Status:** AI-PROPOSED — NOT AN APPROVED DECISION (`00_SYSTEM/brain_rules.md` §30). Both DRAFT on `approvals/2026-09-04`.
+
+### LI-C2 — LinkedIn carousel — "The report says 500. The floor made 480."
+- **Prompt:** `05_CREATIVE/generation_prompts/2026-09-04-linkedin-LI-C2.md`
+- **Frame:** plan vs actual / verification — the gap between reported and real output. The positioning territory Mysoft intends to own (`positioning.md` §32) and white space against Allied's OEE-led content.
+- **Audience:** GM primary, Ops/Production Manager secondary.
+- **Sequence, not a date:** run only *after* LI-C1 produces a first dwell/saves read, so LI-C1 vs LI-C2 tests *frame* with format held constant.
+- **Derives from:** `06_PERFORMANCE/competitive_benchmark.md` 2026-09-04; `03_PLATFORM/linkedin.md`; `08_DECISIONS/strategy_brief_2026-09-04.md` REC-2.
+- **Owner decision needed:** add a carousel row or approve as a standalone follow-up test; or reject.
+
+### FB-05 — Facebook Reel (Mandarin) — "这张工单昨天做了多少?"
+- **Prompt:** `05_CREATIVE/generation_prompts/2026-09-04-facebook-FB-05.md`
+- **Frame:** hidden cost of the paper job traveller, owner POV, Mandarin. First distinct Mandarin asset; uncontested white space (no competitor publishes Mandarin MES content).
+- **Audience:** Chinese-Malaysian factory owner / GM, 35+. Click-to-WhatsApp.
+- **Production note:** shoot alongside FB-01…04 to keep incremental cost low (lean-team constraint).
+- **Derives from:** `03_PLATFORM/facebook.md` + `03_PLATFORM/xiaohongshu.md` 2026-09-04; `05_CREATIVE/hook_library.md`; `08_DECISIONS/strategy_brief_2026-09-04.md` REC-3.
+- **Owner decision needed:** add a Facebook calendar row or approve as a standalone test; or reject.
+
+### Also parked this run (no prompt)
+- **REC-6 — Website explainer, "MES vs your current process: the verification question"** — the wedge into Allied's buyer-education funnel on Mysoft's frame, timed to budget season (Budget 2027, 9 Oct) as context. GATED on owner decision (`08_DECISIONS/current_priorities.md` item 2). Requires keyword-tool verification of the search clusters in `07_RESEARCH/search_trends.md` before writing. No generation prompt until approved.
+

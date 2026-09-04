@@ -274,3 +274,68 @@ against Mysoft audience, sales or performance data.
 - Any Mysoft first-party audience-age / follower data once a channel produces some.
 - Does Mysoft hold Malaysia Digital (MD) status? (carried — SmartMFG+ actionability)
 
+
+
+## 2026-09-04 (fifth run — full sweep: platform trends + copywriting styles, Allied, macro)
+
+**Full strategist reasoning:** `08_DECISIONS/strategy_brief_2026-09-04.md` (Research → Meaning
+→ Opportunity/Gap → Marketing Decision → Content → Platform/Voice → Timing → Next Research).
+This entry is the short decision record.
+
+**Research read:** this run's push `4c01e4c` — `03_PLATFORM/` instagram (2026 SEO-caption
+shift) / facebook (MY discovery + localisation) / linkedin (carousel re-confirm) / xiaohongshu
+(RED sizing + audience-fit caveat) / copywriting_style_and_audience_age; `07_RESEARCH/`
+industry_news (Aug PMI 50.2, Penang, cloud-MES-for-SME), government_updates #9 (ACA YA2027
+sunset, SAG sizing), 2026-09-03-competitor-content-activity (Allied 2026-09-04 refresh).
+Context: `04_COMPETITORS/allied-solutions-global.md`, `06_PERFORMANCE/competitive_benchmark.md`
+2026-09-04, `05_CREATIVE/content_calendars/*`, `05_CREATIVE/generation_prompts/*`,
+`01_BUSINESS/sales_insights.md`.
+**Prior refinement applied:** `learning_log.md` 2026-09-04 (fourth run) — Prompting reads the
+copy-style reference; each asset names its platform-voice/age-band/CTA row; named-person gate
+is a yes/no check only. **Gate checked: still NO named person.** Logged-in Allied audit still
+not possible without authentication.
+
+**What the findings mean (short):**
+- Mysoft is content-silent; Allied (same city) has the full buyer-education library — but it
+  is generic, English-only, corporate-unbylined, long-form, and built for the *last* era of
+  distribution. Every 2026 platform signal (named people > pages; carousels/short-form >
+  articles; dwell > reach; SEO captions > hashtags; local language > English) is a shift
+  Allied is not making and Mysoft can be built around.
+- Mysoft's edge is **frame** ("can you verify what actually happened?" vs Allied's OEE) and
+  **proximity** (Penang, Mandarin/BM, shop-floor access, a potential on-camera founder), not
+  feature parity.
+- Macro ("why now" — PMI, foreign-labour squeeze, ACA YA2027 sunset, Budget 2027 on 9 Oct,
+  cloud-MES-for-SME) is real and dated but is **context, not a campaign**.
+- Four gates bind every strong move: no named person, no customer proof, no owner priority,
+  lean execution.
+
+**Content decision: TEST + one gated CREATE.**
+- **Produce LI-C1** (approved) — LinkedIn carousel, shift-handover frame.
+- **Draft two new prompts → approval PR:**
+  - **LI-C2** — LinkedIn carousel, "The report says 500. The floor made 480." Plan-vs-actual /
+    verification frame. Audience: GM / Ops / Production Manager. Derives from
+    `competitive_benchmark.md` 2026-09-04 (Allied leads with OEE, not verification) +
+    `03_PLATFORM/linkedin.md`. Hypothesis: the verification frame out-dwells the shift-handover
+    frame for this audience. Success metric: dwell time + saves per impression vs LI-C1 and vs
+    the September LinkedIn text-post median (no numeric target — no Mysoft baseline yet).
+  - **FB-05** — Facebook Reel, Mandarin, "紙本工單：看不见的损失." Audience: Chinese-Malaysian
+    factory owner / GM, 35+. Click-to-WhatsApp. Derives from `03_PLATFORM/facebook.md`
+    2026-09-04 (localised MY / Mandarin) + `03_PLATFORM/xiaohongshu.md` 2026-09-04 (Mandarin
+    white space) + `05_CREATIVE/hook_library.md` brand themes. Hypothesis: a Mandarin,
+    owner-POV asset earns higher Click-to-WhatsApp intent from Chinese-Malaysian owners than
+    the English FB Reels. Success metric: Click-to-WhatsApp rate vs FB-01…04 (baseline TBD).
+- **Apply the 2026-09-04 caption spec to IG-01…04 when produced** (SEO captions, ≤80-char
+  hook, DM/save ask) — no regeneration needed, a production note.
+- **REC-6 (website explainer on the verification frame): GATED** — owner decision
+  (`current_priorities.md` item 2). No prompt this run.
+- **FB-01, FB-02, IG-03** left as existing DRAFTs — evidence still valid, not regenerated.
+- **Nothing else drafted** (`brain_rules.md` §31).
+
+**Confidence:** LOW — `current_priorities.md` empty; pre-revenue, zero customers, zero demo
+notes; all platform/competitor figures external → TESTING.
+
+**Open questions handed to the next Research run:** (1) logged-in Allied social audit — 5 runs
+overdue; (2) first demo notes; (3) owner business priority; (4) named person yes/no; (5) MD
+status; (6) keyword-tool verification of the search clusters before REC-6 is written;
+(7) first-party audience-age data once a channel produces some.
+
