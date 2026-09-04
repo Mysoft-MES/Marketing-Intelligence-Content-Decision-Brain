@@ -369,3 +369,54 @@ nature so "TO VERIFY" can be replaced.
 states Digiwin is a partner and must never be tracked as a competitor; the two superseded
 competitor-landscape research files and the `competitive_benchmark.md` / `analysis_log.md`
 headers carry a correction note.
+
+
+
+---
+
+## PROPOSAL 2026-09-04 (fifth run) — daily_operating_spec.md §4A: Analysis #1 writes a structured strategist brief
+
+**File:** `00_SYSTEM/daily_operating_spec.md` §4A ("ANALYSIS #1 — RESEARCHING")
+**Status:** PROPOSED — awaiting owner review. 00_SYSTEM is read-only to the run.
+**Why:** The owner's feedback (2026-09-04) is that `analysis_log.md` reads like a record of
+what the system checked, not a marketing strategist's recommendation. The owner wants, every
+run: Meaning → Opportunity/Gap → Marketing Decision → Content Recommendation (connected to the
+research, not generic) → Platform Strategy (which platform, audience, angle, format, voice,
+objective — never the same content everywhere) → When to Post (sequence + why timing matters,
+checked against the existing calendar/backlog for repetition) → Next Research.
+
+**Proposed change — replace §4A step 3 with:**
+
+> 3. Produce (or update) `08_DECISIONS/strategy_brief_<YYYY-MM-DD>.md` — the strategist read,
+>    in this order, every run:
+>    1. **Research** — the entries this interprets (paths).
+>    2. **Meaning** — what the research actually tells us about Mysoft (the "so what", not a
+>       restatement).
+>    3. **Opportunity / Gap** — where Mysoft is weak; where competitors are stronger; where
+>       Mysoft can win; which opportunity to take now.
+>    4. **Marketing Decision** — what to do, given the analysis.
+>    5. **Content Recommendation** — what to create *because of* this analysis, each item
+>       traceable to a research entry and to the decision. Not generic ideas.
+>    6. **Platform Strategy** — for each recommended asset: platform, target audience, angle,
+>       format, voice/tone (cite the `03_PLATFORM/copywriting_style_and_audience_age.md` row),
+>       objective. LinkedIn / Facebook / Instagram / Xiaohongshu / Reddit / YouTube / Website
+>       do **not** automatically receive the same content; state which channels get nothing
+>       this cycle and why.
+>    7. **When to Post** — recommended sequence/timing, with the reason where timing matters
+>       (experiment design, event/budget anchor, dependency). Explicitly check the
+>       recommendation against `05_CREATIVE/content_calendars/` and
+>       `08_DECISIONS/content_backlog.md` so topics are not repeated.
+>    8. **Next Research** — what is still missing that would improve the next decision, ranked.
+>    `08_DECISIONS/analysis_log.md` keeps a short dated decision record (research read; prior
+>    refinement applied; content decision = Create/Test/Monitor/Nothing + specifics;
+>    confidence; open questions) and points to the brief. Neither file counts against the
+>    two-new-dated-file cap.
+
+**Proposed change — §5 (Prompting) add:** "Each generation prompt cites which strategy-brief
+REC number and which `03_PLATFORM/copywriting_style_and_audience_age.md` voice/age row it is
+written to."
+
+**Risk / cost:** slightly longer Analysis #1 each run. Mitigation: the brief replaces, not
+adds to, the interpretation work already required; `analysis_log.md` gets shorter.
+**Precedent:** `08_DECISIONS/strategy_brief_2026-09-04.md` is the first brief in this format.
+

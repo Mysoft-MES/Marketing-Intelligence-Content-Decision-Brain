@@ -82,3 +82,22 @@ not re-analyse); the logged-in Allied Solutions Global social audit (`allied-sol
 `alliedsolutionsg`) is the priority research task and is now four runs overdue.
 Source: `06_PERFORMANCE/competitive_benchmark.md` 2026-09-04 (fourth run).
 
+
+
+## 2026-09-04 (fifth run — strategist brief format)
+**REFINEMENT (2026-09-04, fifth run):** The strategist output now lives in a dedicated
+`08_DECISIONS/strategy_brief_YYYY-MM-DD.md` structured as Research → Meaning → Opportunity/Gap
+→ Marketing Decision → Content Recommendation → Platform Strategy (audience / angle / format /
+voice / objective per channel) → When to Post (sequence + reasoning, checked against the
+existing calendar/backlog for repetition) → Next Research. `08_DECISIONS/analysis_log.md`
+keeps only the short decision record and points to the brief. From next run: Analysis #1
+writes the brief in that structure every run; the Prompting stage executes the brief's
+Content Recommendation + Platform Strategy + Timing sections directly, and each generation
+prompt cites which REC number and which `03_PLATFORM/copywriting_style_and_audience_age.md`
+row it comes from. Propose the matching `daily_operating_spec.md` §4A wording in
+`08_DECISIONS/brain_update_proposals.md` (00_SYSTEM is read-only to the run). Carried
+unchanged: the logged-in Allied social audit (`allied-solutions-pte-ltd`, `alliedsolutionsg`)
+is the top research task and is now 5 runs overdue; the named-person LinkedIn gate is a
+yes/no owner check only — do not re-analyse it.
+Source: `06_PERFORMANCE/competitive_benchmark.md` 2026-09-04 (fifth run).
+

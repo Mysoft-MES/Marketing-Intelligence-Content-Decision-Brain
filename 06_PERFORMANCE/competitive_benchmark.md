@@ -398,3 +398,93 @@ format mix; individual Allied employees posting about MES; Allied paid advertisi
 Allied publishes any Mandarin / BM / Penang-local content behind a login; whether the owner
 has named a founder / technical lead; Mysoft's own audience age data once a channel produces any.
 
+
+
+---
+
+## 2026-09-04 (fifth run — full sweep + strategist brief + Allied comparison)
+
+> This run ran a live web sweep of platform trends / copywriting styles (LinkedIn, Facebook,
+> Instagram, Xiaohongshu), the macro (PMI, grants, Budget 2027), and Allied Solutions Global
+> (public sources). It produced `08_DECISIONS/strategy_brief_2026-09-04.md` and two new DRAFT
+> prompts (LI-C2, FB-05 — approval PR #2). This entry is the Analysis #2 competitor comparison.
+
+### Half 1 — Our performance
+
+No change. `analyze_posting_time_performance` → `record_count: 0`, `can_claim_best_time: false`
+for every platform. `record_post_performance` has no records. Zero published posts.
+Our side is still all plans: the September LinkedIn text experiment (counterbalanced Tue/Thu),
+the September FB/IG Reel calendars, LI-C1 (approved), and now LI-C2 + FB-05 (DRAFT, PR #2) —
+none produced, none published.
+
+### Half 2 — Competitor comparison (Allied Solutions Global / ASPL)
+
+Public sources only. Logged-in pass **still outstanding — 5 runs overdue.**
+
+| Dimension | Allied Solutions Global (2026-09-04) | Mysoft (planned pipeline) | Read |
+|---|---|---|---|
+| Published output | Full buyer-education funnel, now confirmed to include **"MES vs ERP: What's the Difference, and Do You Need Both?"** — one of the highest-volume MES-buyer queries. ~1–3 pieces/month, sustained through 2026. | Zero published. Pipeline: LI-C1, LI-C2, FB-05, September LinkedIn text ×8, FB Reels ×4, IG Reels ×4 — all DRAFT / AWAITING APPROVAL. | Allied owns "explain MES for the region". Mysoft's job is not to race that funnel. |
+| Format | Long-form articles + downloadable guides + webinars. No carousel, no short video, no named-person content on public record. | Document carousel (LI-C1, LI-C2), short vertical video (FB/IG Reels). | Format white space holds and is now being built against. |
+| Voice / register | Corporate, unbylined. "Monitor, Control, Optimise"; increasingly "no-code / web-native / AI-driven / IIoT". Parsec's new **Connected Worker** (May 2026) adds a "start small → scalable path to full MES" line to the product Allied sells. | Plain, problem-first, shop-floor-colleague; deliberately underplays the tech. | Mysoft's register is *more* distinct as Allied/Parsec lean further into platform/AI language. Hold the line. |
+| Problem frame | OEE, downtime, micro-stoppages, compliance, ERP-connectivity. | "Can management verify what actually happened?" / plan vs actual (LI-C2 is exactly this). | Verification frame is white space against Allied's positioning — LI-C2 tests it directly. |
+| Language / locality | English only. No Mandarin / BM / Penang-local on public record, despite a Penang office. | Mandarin (FB-05), Penang-local parked. | Uncontested. FB-05 is the first move into it. |
+| Named person | None. Fully exposed to the 2026 company-page reach penalty (−60–66%; employee posts ~+561%). | Blocked — owner has not named a person. | Still the single biggest unrealised advantage. |
+| Proof | Global TrakSYS logos (vendor proof); vendor ROI figures (claims, not fact). | None — pre-customer. Cannot run the quantified case study. | Mysoft leads with problem + concept, not proof, until an implementation exists. |
+
+**Where Mysoft is behind:** published volume, regional SEO, product maturity/breadth, global
+logos, trade-show reach, same-city sales presence. Unchanged.
+
+**Where white space holds (and is now being built against):**
+1. LinkedIn document carousel — LI-C1 (shift handover) + LI-C2 (plan vs actual). No Allied carousel.
+2. The verification / plan-vs-actual problem frame — LI-C2. Allied leads with OEE.
+3. Mandarin / Penang-local — FB-05. Allied publishes English only.
+4. Named-person voice — still blocked on the owner.
+5. Short vertical video for the 2026 dwell-time / SEO-caption feed — the September Reels.
+
+**What competitors tried that flopped:** nothing observable. Standing caution holds — Allied's
+buyer-education content is genuinely good and directly comparable; Mysoft wins on *shape*
+(carousel / short-form / Mandarin / named person) and *frame* (verification), not by
+publishing the same guides later.
+
+### Suggestions to beat them (feed next Research + Prompting)
+
+1. **Produce LI-C1 and run it inside the September LinkedIn cycle** so its dwell/saves read
+   against the text-post median from the same weeks — that comparison is the point.
+2. **Hold LI-C2 until LI-C1 has a first read**, then run it — LI-C1 vs LI-C2 tests *frame*
+   (shift-handover vs plan-vs-actual) with format held constant. Do not run both cold.
+3. **Shoot FB-05 alongside FB-01…04** to keep the first Mandarin asset cheap (lean-team
+   constraint). It is the only move into the fully uncontested Mandarin lane.
+4. **Do the logged-in Allied audit — now 5 runs overdue.** Everything in the table above on
+   Allied's social side is public-sources-only. Cadence, recency, engagement, format mix,
+   individual employees, paid ads, any Mandarin/BM/Penang-local behind a login.
+5. **Decide REC-6 (website explainer on the verification frame).** Allied's funnel now
+   includes MES-vs-ERP; if Mysoft builds owned buyer-education it must be on the verification
+   frame and its own register, timed to budget season (9 Oct) as context — not another OEE/ROI guide.
+6. **Name the founder / technical lead.** Unchanged. Still the single blocker on the whole
+   named-person direction and still an empty lane vs Allied.
+
+### Refinement written to learning_log.md this run
+
+> **REFINEMENT (2026-09-04, fifth run):** The strategist output now lives in a dedicated
+> `08_DECISIONS/strategy_brief_YYYY-MM-DD.md` (Research → Meaning → Opportunity/Gap →
+> Marketing Decision → Content → Platform/Voice → Timing → Next Research), with
+> `analysis_log.md` carrying only the short decision record and pointing to it. From next
+> run, Analysis #1 writes the brief in that structure every run (not just the log entry), and
+> the Prompting stage executes the brief's Content Recommendation + Platform Strategy + Timing
+> sections directly — a prompt must cite which REC number and which platform-voice row it
+> comes from. Propose the corresponding `daily_operating_spec.md` §4A wording change in
+> `brain_update_proposals.md` (00_SYSTEM is read-only to the run). Also unchanged and carried:
+> the logged-in Allied social audit is the top research task (5 runs overdue); the
+> named-person gate is a yes/no owner check only.
+> Source: `06_PERFORMANCE/competitive_benchmark.md` 2026-09-04 (fifth run).
+
+**Confidence:** LOW-MEDIUM — Allied side is public sources only, no engagement data, single
+competitor; Mysoft side has zero first-party data; all platform figures external → TESTING.
+Nothing VALIDATED.
+
+**Needs a logged-in / human pass:** Allied LinkedIn (`allied-solutions-pte-ltd`) + Facebook
+(`alliedsolutionsg`) cadence / recency / engagement / format mix; individual Allied employees
+posting about MES; Allied paid ads; any Mandarin / BM / Penang-local Allied content behind a
+login; whether Allied has appeared in a real Mysoft deal; whether the owner has named a
+founder / technical lead; whether Mysoft holds MD status.
+

@@ -29,6 +29,9 @@ research pass — the daily run analyses only the competitor(s) listed here.
   `08_DECISIONS/brain_update_proposals.md`).
 - `allied-solutions-global.md` is 100% human-supplied content, copied verbatim. The Brain
   has added nothing to it.
+- `mysoft-vs-allied-comparison.md` (added 2026-09-04) — the Brain's head-to-head analysis:
+  where Allied is stronger, where Mysoft can win, where not to compete. Kept separate so the
+  verbatim profile stays untouched.
 - `competitor_gaps.md` and `competitor_patterns.md` were built on the retired 14-competitor
   set and have been reset to stubs pending re-analysis against the new set.
 - `competitor_template.md` (the blank profile template) is retained.
