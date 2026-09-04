@@ -20,6 +20,13 @@ research pass — the daily run analyses only the competitor(s) listed here.
 
 ## NOTES
 
+- **Digiwin / DigiwinSoft / DigiwinSoft Malaysia / Digiwin AIoT is a Mysoft MES PARTNER and
+  technology supplier — NOT a competitor** (owner instruction, 2026-09-04). It must never be
+  added to this index or profiled in `04_COMPETITORS/`, and never analysed as competition.
+  The pre-2026-09-04-reset research that tracked "DigiwinSoft" as a competitor / "local
+  content leader" was wrong; those files are superseded and carry corrections. Digiwin
+  signals belong in `01_BUSINESS/products.md` / `positioning.md` (via
+  `08_DECISIONS/brain_update_proposals.md`).
 - `allied-solutions-global.md` is 100% human-supplied content, copied verbatim. The Brain
   has added nothing to it.
 - `competitor_gaps.md` and `competitor_patterns.md` were built on the retired 14-competitor

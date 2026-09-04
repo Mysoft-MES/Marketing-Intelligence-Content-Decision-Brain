@@ -23,6 +23,12 @@ via a refinement note appended to `06_PERFORMANCE/learning_log.md`.
 
 See `00_SYSTEM/daily_operating_spec.md` §9A for the stage definition.
 
+> **Correction (owner, 2026-09-04):** the retired **2026-09-04 (first run)** entry below
+> names **DigiwinSoft** as a competitor / "content leader" to beat. That is wrong. **Digiwin /
+> DigiwinSoft is a Mysoft MES partner / technology supplier, never a competitor.** Past
+> entries are not rewritten (running-log rule), but disregard every Digiwin competitor
+> reference. See `04_COMPETITORS/competitor_index.md` NOTES.
+
 ---
 
 ## Entry template
@@ -298,3 +304,97 @@ first-party data. Nothing here is VALIDATED.
 **Needs a logged-in / human pass:** competitor post cadence/recency/engagement; individual
 employees posting about MES; whether any competitor appears in a real Mysoft deal; whether
 Mysoft holds MD status (for SmartMFG+).
+
+
+---
+
+## 2026-09-04 (fourth run — platform copy-style / audience-age synthesis + Allied comparison)
+
+> This run produced one new reference doc — `03_PLATFORM/copywriting_style_and_audience_age.md`
+> (how the copy should sound and which age / seniority band it addresses on each channel) —
+> and compares that against the one tracked competitor, Allied Solutions Global / ASPL, on
+> **copywriting register and audience targeting** specifically. It is a synthesis pass, no
+> new external research.
+
+### Half 1 — Our performance
+
+No change. No first-party performance data — zero published posts.
+`analyze_posting_time_performance` returns nothing for every platform;
+`record_post_performance` has no records. Approved-for-production (PR #1, merged
+2026-09-04): LI-C1, IG-01, IG-02, FB-03, FB-04, IG-04 — none produced, none published, so
+nothing to measure. No new generation prompt this run and no approval PR opened (the
+synthesis did not open a content opportunity — see `08_DECISIONS/analysis_log.md`).
+
+### Half 2 — Competitor comparison — copywriting style & audience targeting
+
+Only tracked competitor: **Allied Solutions Global / ASPL**. Public sources only; no
+logged-in pass (still the top open competitor task, now four runs overdue).
+
+| Dimension | Allied Solutions Global (observed) | Mysoft intended (per Brain) | Read |
+|---|---|---|---|
+| **Voice / register** | Corporate, unbylined, plain-English explainer. Competent and clear. "Monitor, Control, Optimise" / "One platform, every operations challenge". Increasingly leans on "no-code", "web-native", "AI-driven optimisation", "IIoT". | Plain-spoken, problem-first, shop-floor-colleague tone; deliberately *underplays* the technology (`hook_library.md` — "you don't need a new ERP, you need one clear answer"). | Mysoft's intended voice is **more distinct the more Allied leans on platform/AI vocabulary.** Do not converge on that language. |
+| **Audience addressed** | Regional buyer in general — "manufacturers in Singapore, Malaysia, Vietnam". Role-agnostic. Compliance / OEE / ROI framing implies a manager-to-exec reader. | Explicitly role- and age-split by channel (new reference doc): FB = 35+ owners/GMs, Mandarin; LI = under-45 researchers, carousel; IG = younger influencers, visual. | Allied does **not** segment copy by platform or age. That segmentation is open space for Mysoft — if Mysoft actually executes it. |
+| **Language** | English only. No Mandarin, no BM, no Penang-local content found. | English + Mandarin (FB), English/BM (IG), Mandarin (XHS white space). | **Mandarin / BM / Penang-local is uncontested.** Allied's KL+Penang offices publish in English only from public sources. |
+| **Format range** | Long-form articles + downloadable guides + webinars. No short vertical video, no carousel, no named-person posts. | Short vertical video (FB/IG), 8–12-slide LinkedIn carousel, named-person LinkedIn (blocked on owner). | Format white space holds — carousel and short-form are both empty against Allied. |
+| **Funnel coverage** | Complete, connected: what-is-MES → MES-vs-ERP → buyer's guide → how-to-choose → implementation guide → ROI/cost. | Zero published assets. | Allied owns "explain MES well for the region". Mysoft cannot win that by publishing the same later. |
+
+**Where Mysoft is behind:** publishing at all; complete buyer-journey funnel; being first on
+the plain-language register in this region.
+
+**Where competitors are weak / white space holds (copy & audience angle):**
+1. **Platform- and age-specific copy.** Allied writes one register for one generic buyer.
+   Mysoft's new reference doc defines a different voice, format and CTA per channel and age
+   band — a real differentiator *if produced*, worthless as a document alone.
+2. **Mandarin / Bahasa Malaysia / Penang-local.** Completely uncontested by Allied.
+3. **Named-person voice.** Allied is 100% corporate/unbylined and fully exposed to the 2026
+   company-page reach penalty (−60–66%; employee posts ~+561%). Still blocked on the owner
+   naming a person (`current_priorities.md` item 1).
+4. **A sharper problem frame.** Allied leads with OEE / downtime / compliance / ERP-connectivity.
+   It does **not** lead with "can management verify what actually happened on the floor?" —
+   Mysoft's intended reporting-reliability / verifiability territory (`swot.md` §12, `positioning.md` §32).
+
+**What competitors tried that flopped:** nothing observable. Standing caution unchanged —
+Allied's explainer content is genuinely good; Mysoft must win on *shape* (named person /
+short-form / carousel / Mandarin / Penang-local) or *problem frame* (verifiability), not by
+re-publishing guides.
+
+### Suggestions to beat them (feed next Research + Prompting)
+
+1. **Make the new copy-style / audience-age reference the standing spec for every prompt.**
+   Its value is only realised when a caption or a generation prompt is actually written to
+   the right voice + age band + CTA friction for its channel. Add it to the Prompting-stage
+   read list alongside `build_prompt_context`.
+2. **When the FB/IG September Reels are produced, hold the line on the register split:** FB
+   copy plain + Mandarin + Click-to-WhatsApp; IG copy minimal + visual-led + save/DM ask;
+   never the same caption on both (`brain_rules.md` §7). This is a direct, cheap
+   differentiator vs Allied's single-register approach.
+3. **Prioritise one Mandarin or Penang-local asset** in the next content cycle — it is the
+   most defensible uncontested space and Allied has a Penang office but no local-language
+   content on public record.
+4. **Logged-in Allied audit is now four runs overdue** — cadence, recency, engagement,
+   format mix, individual employees, paid ads on `allied-solutions-pte-ltd` /
+   `alliedsolutionsg`. Every "white space holds" line is still public-sources-only.
+5. **Name the founder / technical lead** (`current_priorities.md` item 1) — unchanged, still
+   the single blocker on the named-person LinkedIn direction and still an empty lane vs Allied.
+
+### Refinement written to learning_log.md this run
+
+> **REFINEMENT (2026-09-04, fourth run):** A per-channel copy-style + audience-age reference
+> now exists (`03_PLATFORM/copywriting_style_and_audience_age.md`). From next cycle, the
+> Prompting stage must read it before writing any caption or generation prompt, and every
+> drafted asset must state, in the prompt file, which platform voice / age band / CTA-friction
+> row it is written to — so the evidence-to-creative chain (`daily_operating_spec.md` §9.4)
+> includes *audience fit*, not just the derived-from research entry. A prompt that does not
+> name its target row is not finished. This does not add a content asset; it tightens how the
+> existing prompting gate is run.
+> Source: `06_PERFORMANCE/competitive_benchmark.md` 2026-09-04 (fourth run).
+
+**Confidence:** LOW-MEDIUM — Allied side is public sources only, no engagement data, single
+competitor; Mysoft side has zero first-party audience or performance data, and the copy-style
+reference is entirely external → TESTING. Nothing here is VALIDATED.
+
+**Needs a logged-in / human pass:** Allied LinkedIn/Facebook cadence, recency, engagement,
+format mix; individual Allied employees posting about MES; Allied paid advertising; whether
+Allied publishes any Mandarin / BM / Penang-local content behind a login; whether the owner
+has named a founder / technical lead; Mysoft's own audience age data once a channel produces any.
+

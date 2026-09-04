@@ -15,6 +15,12 @@ and why — which the prompting stage then executes.
 
 See `00_SYSTEM/daily_operating_spec.md` §4A for the stage definition.
 
+> **Correction (owner, 2026-09-04):** where the 2026-09-04 (second run) entry refers to the
+> "retired benchmark's content leader (DigiwinSoft)", note that **Digiwin / DigiwinSoft is a
+> Mysoft MES partner / technology supplier, not a competitor** — the earlier benchmark that
+> framed it as one was wrong. Past entries are not rewritten. See
+> `04_COMPETITORS/competitor_index.md` NOTES.
+
 ---
 
 ## Entry template
@@ -216,3 +222,55 @@ platform figures are external benchmarks (TESTING).
   individual employees posting about MES — still not done.
 - Any of the 14 competitors appearing in a real Mysoft deal (needs owner/sales input) —
   every competitive implication remains HYPOTHESIS without it.
+
+
+## 2026-09-04 (fourth run — copy-style / audience-age synthesis)
+
+**Research read:** `03_PLATFORM/facebook.md`, `03_PLATFORM/instagram.md`,
+`03_PLATFORM/linkedin.md`, `03_PLATFORM/platform_index.md`, `02_AUDIENCE/audience_matrix.md`,
+`02_AUDIENCE/general_manager.md`, `01_BUSINESS/company_profile.md` §30 / §9–19,
+`04_COMPETITORS/allied-solutions-global.md`. Context: the three earlier 2026-09-04 entries;
+`06_PERFORMANCE/competitive_benchmark.md` 2026-09-04 (fourth run).
+**Prior refinement applied:** `06_PERFORMANCE/learning_log.md` REFINEMENT (2026-09-04, third
+run) — named-person gate is a yes/no check only (checked this run: **still NO named person**;
+not rebuilt), and the logged-in Allied audit is the priority (still not possible without
+authentication).
+
+**What the findings mean:**
+- The platform and audience files already contained the per-channel voice and age split; it
+  was scattered across five files and never stated as one spec. Pulling it together —
+  `03_PLATFORM/copywriting_style_and_audience_age.md` — is a **synthesis, not new evidence**:
+  Facebook = 35+ owners/GMs, plain + Mandarin, Click-to-WhatsApp; LinkedIn = under-45
+  researchers, technical read-through, carousel, no demo ask; Instagram = younger influencers
+  who don't sign off, visual-first, save/DM ask.
+- Against Allied Solutions Global this sharpens an existing white space rather than opening a
+  new one: Allied writes **one register for one generic regional buyer**, English only, no
+  short-form, no carousel, no named person. Per-platform + per-age copy, and Mandarin / BM /
+  Penang-local, are uncontested — **but only as execution, not as a document.**
+- Per `brain_rules.md` §31 and `evidence_rules.md` §38, producing a new content asset to
+  "act on" this synthesis would be a content-factory move. The correct output is a tighter
+  prompting spec (the reference doc + the refinement note), not a post.
+
+**Content decision:**
+- **Nothing new to publish this run.** No new generation prompt, no approval PR opened.
+- **Test / operating change:** from next cycle the Prompting stage reads
+  `03_PLATFORM/copywriting_style_and_audience_age.md` before writing any caption or prompt,
+  and each drafted asset names the platform-voice / age-band / CTA row it targets. Recorded
+  as the 2026-09-04 (fourth run) REFINEMENT in `learning_log.md`.
+- The already-approved FB/IG September Reels (FB-03, FB-04, IG-01, IG-02, IG-04) are the
+  first assets this spec applies to when they are produced — FB copy plain + Mandarin +
+  Click-to-WhatsApp; IG copy minimal + visual-led + save/DM; never the same caption on both.
+
+**Confidence:** LOW — `08_DECISIONS/current_priorities.md` still carries no owner-set business
+priorities and `sales_insights.md` still records pre-revenue / zero customers / zero demo
+notes. The copy-style reference is entirely external benchmark → TESTING. Nothing validated
+against Mysoft audience, sales or performance data.
+
+**Open questions handed to the next Research run:**
+- Logged-in Allied social audit (`allied-solutions-pte-ltd`, `alliedsolutionsg`) — cadence,
+  recency, engagement, format mix, individual employees, paid ads; and whether Allied runs
+  any Mandarin / BM / Penang-local content behind a login. Four runs overdue.
+- Has the owner named a founder / technical lead? (carried)
+- Any Mysoft first-party audience-age / follower data once a channel produces some.
+- Does Mysoft hold Malaysia Digital (MD) status? (carried — SmartMFG+ actionability)
+

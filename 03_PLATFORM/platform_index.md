@@ -6,6 +6,8 @@ Last updated: 2026-09-04.
 
 Platform files hold durable platform behaviour and strategy, not individual posts. Dated calendars live in `05_CREATIVE/content_calendars/`.
 
+For **how the copy should sound and which age / seniority band it addresses on each channel**, see `03_PLATFORM/copywriting_style_and_audience_age.md` (cross-platform reference, added 2026-09-04).
+
 ---
 
 | Platform | Role | Priority | Primary audience | Evidence status | Detail |

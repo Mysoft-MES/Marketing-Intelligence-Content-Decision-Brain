@@ -1,5 +1,11 @@
 # Platform Trends × Full Competitor Landscape (14 Verified) — Directional Analysis
 
+> **SUPERSEDED 2026-09-04.** Built on the retired 14-competitor set; `competitor_index.md`
+> was reset to Allied Solutions Global only. Retained for provenance, not current evidence.
+> **Correction (owner, 2026-09-04):** this file lists **DigiwinSoft** as a competitor
+> ("enterprise/global tier", §1 and §5). Digiwin / DigiwinSoft is a **Mysoft MES partner /
+> technology supplier**, not a competitor — disregard that framing.
+
 Date: 2026-09-01
 Inputs: `03_PLATFORM/*.md` (Facebook, Instagram, LinkedIn, Reddit, Xiaohongshu, YouTube) + all 14 verified `04_COMPETITORS/*.md` profiles (8 from the earlier session pass + 6 newly verified this pass: SOFtronix, Blue Ocean Data Solutions, VISI/VSys MyKilang, ASPL/Allied Solutions, XTS Technologies, Zoomo Tech)
 Related prior analysis: `07_RESEARCH/19.md` (same-day earlier pass, 8-competitor version — this file supersedes its competitor count but its LinkedIn/founder-content finding still stands and is not repeated in full here)

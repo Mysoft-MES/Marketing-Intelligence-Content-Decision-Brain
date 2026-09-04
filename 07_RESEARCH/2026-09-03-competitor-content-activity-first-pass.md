@@ -1,5 +1,12 @@
 # Competitor content & social activity — first-pass audit
 
+> **SUPERSEDED 2026-09-04.** Covered the retired 14-competitor set; `competitor_index.md`
+> was reset to Allied Solutions Global only. Retained for provenance, not current evidence.
+> **Correction (owner, 2026-09-04):** Finding F1 below wrongly treats **DigiwinSoft Malaysia /
+> Digiwin as a competitor** ("local content leader"). Digiwin is a **Mysoft MES partner /
+> technology supplier**, not a competitor. Disregard all Digiwin competitor framing here and
+> in `2026-09-01-competitor-landscape-directional-analysis.md`.
+
 - **Type:** Standalone research pass (competitor landscape — content/social dimension)
 - **Date:** 2026-09-03
 - **Access date:** 2026-09-03

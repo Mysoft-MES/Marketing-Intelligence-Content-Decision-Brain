@@ -64,3 +64,21 @@ Next cycle: the **logged-in Allied Solutions Global social audit** is the priori
 task (overdue three runs); the named-person LinkedIn gate is a yes/no check only, not to be
 re-analysed.
 Source: `06_PERFORMANCE/competitive_benchmark.md` 2026-09-04 (third run).
+
+
+## 2026-09-04 (fourth run — copy-style / audience-age synthesis)
+**REFINEMENT (2026-09-04, fourth run):** A per-channel copy-style + audience-age reference now
+exists (`03_PLATFORM/copywriting_style_and_audience_age.md`) — how the copy should sound and
+which age / seniority band it addresses on Facebook (35+ owners/GMs, Mandarin,
+Click-to-WhatsApp), LinkedIn (under-45 researchers, technical read-through, carousel, no demo
+ask) and Instagram (younger influencers who don't sign off, visual-first, save/DM ask). From
+next cycle, the Prompting stage must **read it before writing any caption or generation
+prompt**, and every drafted asset must state in its prompt file which platform-voice / age-band
+/ CTA-friction row it targets — so the evidence-to-creative chain includes audience fit, not
+just the derived-from research entry. A prompt that does not name its target row is not
+finished. No content asset added this run; this tightens how the existing prompting gate runs.
+Still carried and unchanged: the named-person LinkedIn gate is a yes/no owner check only (do
+not re-analyse); the logged-in Allied Solutions Global social audit (`allied-solutions-pte-ltd`,
+`alliedsolutionsg`) is the priority research task and is now four runs overdue.
+Source: `06_PERFORMANCE/competitive_benchmark.md` 2026-09-04 (fourth run).
+

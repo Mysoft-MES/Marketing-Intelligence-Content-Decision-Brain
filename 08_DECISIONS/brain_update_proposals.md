@@ -323,3 +323,49 @@ routing table. ~30 existing files/folders had no defined home.
 **Still open (not resolved by this edit):** Proposal 3 (prompt.md vs
 daily_operating_spec.md overlap), Proposal 2 (social scorecard), Proposals 4–6.
 
+
+---
+
+## 2026-09-04 — Proposal: record the Digiwin partnership in the business files
+
+**Raised by:** daily run, on explicit owner instruction 2026-09-04 ("always remember Digiwin
+is our partnership not competitor").
+
+**Target files (protected — owner applies):**
+- `01_BUSINESS/products.md` — technology ownership section (§7 area, "Mysoft-owned vs
+  Digiwin/supplier")
+- `01_BUSINESS/positioning.md` — "what must not be claimed" / differentiation
+- `01_BUSINESS/company_profile.md` §33 (Competitive environment) — explicitly exclude Digiwin
+
+**Reasoning:** The Brain currently references "Digiwin" only obliquely as a supplier and had
+(pre-2026-09-04 reset) wrongly tracked "DigiwinSoft" as a competitor. The owner has confirmed
+Digiwin is a **partner / technology supplier**. This needs to be stated positively in the
+business files so no future research pass re-adds it to `04_COMPETITORS/`.
+
+**Proposed change — exact text to add to `products.md` (new subsection under the technology
+ownership area):**
+
+> ### Digiwin — technology partner
+>
+> Digiwin (Taiwan-origin; Malaysian operation "DigiwinSoft Malaysia") is a **Mysoft MES
+> partner and technology supplier**, not a competitor. Mysoft MES integrates with the
+> **Digiwin AIoT** layer for the broader IIoT / production-data environment. Capabilities
+> that originate from Digiwin must be labelled "Digiwin / supplier", not presented as
+> Mysoft-owned. The exact partnership terms (technology licence / OEM / reseller /
+> implementation / co-sell) are **TO VERIFY** — the owner to supply.
+
+**Proposed change — `positioning.md`:** add to the "what must not be claimed" list —
+> Do not describe Digiwin-originated capabilities as native Mysoft MES features; do not
+> narrate the Digiwin AIoT upload mechanism (fields / method / architecture / frequency are
+> TO VERIFY, `products.md` §7).
+
+**Proposed change — `company_profile.md` §33:** add a line —
+> Digiwin / DigiwinSoft is a **partner**, not part of the competitive set.
+
+**Status:** PROPOSED — awaiting owner. The owner also needs to state the partnership's actual
+nature so "TO VERIFY" can be replaced.
+
+**Already done directly (allowed folders):** `04_COMPETITORS/competitor_index.md` NOTES now
+states Digiwin is a partner and must never be tracked as a competitor; the two superseded
+competitor-landscape research files and the `competitive_benchmark.md` / `analysis_log.md`
+headers carry a correction note.
