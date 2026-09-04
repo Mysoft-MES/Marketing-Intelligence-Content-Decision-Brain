@@ -43,6 +43,22 @@ Practical, grounded, shot on a real floor with real stations. The framing is "le
 ## CTA
 "Save this." No hard CTA.
 
+## Caption (publish copy) — DRAFT
+
+Station 1: no more clipboard. Here's what replaces it.
+
+Station by station — the manual step that goes away, and the structured entry that takes its place:
+– Station 1 — Before: write job + start time on the traveller. After: select the job, confirm the station.
+– Station 2 — Before: tally quantity on paper. After: enter quantity against the job.
+– Station 3 — Before: initial the sheet. After: operator and timestamp recorded with the entry.
+– Station 4 — Before: mark "done" on the clipboard. After: update status on the record.
+
+Same information — structured, stamped, and retrievable.
+
+Save this.
+
+#manufacturing #paperlessproduction #productionmanagement #shopfloor #manufacturingmalaysia
+
 ## Hypothesis
 WE BELIEVE a station-by-station "what replaces the clipboard" breakdown FOR production managers ON Instagram WILL earn watch-through and saves BECAUSE it answers the concrete "what actually changes on my floor" question that abstract digitalisation content skips.
 
