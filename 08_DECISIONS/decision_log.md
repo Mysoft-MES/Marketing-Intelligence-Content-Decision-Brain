@@ -90,6 +90,72 @@ reaches `main`.
 
 
 
+## 2026-09-03 — Operating loop gains a second analysis stage (v2.1, owner-instructed)
+
+**Decision:** APPROVED by the human owner in an interactive session, 2026-09-03. Explicit
+in-session instruction is the human approval the autonomy rule requires for the
+`00_SYSTEM/` (protected) change.
+
+**What changed — the loop now has TWO analysis stages, not one:**
+
+- **Analysis #1 ("Researching")** — runs after Research and before Prompting. An
+  interpretation pass (no new sources) that turns the run's findings into an explicit
+  content decision (Create / Test / Monitor / Nothing). Output → new file
+  `08_DECISIONS/analysis_log.md`, one dated entry per run. The prompting stage executes
+  this decision.
+- **Analysis #2 ("Posting")** — runs after the prompting stage. Two halves: (1) our own
+  performance review; (2) a competitor comparison — our posts / ads / cadence / formats /
+  angles vs the 14 verified MES competitors' content activity — producing a numbered
+  "Suggestions to beat them" list. Output → new file
+  `06_PERFORMANCE/competitive_benchmark.md`, plus one dated `REFINEMENT:` note appended to
+  `06_PERFORMANCE/learning_log.md`.
+- **The loop is closed.** Every run reads the previous run's most recent `REFINEMENT:`
+  note (and the last benchmark suggestions + last analysis_log open questions) at bootstrap
+  and applies them to that run's Research and Prompting. This is how "Research refers to
+  Analysis #2".
+- **Research full sweep** now includes a competitor **content/social** audit as deep as
+  public/non-authenticated sources allow, flagging what needs a logged-in pass. Owner will
+  supplement with first-hand competitor information separately.
+- **Third autonomous GitHub push** added, carrying the Analysis #2 output. Push order:
+  research → analysis #1 + prompts → competitive benchmark + refinement.
+
+**Files edited (direct, on explicit owner instruction):**
+- `00_SYSTEM/daily_operating_spec.md` → v2.1 (header note, new §2A, §3, §4, new §4A, §5,
+  new §9A, §10)
+- `.claude/scheduled-tasks/marketing-brain-daily/SKILL.md` → new §4A, §5, §6, new §6A,
+  §1 bootstrap step 5, §2 competitor-content line, §9/§10
+- `08_DECISIONS/analysis_log.md` → created
+- `06_PERFORMANCE/competitive_benchmark.md` → created
+- `06_PERFORMANCE/learning_log.md` → refinement-note convention added to the header
+
+**Limits kept hard:** unchanged — no direct writes to `00_SYSTEM/`/`01_BUSINESS/` by a run,
+no social publishing, no spend, nothing APPROVED/VALIDATED without the stated gate, no
+remote deletions.
+
+**Effect on tomorrow's run (2026-09-04):** first run under v2.1. No prior `REFINEMENT:`
+note exists, so bootstrap notes that and proceeds with a normal full sweep. Analysis #1
+runs normally. Analysis #2 Half 1 = "no first-party performance data yet"; Half 2 runs on
+whatever the competitor content audit produces.
+
+**Follow-up not done this session:** `CLAUDE.md` (protected) still describes the
+single-analysis state — noted in `08_DECISIONS/brain_update_proposals.md` for the owner to
+apply.
+
+---
+
+## 2026-09-03 — Content approval panel — attempted, then abandoned (owner-instructed)
+
+A web approval panel (published Artifact with a `db` store, Approve/Reject/Changes buttons)
+was built and seeded on 2026-09-03 so the owner could tap decisions and have the daily run
+apply them. The panel UI would not load its data runtime in the owner's viewer, so the
+owner asked to stop and remove it the same session. All wiring was reverted:
+`00_SYSTEM/daily_operating_spec.md`, the scheduled-task SKILL.md, and the local panel files
+were returned to their pre-panel state. The Human-checking gate stays manual — edit the
+prompt file's `Status` and log it here (see `05_CREATIVE/generation_prompts/README.md`).
+The artifact itself is deleted by the owner from claude.ai.
+
+---
+
 ## 2026-09-03 — swot.md restored, sales_insights.md populated (owner-instructed)
 
 **Decision:** APPROVED by the human owner in an interactive session, 2026-09-03. Both are
@@ -116,3 +182,101 @@ and keeps an empty entry log.
 (pre-customer), so the quantified case-study format stays unavailable and
 `customer_objections.md` stays all-HYPOTHESIS.
 
+---
+
+## 2026-09-04 — Generation-prompt approval is now a GitHub Pull Request (the "human checking" node)
+
+**Decision:** APPROVED by the human owner in an interactive session, 2026-09-04 ("Can you do
+it all"). Explicit in-session instruction is the human approval the autonomy rule requires
+for the `00_SYSTEM/` (protected) changes.
+
+**Problem:** the loop's "human checking" node (Prompting → Generating → *Human checking* ─No─↺
+; Yes → Posting) had no screen — a human had to hand-edit `**Status:**` in each prompt file.
+The owner asked for an Approve/Deny action reachable from the daily notification email. A
+first attempt (published Artifact + `db` store) was abandoned 2026-09-03 because the Artifact
+data runtime would not load in the owner's viewer.
+
+**What changed:**
+- Generation prompts are **no longer pushed to `main` by the daily run**. New/regenerated
+  DRAFT prompts go onto a branch `approvals/<run_date>` and the run opens a **Pull Request**
+  to `main`. Merge = approve all; comment `deny <POST-ID>: <reason>` then merge = reject
+  those; close = reject all.
+- Next run (and an optional same-day apply run) reads the PR and applies the decision:
+  approved → status flipped to APPROVED, logged here; denied → logged to
+  `08_DECISIONS/rejected_ideas.md` and regenerated into the next PR.
+- A **merged PR is** the explicit human confirmation §3 requires. Nothing else sets a prompt
+  APPROVED.
+
+**Files edited / created:**
+- `server.py` — four new tools: `list_generation_prompt_status`, `open_prompt_approval_pr`,
+  `get_prompt_approval_pr`, `apply_prompt_decision` (offline; PR tools reuse the existing
+  GitHub Data-API helpers).
+- `00_SYSTEM/daily_operating_spec.md` → v2.2 (header note, §2A step 4, §3, §9 step 8, §10,
+  new §13, new §14).
+- `00_SYSTEM/apply_approvals_runbook.md` → created (same-day apply run).
+- `APPROVAL_UI.md` (repo root) → created (operator doc + scheduled-task SKILL.md text block).
+- `05_CREATIVE/generation_prompts/README.md` → approval section + status vocabulary.
+- `.claude/settings.local.json` → allow-rules for the four new tools.
+
+**Limits unchanged:** no direct writes to `00_SYSTEM/`/`01_BUSINESS/` by a run; no social
+publishing; no spend; nothing VALIDATED without the sample-size gate; no remote deletions.
+The PR flow *adds* a gate.
+
+**Follow-up owned by the human:** (1) paste the SKILL.md text block from `APPROVAL_UI.md`
+into the Claude-desktop scheduled task; (2) optionally create the 14:00 MYT same-day
+apply OS task; (3) `CLAUDE.md` still predates this — proposal in `brain_update_proposals.md`.
+
+
+## 2026-09-04
+## Decision — Generation prompt LI-C1 (LinkedIn, 2026-09-03): APPROVED (2026-09-04)
+
+**Date:** 2026-09-04
+**Decision:** Move generation prompt `05_CREATIVE/generation_prompts/2026-09-03-linkedin-LI-C1.md` from DRAFT to APPROVED for production.
+**Context:** Human approval recorded via the approval Pull Request (human via approval PR #1 (merged 2026-09-04)).
+**Evidence:** As stated in the prompt's Evidence basis section. Approval authorises production of the asset, not publication.
+**Approved by:** human via approval PR #1 (merged 2026-09-04), 2026-09-04.
+
+## 2026-09-04
+## Decision — Generation prompt IG-01 (Instagram, 2026-09-09): APPROVED (2026-09-04)
+
+**Date:** 2026-09-04
+**Decision:** Move generation prompt `05_CREATIVE/generation_prompts/2026-09-09-instagram-IG-01.md` from DRAFT to APPROVED for production.
+**Context:** Human approval recorded via the approval Pull Request (human via approval PR #1 (merged 2026-09-04)).
+**Evidence:** As stated in the prompt's Evidence basis section. Approval authorises production of the asset, not publication.
+**Approved by:** human via approval PR #1 (merged 2026-09-04), 2026-09-04.
+
+## 2026-09-04
+## Decision — Generation prompt IG-02 (Instagram, 2026-09-17): APPROVED (2026-09-04)
+
+**Date:** 2026-09-04
+**Decision:** Move generation prompt `05_CREATIVE/generation_prompts/2026-09-17-instagram-IG-02.md` from DRAFT to APPROVED for production.
+**Context:** Human approval recorded via the approval Pull Request (human via approval PR #1 (merged 2026-09-04)).
+**Evidence:** As stated in the prompt's Evidence basis section. Approval authorises production of the asset, not publication.
+**Approved by:** human via approval PR #1 (merged 2026-09-04), 2026-09-04.
+
+## 2026-09-04
+## Decision — Generation prompt FB-03 (Facebook, 2026-09-22): APPROVED (2026-09-04)
+
+**Date:** 2026-09-04
+**Decision:** Move generation prompt `05_CREATIVE/generation_prompts/2026-09-22-facebook-FB-03.md` from DRAFT to APPROVED for production.
+**Context:** Human approval recorded via the approval Pull Request (human via approval PR #1 (merged 2026-09-04)).
+**Evidence:** As stated in the prompt's Evidence basis section. Approval authorises production of the asset, not publication.
+**Approved by:** human via approval PR #1 (merged 2026-09-04), 2026-09-04.
+
+## 2026-09-04
+## Decision — Generation prompt FB-04 (Facebook, 2026-09-29): APPROVED (2026-09-04)
+
+**Date:** 2026-09-04
+**Decision:** Move generation prompt `05_CREATIVE/generation_prompts/2026-09-29-facebook-FB-04.md` from DRAFT to APPROVED for production.
+**Context:** Human approval recorded via the approval Pull Request (human via approval PR #1 (merged 2026-09-04)).
+**Evidence:** As stated in the prompt's Evidence basis section. Approval authorises production of the asset, not publication.
+**Approved by:** human via approval PR #1 (merged 2026-09-04), 2026-09-04.
+
+## 2026-09-04
+## Decision — Generation prompt IG-04 (Instagram, 2026-09-30): APPROVED (2026-09-04)
+
+**Date:** 2026-09-04
+**Decision:** Move generation prompt `05_CREATIVE/generation_prompts/2026-09-30-instagram-IG-04.md` from DRAFT to APPROVED for production.
+**Context:** Human approval recorded via the approval Pull Request (human via approval PR #1 (merged 2026-09-04)).
+**Evidence:** As stated in the prompt's Evidence basis section. Approval authorises production of the asset, not publication.
+**Approved by:** human via approval PR #1 (merged 2026-09-04), 2026-09-04.

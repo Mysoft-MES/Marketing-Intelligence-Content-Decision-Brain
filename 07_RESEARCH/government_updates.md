@@ -81,6 +81,24 @@ effective date, businesses affected and possible business/marketing impact.
   - **Exemption threshold raised from RM500,000 to RM1,000,000** turnover, effective
     **1 January 2026** — businesses below RM1m turnover are exempt.
   - **Phase 5 was cancelled** following a Prime Minister announcement on **7 December 2025**.
+  - **2026-09-04 update — relaxation end-date resolved to 31 December 2027.** The
+    2026-09-03 note below flagged the Phase 4 relaxation cut-off as contested (end-2026 vs
+    end-2027). Multiple tax-advisory sources now **agree**: in **April 2026 the IRBM
+    extended the Phase 4 penalty-free relaxation by a further 12 months, to 31 December
+    2027**. During it, RM1m–5m businesses may issue consolidated monthly e-invoices and
+    Section 120 penalties are not enforced, **provided** the business has registered on
+    MyInvois and made a genuine compliance effort. The **RM10,000 per-transaction rule is
+    NOT relaxed** and has been enforced since 1 January 2026 (any single transaction ≥
+    RM10,000 needs its own individual e-invoice). Still tax-advisory secondary sources, not
+    primary LHDN text — but they no longer disagree. Sources (accessed 2026-09-04): ClearTax
+    MY — e-Invoice implementation date & relaxation
+    (https://www.cleartax.com/my/en/different-phases-implementation-timelines-einvoicing-malaysia);
+    JomeInvoice — RM10,000 e-Invoice rule
+    (https://jomeinvoice.my/article/rm10000-e-invoice-rule-malaysia/);
+    Axxis Consulting — LHDN e-Invoicing 2026 update
+    (https://axxis-consulting.com/lhdn-e-invoicing-2026-update/);
+    SteadyDevs — LHDN e-Invoice Phase 3/4 small-business (mid-2026 update)
+    (https://steadydevs.com/blog/lhdn-einvoice-phase-3-4-small-business-2026.html).
 - **Effective date:** 1 January 2026 (Phase 4 start); relaxation to 31 December 2027.
 - **Businesses affected:** Smaller Malaysian manufacturers in the RM1m–RM5m band — a
   segment overlapping Mysoft's SME target. Sub-RM1m firms now out of scope.
@@ -92,7 +110,8 @@ effective date, businesses affected and possible business/marketing impact.
   Keep this as adjacency, not a compliance claim; Mysoft MES is not an e-Invoice solution.
 - **Evidence type:** INDUSTRY SOURCE (secondary, tax-advisory).
 - **Confidence:** MEDIUM (phase structure is widely and consistently reported);
-  LOW-MEDIUM on enforcement/penalty dates.
+  MEDIUM on the relaxation cut-off as of 2026-09-04 (sources now agree on 31 Dec 2027,
+  up from LOW-MEDIUM / contested on 2026-09-03); still no primary LHDN read.
 - **Contradicting evidence:** Sources differ on full-enforcement/penalty start for
   Phase 4 — variously "1 January 2027" (penalties) and "1 January 2028" (full
   enforcement). **2026-09-03:** the relaxation *end date* is now itself contested —
@@ -108,7 +127,7 @@ effective date, businesses affected and possible business/marketing impact.
   (https://jomeinvoice.my/article/lhdn-e-invoice-malaysia-2026-complete-guide/);
   EasyInvoice — e-Invoice mandatory timeline
   (https://www.easyinvoice.my/blog/en/einvoice-mandatory-timeline-malaysia).
-- **Last checked:** 2026-09-02.
+- **Last checked:** 2026-09-04.
 
 ### 3. Foreign-worker policy — declining cap + Multi-Tier Levy Model
 
@@ -272,4 +291,68 @@ effective date, businesses affected and possible business/marketing impact.
   (https://www.thestar.com.my/business/business-news/2026/01/29/miti-to-implement-new-incentive-framework-from-march-2026);
   MITI — Investment incentives / Industry4WRD pages (https://www.miti.gov.my/).
 - **Last checked:** 2026-09-03.
+
+## 2026-09-04 — Research pass
+
+> Theme: light full-sweep check. Most areas re-confirmed with nothing material to add. The
+> item below was missing from the Brain and is **supply-side** — it concerns Mysoft as a
+> solution provider, not Mysoft's customers. Access date 2026-09-04.
+
+### 7. MDEC SmartMFG+ Incentive Programme — a Tech Solution Provider incentive Mysoft itself may qualify for
+
+- **Update:** MDEC runs the **SmartMFG+ Incentive Programme** under **NIMP 2030 Mission 2
+  ("Tech Up for a Digitally Vibrant Nation")**, MITI-led. It supports **Malaysia Digital
+  (MD) / MSC-status Tech Solution Providers (TSPs)** building digital solutions for the
+  manufacturing sector — domains named include **real-time production intelligence, quality
+  assurance, predictive maintenance, operational efficiency, supply-chain analytics**
+  (i.e. the MES value space). Selected TSPs get **up to 70% funding or RM75,000
+  (whichever is lower)** plus capacity-building, test-bed and go-to-market support. Part of
+  a broader MDEC push — a **RM2.9m tranche of AI + manufacturing-digitisation grants was
+  launched in July 2025**.
+- **Publication date:** MDEC media release "RM2.9 million in strategic grants…" (2025-07);
+  MDEC SmartMFG+ programme page (undated, live 2026-09-04); BusinessToday / The Sun / TNGlobal
+  coverage 2025-07-08/09.
+- **Effective date:** Programme live and open (rolling; MD-status applicants, including
+  pending applications, eligible).
+- **Businesses affected:** **Mysoft MES itself**, if it holds or obtains Malaysia Digital
+  status — and, equally, its Malaysian MES competitors, several of which are MD/MSC-status
+  (implication below).
+- **Possible marketing impact:** Two-sided.
+  1. **Operational (not content):** flag for the owner — if Mysoft has MD status, SmartMFG+
+     is a direct route to co-funded product enhancement, test-bed validation and
+     go-to-market help. Route to `08_DECISIONS/current_priorities.md` discussion, not to a
+     content calendar.
+  2. **Competitive:** subsidised competitors can lower their effective price / accelerate
+     their roadmap. Reinforces the existing read that Mysoft should not compete on price
+     alone. Not a content trigger.
+  Do **not** turn this into a "grants available" customer-facing post — it is a *provider*
+  incentive, not a buyer incentive, and conflating the two would misrepresent it.
+- **Evidence type:** PRIMARY EXTERNAL (MDEC programme page + media release) + RELIABLE
+  INDEPENDENT (BusinessToday, The Sun, TNGlobal).
+- **Confidence:** MEDIUM — programme existence and headline terms are well-sourced; whether
+  Mysoft is eligible / MD-status is UNKNOWN and needs owner input.
+- **Contradicting evidence:** None found.
+- **Evidence gaps:** Current intake status, selection criteria detail, and whether the
+  RM75k cap has moved since the 2025 launch not verified against a 2026 primary.
+- **Sources:** MDEC — SmartMFG+ Incentive Programme (https://www.mdec.my/smartmfg);
+  MDEC — "RM2.9 million in strategic grants to advance AI and industrial digitalisation"
+  (https://www.mdec.my/media-release/news-press-release/395/rm2.9-million-in-strategic-grants-to-advance-ai-and-industrial-digitalisation);
+  BusinessToday — "MDEC Launches RM2.9 Million Grant Programmes…" (2025-07-08)
+  (https://www.businesstoday.com.my/2025/07/08/mdec-launches-rm2-9-million-grant-programmes-for-ai-and-manufacturing-digitisation/).
+- **Last checked:** 2026-09-04.
+
+### 8. Evening re-sweep note (2026-09-04)
+
+Second full-sweep pass this day (after a branch reconciliation — see run summary). Findings:
+- **e-Invoice (#2):** relaxation end-date resolved to 31 Dec 2027 — updated in place above.
+- **Multi-Tier Levy (#3):** no change. Still not gazetted (latest reporting July 2026);
+  flat RM1,850/yr manufacturing levy still applies; FMM publicly urging a smooth MTLM
+  rollout. The 2026-09-03 note stands. Sources (accessed 2026-09-04): Scoop — "Manufacturers'
+  federation welcomes centralised foreign worker system, urges … MTLM rollout"
+  (https://www.scoop.my/news/293435/); Carriera — Foreign Worker Levy Malaysia 2026
+  (https://carrieragroup.com.my/foreign-worker-levy-malaysia-2026-employer-guide.html).
+- **Budget 2027 (#5):** no change. Still tabled 9 Oct 2026; SME Malaysia / ACCCIM still
+  lobbying for an outcome-driven, integrated SME productivity programme; no allocations
+  announced. Sources re-checked 2026-09-04 (BernamaBiz; cfotech.asia).
+- **NIF (#6), NIMP 2030 (#4):** no change.
 

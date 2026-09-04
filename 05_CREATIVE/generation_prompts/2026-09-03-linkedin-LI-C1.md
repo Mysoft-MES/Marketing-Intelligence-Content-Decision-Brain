@@ -1,6 +1,6 @@
 # LI-C1 — LinkedIn — 2026-09-03
 
-**Status:** DRAFT
+**Status:** APPROVED (human via approval PR #1 (merged 2026-09-04), 2026-09-04)
 **Calendar row:** none yet — this is a NEW format proposal (the September LinkedIn plan in
 `05_CREATIVE/linkedin_content_calendar_2026-09.md` is text posts only). Needs a human to
 add a carousel row or approve this as a standalone test before production.

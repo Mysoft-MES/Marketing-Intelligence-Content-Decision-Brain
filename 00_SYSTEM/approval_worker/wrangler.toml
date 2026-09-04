@@ -1,0 +1,11 @@
+name = "mysoft-approval"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+# Secrets (do NOT put values here — use `npx wrangler secret put NAME`):
+#   GH_TOKEN        fine-grained PAT, repo Mysoft-MES/Marketing-Intelligence-Content-Decision-Brain,
+#                   permissions: Contents = Read and write, Pull requests = Read and write
+#   SIGNING_SECRET  long random string; the daily run gets the same value
+
+[vars]
+MERGE_METHOD = "squash"

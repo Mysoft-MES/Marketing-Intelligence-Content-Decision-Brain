@@ -1,4 +1,190 @@
 
+## 2026-09-04
+## daily_operating_spec.md update — competitor set reset; daily run must not add new competitors
+
+**Status: APPLIED 2026-09-04** on the owner's explicit in-session instruction ("yes").
+`daily_operating_spec.md` is now v2.3 (new header note; §2A/v2.1-note "14 verified MES
+competitors" → "the competitor(s) listed in `competitor_index.md`"; §4 table competitor
+rows scoped to the listed set with an explicit no-discovery rule; §9A Half 2 scoped to
+`competitor_index.md`). Original proposal text kept below for the record.
+
+**Context:** The human owner deleted the entire prior 14-competitor set from GitHub and
+supplied one replacement competitor analysis (Allied Solutions Global / ASPL), which has
+been copied verbatim into `04_COMPETITORS/allied-solutions-global.md` (100% human-supplied,
+nothing added by the Brain). `competitor_index.md`, `competitor_gaps.md` and
+`competitor_patterns.md` have been reset. Owner instruction, verbatim: *"for 9:30 am
+research that you will conduct it later, please don't add any new competitor, just follow
+the new added by you now, and do the analysis."*
+
+**Proposed changes to `daily_operating_spec.md`:**
+
+1. Header note (new v2.x): competitor set was reset 2026-09-04; the daily run does **not**
+   discover or add new competitors. It analyses only the competitor(s) listed in
+   `04_COMPETITORS/competitor_index.md`. Adding a competitor is a human action.
+2. §4 (Research full-sweep) and §9A (Analysis #2 competitor comparison): replace every
+   "the 14 verified MES competitors" / "14 verified" reference with "the competitor(s)
+   listed in `competitor_index.md`".
+3. §4: the competitor content/social audit covers only the listed competitor(s); it does
+   not scan the market for new entrants.
+4. Routing table (§ lines ~160–161, ~237): unchanged targets, but note `competitor_gaps.md`
+   / `competitor_patterns.md` stay stubs until the tracked set is large enough again.
+
+**Why:** Keeps the automated run inside the owner's explicit scope and prevents the
+competitor list silently regrowing via research passes.
+
+---
+
+## 2026-09-04
+## daily_operating_spec.md update — PR-based human approval of generation prompts (the "human checking" node)
+
+**Status: APPLIED 2026-09-04** on the owner's explicit in-session instruction ("Can you do
+it all"). `daily_operating_spec.md` is now v2.2 (header note, §2A step 4, §3, §9 step 8, §10,
+new §13, new §14). `00_SYSTEM/apply_approvals_runbook.md` created. Recorded in
+`decision_log.md` 2026-09-04. Original proposal text kept below for the record.
+
+**Context:** The owner asked (interactive session, 2026-09-03/04) for the loop's **"human
+checking"** node — Prompting → Generating → *Human checking* ─(No)─↺ ; (Yes) → Posting — to
+be a real approval step reachable from the daily notification email, with an Approve and a
+Deny action per prompt. A prior attempt (published Artifact + `db` store) was abandoned the
+same day because the Artifact data runtime would not load in the owner's viewer
+(`decision_log.md` 2026-09-03 "Content approval panel — attempted, then abandoned"). The
+replacement uses **GitHub Pull Requests** — no artifact runtime, works from any device via
+github.com, uses the owner's existing GitHub login.
+
+**Mechanism already built (not protected, already committed/working):**
+- `server.py` new tools: `list_generation_prompt_status`, `apply_prompt_decision`,
+  `open_prompt_approval_pr`, `get_prompt_approval_pr`.
+- `apply_prompt_decision(post_id, "approve"|"deny", reason)` flips the prompt's `**Status:**`
+  line, updates the `generation_prompts/README.md` index row, and appends to
+  `08_DECISIONS/decision_log.md` (approve) or `08_DECISIONS/rejected_ideas.md` (deny). It
+  does not touch git.
+- `open_prompt_approval_pr` puts the DRAFT prompt files on branch `approvals/<run_date>` and
+  opens a PR to `main` (confirmation phrase `OPEN APPROVAL PR`). `get_prompt_approval_pr`
+  reports that PR's state + comments so a later run can apply the decision.
+- Operator documentation: `APPROVAL_UI.md` at the repo root.
+
+**Proposed edits to `daily_operating_spec.md`:**
+
+1. **§2A BOOTSTRAP** — add step 4:
+   > 4. **Apply the previous run's approval decisions.** Call
+   > `get_prompt_approval_pr(run_date=<previous run date>)`. Then:
+   > - `recommended_apply_action: approve_all` (PR merged) → `git fetch origin &&
+   >   git reset --hard origin/main`; for each `post_id`, `apply_prompt_decision(id,"approve")`;
+   >   push the status flips + `decision_log.md` to `main` (§3 atomic path).
+   > - `deny_all` (PR closed unmerged) → for each `post_id`,
+   >   `apply_prompt_decision(id,"deny", reason="PR closed without merge")`, then regenerate
+   >   each denied prompt as a fresh DRAFT addressing nothing specific (no reason given) and
+   >   include them in today's new PR.
+   > - `pending_or_partial` (PR still open) → honour only `deny <POST-ID>: <reason>` comments:
+   >   `apply_prompt_decision(id,"deny", reason=<comment reason>)`, regenerate that prompt
+   >   addressing the reason, leave the PR open for the rest.
+   > If no previous approval PR exists, say so and continue.
+
+2. **§3 AUTONOMY BOUNDARIES** — under "AUTONOMOUS GITHUB SYNC", change the prompts push:
+   > Generation prompts are **not** pushed to `main` by the run. New and regenerated DRAFT
+   > prompt files go onto branch `approvals/<run_date>` via `open_prompt_approval_pr`
+   > (confirmation `OPEN APPROVAL PR`) and wait for the owner to merge (approve) or close
+   > (reject) the PR. Research, `analysis_log.md`, `competitive_benchmark.md` and
+   > `learning_log.md` still push to `main` directly as today.
+   And under "MUST NOT DO WITHOUT EXPLICIT HUMAN CONFIRMATION", clarify:
+   > - Mark any content calendar or prompt as APPROVED. **A merged approval PR is that
+   >   confirmation for the prompts it contains** — the next run then runs
+   >   `apply_prompt_decision(...,"approve")` for each. Nothing else may set a prompt APPROVED.
+
+3. **§9 PROMPTING STAGE** — replace step 7–8:
+   > 7. Status starts DRAFT. The run never sets APPROVED.
+   > 8. After the prompting stage: push Analysis #1 to `main`, then call
+   >    `open_prompt_approval_pr(confirmation="OPEN APPROVAL PR")` with every new or
+   >    regenerated DRAFT prompt file. Record the returned `pr_url` for §10.
+
+4. **§10 NOTIFICATION** — add to the required email content:
+   > A **"REVIEW & APPROVE TODAY'S PROMPTS"** block: the approval PR URL, the list of post
+   > IDs in it, and the one-line instruction — *merge to approve all; comment
+   > `deny <POST-ID>: <reason>` then merge to reject some; close the PR to reject all.* Omit
+   > the block only on a run that drafted no prompts.
+
+5. **New §13 — HUMAN APPROVAL LOOP ("human checking" node).** Full description of the PR
+   flow, the four `server.py` tools, the branch name convention `approvals/<run_date>`, the
+   three apply paths, and the rule that a merged PR is the human confirmation §3 requires.
+   Cross-reference `APPROVAL_UI.md`.
+
+6. **Optional second scheduled run** (same-day apply) — see the companion proposal for
+   `00_SYSTEM/apply_approvals_runbook.md` below.
+
+**Limits unchanged:** no direct writes to `00_SYSTEM/`/`01_BUSINESS/`; no social publishing;
+no spend; nothing VALIDATED without the sample-size gate; no remote deletions. The PR flow
+*adds* a gate, it does not remove one.
+
+---
+
+## 2026-09-04
+## Proposed CLAUDE.md update — the approval PR gate
+
+**Status: PROPOSED — NOT APPLIED.** `CLAUDE.md` is protected.
+
+**Context:** 2026-09-04 the approval flow for generation prompts became a GitHub Pull
+Request (`decision_log.md` 2026-09-04; `daily_operating_spec.md` v2.2 §13–§14). `CLAUDE.md`
+still says "September calendars … none published" and lists prompts only as DRAFT with no
+gate described.
+
+**Proposed changes to `CLAUDE.md`:**
+1. "Autonomy boundaries" — add: generation prompts are not pushed to `main`; the daily run
+   opens an approval PR (`approvals/<date>`); a merged PR is the human confirmation that
+   moves prompts to APPROVED. Cross-reference `APPROVAL_UI.md` and `daily_operating_spec.md`
+   §13.
+2. "Known tooling hazards" — add the four approval tools and note `open_prompt_approval_pr`
+   refuses a hand-edited branch.
+3. "Current state" — note PR-based approval is live; the abandoned Artifact panel
+   (2026-09-03) is superseded.
+
+---
+
+## 2026-09-04
+## New file 00_SYSTEM/apply_approvals_runbook.md — same-day approval apply run
+
+**Status: APPLIED 2026-09-04** (owner instruction, same as the entry above). File created
+with the outline below expanded into steps §1–§5. The owner still needs to create the OS
+scheduled task (14:00 MYT suggested; task prompt in `APPROVAL_UI.md`).
+
+**Context:** The owner wants an approved prompt committed the same day, not only at the next
+09:30 run. This is a second, lightweight scheduled run that does **only** the apply step.
+
+**Proposed file content (outline):**
+- Purpose: between daily runs, apply any approval decision the owner has made on the open
+  `approvals/<date>` PR(s).
+- Steps: `know_yourself` (light) → for each open/recently-closed `approvals/*` PR:
+  `get_prompt_approval_pr(pr_number=…)` → apply per §2A step 4 logic → push to `main` →
+  `git reset --hard origin/main`. If a deny needs regeneration, do it and update that PR.
+- Then: if anything changed, append a one-line note to `06_PERFORMANCE/learning_log.md` and
+  send the owner a short email (same address, plain text) listing what was applied.
+- Boundaries: identical to the daily run. Never opens brand-new research. Never sets
+  APPROVED without a merged PR.
+- Schedule: suggested 14:00 MYT Mon–Fri, same machine/desktop-app dependency as the daily
+  run. Owner creates the OS scheduled task; the exact task prompt is in `APPROVAL_UI.md`.
+
+---
+
+## 2026-09-03
+## Proposed CLAUDE.md update — reflect the two-analysis loop (v2.1)
+
+**Status: PROPOSED — NOT APPLIED.** `CLAUDE.md` is protected.
+
+**Context:** On 2026-09-03 the owner approved adding a second analysis stage to the
+operating loop (see `decision_log.md` 2026-09-03 "Operating loop gains a second analysis
+stage"). `00_SYSTEM/daily_operating_spec.md` (v2.1) and the scheduled-task SKILL.md were
+updated. `CLAUDE.md` still implies a single end-of-loop analysis.
+
+**Proposed changes to `CLAUDE.md`:**
+1. "Read these first" — after the `daily_operating_spec.md` line, note it now defines two
+   analysis stages (§4A Analysis #1, §9A Analysis #2).
+2. "Current state" / "What is actually blocking quality" — add that Analysis #2's
+   competitor-comparison half depends on the competitor content/social audit, which is
+   still only a first pass (`07_RESEARCH/2026-09-03-competitor-content-activity-first-pass.md`).
+3. "Working conventions" — add: `08_DECISIONS/analysis_log.md` (Analysis #1 output) and
+   `06_PERFORMANCE/competitive_benchmark.md` (Analysis #2 output) get one dated entry per
+   run; each run reads the last `REFINEMENT:` note in `06_PERFORMANCE/learning_log.md` at
+   bootstrap.
+
 ## Proposed update to 00_SYSTEM/routing_rules.md
 **Reasoning:** While saving the first LinkedIn content calendar (12 posts, September 2026), no existing file in the routing structure matched "finished, dated, ready-to-publish post copy." It was filed in 05_CREATIVE/ as the closest fit, but the routing rules don't currently define this file type, so future calendars (LinkedIn or other platforms) risk being filed inconsistently or overwriting each other without a naming/location convention.
 

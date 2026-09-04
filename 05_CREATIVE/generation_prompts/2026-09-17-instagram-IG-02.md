@@ -1,6 +1,6 @@
 # IG-02 — Instagram — 2026-09-17 (moved from Wed 16 Sep, Malaysia Day)
 
-**Status:** DRAFT
+**Status:** APPROVED (human via approval PR #1 (merged 2026-09-04), 2026-09-04)
 **Calendar row:** 05_CREATIVE/content_calendars/2026-09-instagram.md → IG-02
 **Platform:** Instagram (Reel)
 **Audience:** Production Manager

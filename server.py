@@ -1289,6 +1289,232 @@ def close_experiment(experiment_id: str, learning: str, outcome: str) -> str:
     return json.dumps(event, ensure_ascii=False, indent=2)
 
 
+# ----------------- 7B. GENERATION PROMPT APPROVAL -----------------
+
+GENERATION_PROMPTS_DIR = "05_CREATIVE/generation_prompts"
+GENERATION_PROMPTS_INDEX = f"{GENERATION_PROMPTS_DIR}/README.md"
+_PROMPT_TITLE_RE = re.compile(r"(?m)^#\s+(?P<post_id>.+?)\s+[—–-]\s+(?P<platform>.+?)\s+[—–-]\s+(?P<date>\d{4}-\d{2}-\d{2})\b.*$")
+_PROMPT_FILENAME_RE = re.compile(r"^(?P<date>\d{4}-\d{2}-\d{2})-(?P<platform>[a-z]+)-(?P<post_id>.+)$", re.IGNORECASE)
+_PROMPT_STATUS_RE = re.compile(r"(?m)^\*\*Status:\*\*[ \t]*(?P<status>.+?)[ \t]*$")
+
+
+def _parse_prompt_file(rel_path: str) -> dict:
+    """Extract post id, platform, date and status from one generation prompt file."""
+    content = _read_markdown(rel_path)
+    title_match = _PROMPT_TITLE_RE.search(content)
+    name_match = _PROMPT_FILENAME_RE.match(os.path.splitext(os.path.basename(rel_path))[0])
+    status_match = _PROMPT_STATUS_RE.search(content)
+    raw_status = status_match.group("status").strip() if status_match else ""
+    status_word = re.split(r"[ \t(]", raw_status, maxsplit=1)[0].upper() if raw_status else "UNKNOWN"
+    first_heading = re.search(r"(?m)^#\s+(.+?)\s*$", content)
+
+    def _pick(field: str) -> str:
+        if title_match and title_match.group(field).strip():
+            return title_match.group(field).strip()
+        if name_match:
+            return name_match.group(field).strip()
+        return ""
+
+    return {
+        "post_id": _pick("post_id"),
+        "platform": _pick("platform").title() if not title_match and name_match else _pick("platform"),
+        "post_date": _pick("date"),
+        "file": rel_path,
+        "status": status_word,
+        "status_text": raw_status,
+        "title": (first_heading.group(1).strip() if first_heading else rel_path),
+        "characters": len(content),
+    }
+
+
+def _iter_prompt_files() -> list:
+    base = _resolve_workspace_path(GENERATION_PROMPTS_DIR, require_markdown=False)
+    if not os.path.isdir(base):
+        return []
+    found = []
+    for name in sorted(os.listdir(base)):
+        if name.lower().endswith(".md") and name.lower() != "readme.md":
+            found.append(f"{GENERATION_PROMPTS_DIR}/{name}")
+    return found
+
+
+def _find_prompt_file_by_id(post_id: str) -> Optional[str]:
+    target = post_id.strip().lower()
+    for rel_path in _iter_prompt_files():
+        parsed = _parse_prompt_file(rel_path)
+        if parsed["post_id"].lower() == target:
+            return rel_path
+    # Fall back to the filename convention YYYY-MM-DD-<platform>-<post-id>.md
+    for rel_path in _iter_prompt_files():
+        stem = os.path.splitext(os.path.basename(rel_path))[0].lower()
+        if stem.endswith(f"-{target}"):
+            return rel_path
+    return None
+
+
+def _set_readme_index_status(post_id: str, new_status: str) -> bool:
+    """Rewrite the status cell for one post id row in the generation_prompts index. Returns True if changed."""
+    full_path = _resolve_workspace_path(GENERATION_PROMPTS_INDEX)
+    if not os.path.exists(full_path):
+        return False
+    before = _read_markdown(GENERATION_PROMPTS_INDEX)
+    row_marker = re.compile(rf"\|\s*{re.escape(post_id)}\s*\|")
+    changed = False
+    out_lines = []
+    for line in before.splitlines():
+        if line.lstrip().startswith("|") and row_marker.search(line) and "---" not in line:
+            new_line = re.sub(r"\|\s*[^|]*\|\s*$", f"| {new_status} |", line)
+            if new_line != line:
+                changed = True
+            out_lines.append(new_line)
+        else:
+            out_lines.append(line)
+    if not changed:
+        return False
+    after = "\n".join(out_lines) + ("\n" if before.endswith("\n") else "")
+    with open(full_path, "w", encoding="utf-8") as file:
+        file.write(after)
+    _log_change("update_section", GENERATION_PROMPTS_INDEX)
+    _audit_mutation("apply_prompt_decision", GENERATION_PROMPTS_INDEX, "index_status", before, after, True)
+    return True
+
+
+@mcp.tool()
+def list_generation_prompt_status() -> str:
+    """Lists every media generation prompt with its post id, platform, date and status.
+
+    Reads 05_CREATIVE/generation_prompts/*.md (excluding README.md). Use this to seed the
+    approval console queue and to reconcile which prompts still await a human decision.
+    Status is the first word of the file's `**Status:**` line (DRAFT / APPROVED / REJECTED /
+    PRODUCED / PUBLISHED).
+    """
+    prompts = [_parse_prompt_file(rel_path) for rel_path in _iter_prompt_files()]
+    return json.dumps({
+        "directory": GENERATION_PROMPTS_DIR,
+        "count": len(prompts),
+        "draft_post_ids": [item["post_id"] for item in prompts if item["status"] == "DRAFT"],
+        "prompts": prompts,
+    }, ensure_ascii=False, indent=2)
+
+
+@mcp.tool()
+def apply_prompt_decision(
+    post_id: str,
+    decision: str,
+    reason: str = "",
+    decided_at: str = "",
+    decided_by: str = "human via approval PR",
+) -> str:
+    """Applies one human approve/deny decision to a DRAFT generation prompt, locally only.
+
+    This is the "Human checking" node of the daily loop. It does NOT touch git — the caller
+    pushes the returned `changed_files` with preview_github_api_sync -> sync_to_github_atomic.
+
+    approve: rewrites the prompt's `**Status:**` line to APPROVED, flips its row in the
+             generation_prompts index, and appends a dated entry to 08_DECISIONS/decision_log.md.
+    deny:    rewrites `**Status:**` to REJECTED, flips the index row, and appends an entry to
+             08_DECISIONS/rejected_ideas.md carrying the reason (the next run regenerates it).
+
+    A decision of "deny" requires a non-empty reason. Refuses if the prompt is not found or is
+    not currently DRAFT (nothing is silently overwritten).
+    """
+    choice_key = decision.strip().lower()
+    if choice_key in {"approve", "approved", "accept", "yes"}:
+        choice = "approve"
+    elif choice_key in {"deny", "denied", "reject", "rejected", "no"}:
+        choice = "deny"
+    else:
+        return json.dumps({"applied": False, "error": "decision must be 'approve' or 'deny'."}, indent=2)
+    if choice == "deny" and not reason.strip():
+        return json.dumps({"applied": False, "error": "A non-empty reason is required to deny a prompt."}, indent=2)
+
+    decision_date = decided_at.strip() or datetime.now().strftime("%Y-%m-%d")
+    rel_path = _find_prompt_file_by_id(post_id)
+    if not rel_path:
+        return json.dumps({"applied": False, "error": f"No generation prompt found for post id {post_id!r}."}, indent=2)
+
+    parsed = _parse_prompt_file(rel_path)
+    if parsed["status"] != "DRAFT":
+        return json.dumps({
+            "applied": False,
+            "post_id": parsed["post_id"] or post_id,
+            "error": f"{rel_path} is not DRAFT (current status: {parsed['status_text'] or parsed['status']}). No change made.",
+        }, ensure_ascii=False, indent=2)
+
+    resolved_id = parsed["post_id"] or post_id.strip()
+    full_path = _resolve_workspace_path(rel_path)
+    before = _read_markdown(rel_path)
+
+    if choice == "approve":
+        new_status_line = f"**Status:** APPROVED ({decided_by}, {decision_date})"
+        index_status = "APPROVED"
+    else:
+        new_status_line = f"**Status:** REJECTED ({decided_by}, {decision_date}) — see 08_DECISIONS/rejected_ideas.md"
+        index_status = "REJECTED"
+
+    after, replaced = _PROMPT_STATUS_RE.subn(lambda _m: new_status_line, before, count=1)
+    if not replaced:
+        return json.dumps({"applied": False, "error": f"No `**Status:**` line found in {rel_path}."}, indent=2)
+    with open(full_path, "w", encoding="utf-8") as file:
+        file.write(after)
+    _log_change("update_section", rel_path)
+    _audit_mutation("apply_prompt_decision", rel_path, choice, before, after, True)
+
+    changed_files = [rel_path]
+    if _set_readme_index_status(resolved_id, index_status):
+        changed_files.append(GENERATION_PROMPTS_INDEX)
+
+    if choice == "approve":
+        log_rel = "08_DECISIONS/decision_log.md"
+        entry = (
+            f"\n## {decision_date}\n"
+            f"## Decision — Generation prompt {resolved_id} ({parsed['platform']}, {parsed['post_date']}): APPROVED ({decision_date})\n\n"
+            f"**Date:** {decision_date}\n"
+            f"**Decision:** Move generation prompt `{rel_path}` from DRAFT to APPROVED for production.\n"
+            f"**Context:** Human approval recorded via the approval Pull Request ({decided_by}).\n"
+            f"**Evidence:** As stated in the prompt's Evidence basis section. Approval authorises production of the asset, not publication.\n"
+            f"**Approved by:** {decided_by}, {decision_date}.\n"
+            + (f"**Note:** {reason.strip()}\n" if reason.strip() else "")
+        )
+    else:
+        log_rel = "08_DECISIONS/rejected_ideas.md"
+        entry = (
+            f"\n## {resolved_id} — {parsed['platform']} generation prompt — rejected {decision_date}\n\n"
+            f"- Date: {decision_date}\n"
+            f"- Idea: {parsed['title']}\n"
+            f"- Audience/platform/objective: see `{rel_path}`\n"
+            f"- Decision maker: {decided_by}\n"
+            f"- Reason rejected: {reason.strip()}\n"
+            f"- Evidence considered: the prompt's Evidence basis section\n"
+            f"- Conditions that could justify reconsideration: regenerate the prompt addressing the reason above, then re-submit for approval\n"
+        )
+    log_full = _resolve_workspace_path(log_rel)
+    log_before = _read_markdown(log_rel)
+    os.makedirs(os.path.dirname(log_full), exist_ok=True)
+    with open(log_full, "a", encoding="utf-8") as file:
+        file.write(entry)
+    _log_change("append", log_rel)
+    _audit_mutation("apply_prompt_decision", log_rel, "append", log_before, log_before + entry, True)
+    changed_files.append(log_rel)
+
+    return json.dumps({
+        "applied": True,
+        "post_id": resolved_id,
+        "choice": choice,
+        "prompt_file": rel_path,
+        "new_status": index_status,
+        "reason": reason.strip() or None,
+        "regenerate_required": choice == "deny",
+        "changed_files": changed_files,
+        "next_step": (
+            "Push changed_files: check_github_connection -> preview_github_api_sync -> "
+            "sync_to_github_atomic, then git fetch origin && git reset --hard origin/main. "
+            + ("Then regenerate this prompt as a fresh DRAFT addressing the reason and re-seed its queue doc."
+               if choice == "deny" else "")
+        ),
+    }, ensure_ascii=False, indent=2)
+
+
 # ----------------- 8. PROMPT AND RECOMMENDATION CONTEXT -----------------
 
 @mcp.tool()
@@ -1919,6 +2145,297 @@ def sync_to_github_atomic(
         }, ensure_ascii=False, indent=2)
 
 
+# ----------------- 9B. PULL REQUEST APPROVAL WORKFLOW -----------------
+
+APPROVAL_BRANCH_PREFIX = "approvals"
+
+
+def _github_ref_sha(ref: str) -> Optional[str]:
+    """Return the commit SHA a ref (e.g. 'heads/approvals/2026-09-04') points at, or None."""
+    try:
+        data = _github_api_request(f"/repos/{REPO_OWNER}/{REPO_NAME}/git/ref/{ref}")
+    except GitHubAPIError as error:
+        if error.status == 404:
+            return None
+        raise
+    return data.get("object", {}).get("sha")
+
+
+def _normalize_file_list(files) -> list:
+    items = list(files) if isinstance(files, (list, tuple)) else re.split(r"[,\n]", str(files or ""))
+    seen = []
+    for item in items:
+        rel = str(item).strip().strip('"').replace("\\", "/")
+        if rel and rel not in seen:
+            seen.append(rel)
+    return seen
+
+
+def _prompt_files_changed_vs_main() -> list:
+    """generation_prompts/*.md (plus its README) whose local blob differs from remote main."""
+    remote_blobs = _github_repository_state()["remote_blobs"]
+    changed = []
+    for rel_path in _iter_prompt_files() + [GENERATION_PROMPTS_INDEX]:
+        full_path = _resolve_workspace_path(rel_path, require_markdown=False)
+        if not os.path.exists(full_path):
+            continue
+        with open(full_path, "rb") as file:
+            local_sha = _git_blob_sha(file.read())
+        if remote_blobs.get(rel_path) != local_sha:
+            changed.append(rel_path)
+    return changed
+
+
+def _default_pr_body(prompts: list, run_date: str) -> str:
+    lines = [
+        f"Automated daily run {run_date} — {len(prompts)} generation prompt(s) awaiting the "
+        f"**human checking** gate (`daily_operating_spec.md` loop diagram).",
+        "",
+        "## How to respond",
+        "- **Approve all:** merge this PR.",
+        "- **Reject some:** comment `deny <POST-ID>: <reason>` for each "
+        "(e.g. `deny FB-01: hook too similar to FB-03`), then merge. Denied prompts are logged "
+        "to `08_DECISIONS/rejected_ideas.md` and regenerated on the next run.",
+        "- **Reject all:** close this PR without merging.",
+        "",
+        "Do not edit files on this branch — comment instead. Merging publishes nothing: prompts "
+        "stay DRAFT until the next run flips approved ones to APPROVED and records them in "
+        "`08_DECISIONS/decision_log.md`.",
+        "",
+        "## Prompts in this PR",
+    ]
+    for prompt in prompts:
+        lines.append(f"### {prompt['post_id']} — {prompt['platform']} — {prompt['post_date']}")
+        lines.append(f"`{prompt['file']}`")
+    return "\n".join(lines)
+
+
+@mcp.tool()
+def open_prompt_approval_pr(
+    files: str = "",
+    run_date: str = "",
+    title: str = "",
+    body: str = "",
+    confirmation: str = "",
+) -> str:
+    """Opens (or updates) a GitHub Pull Request carrying DRAFT generation prompts for human approval.
+
+    This is the "human checking" gate: instead of pushing new prompt files straight to main,
+    the daily run puts them on a dated branch and opens a PR. The owner merges to approve all,
+    comments `deny <POST-ID>: <reason>` to reject specific prompts, or closes the PR to reject all.
+
+    files: comma/newline-separated repo-relative paths. Empty = every file under
+           05_CREATIVE/generation_prompts/ (plus its README) whose local content differs from main.
+    run_date: YYYY-MM-DD; picks the branch name approvals/<run_date>. Defaults to today.
+    Requires confirmation='OPEN APPROVAL PR'. Never writes to main. Never deletes anything.
+    If the branch already carries commits that are not children of the current main tip, it
+    refuses rather than force-overwriting them.
+    """
+    if confirmation != "OPEN APPROVAL PR":
+        return json.dumps({"opened": False, "error": "Exact confirmation phrase required: OPEN APPROVAL PR"}, indent=2)
+    run_date = run_date.strip() or datetime.now().strftime("%Y-%m-%d")
+    branch = f"{APPROVAL_BRANCH_PREFIX}/{run_date}"
+    ref = f"heads/{branch}"
+    repo_path = f"/repos/{REPO_OWNER}/{REPO_NAME}"
+
+    requested = _normalize_file_list(files)
+    try:
+        file_list = requested or _prompt_files_changed_vs_main()
+    except GitHubAPIError as error:
+        return json.dumps({"opened": False, "http_status": error.status, "error": str(error)}, indent=2)
+
+    safe_files = []
+    for rel_path in file_list:
+        try:
+            full_path = _resolve_workspace_path(rel_path, require_markdown=False)
+        except ValueError:
+            continue
+        if os.path.exists(full_path) and _path_is_sync_eligible(rel_path, include_code=True, include_obsidian=False):
+            safe_files.append(rel_path)
+    if not safe_files:
+        return json.dumps({"opened": False, "error": "No eligible files to put in the PR."}, indent=2)
+
+    try:
+        state = _github_repository_state()
+        main_sha = state["remote_commit_sha"]
+        base_tree = state["remote_tree_sha"]
+
+        existing_head = _github_ref_sha(ref)
+        if existing_head:
+            head_commit = _github_api_request(f"{repo_path}/git/commits/{existing_head}")
+            parents = [parent.get("sha") for parent in head_commit.get("parents", [])]
+            if parents and main_sha not in parents:
+                return json.dumps({
+                    "opened": False,
+                    "error": (
+                        f"Branch {branch} has diverged from main (its commit is not a child of the "
+                        f"current main tip). Resolve on GitHub before re-running."
+                    ),
+                    "branch_head_sha": existing_head,
+                }, ensure_ascii=False, indent=2)
+
+        tree_entries = []
+        errors = []
+        with ThreadPoolExecutor(max_workers=4) as executor:
+            futures = {executor.submit(_create_github_blob, rel_path): rel_path for rel_path in safe_files}
+            for future in as_completed(futures):
+                try:
+                    tree_entries.append(future.result())
+                except (GitHubAPIError, OSError, ValueError) as error:
+                    errors.append({"filepath": futures[future], "error": str(error)})
+        if errors:
+            return json.dumps({"opened": False, "errors": errors}, ensure_ascii=False, indent=2)
+
+        tree_response = _github_api_request(
+            f"{repo_path}/git/trees", method="POST",
+            payload={"base_tree": base_tree, "tree": tree_entries}, timeout=30,
+        )
+        new_tree_sha = tree_response.get("sha")
+        if not new_tree_sha:
+            raise GitHubAPIError(None, "GitHub did not return the new tree SHA.")
+
+        commit_message = title.strip() or f"Prompts for approval — {run_date}"
+        commit_response = _github_api_request(
+            f"{repo_path}/git/commits", method="POST",
+            payload={"message": commit_message, "tree": new_tree_sha, "parents": [main_sha]}, timeout=30,
+        )
+        new_commit_sha = commit_response.get("sha")
+        if not new_commit_sha:
+            raise GitHubAPIError(None, "GitHub did not return the new commit SHA.")
+
+        if existing_head is None:
+            _github_api_request(
+                f"{repo_path}/git/refs", method="POST",
+                payload={"ref": f"refs/heads/{branch}", "sha": new_commit_sha}, timeout=30,
+            )
+        else:
+            _github_api_request(
+                f"{repo_path}/git/refs/{ref}", method="PATCH",
+                payload={"sha": new_commit_sha, "force": True}, timeout=30,
+            )
+
+        prompts = [_parse_prompt_file(path) for path in safe_files if path != GENERATION_PROMPTS_INDEX]
+        pr_body = body.strip() or _default_pr_body(prompts, run_date)
+
+        open_prs = _github_api_request(f"{repo_path}/pulls?head={REPO_OWNER}:{branch}&state=open")
+        if isinstance(open_prs, list) and open_prs:
+            pr = open_prs[0]
+            _github_api_request(
+                f"{repo_path}/pulls/{pr['number']}", method="PATCH",
+                payload={"title": commit_message, "body": pr_body}, timeout=30,
+            )
+            pr_number, pr_url, reused = pr["number"], pr["html_url"], True
+        else:
+            pr = _github_api_request(
+                f"{repo_path}/pulls", method="POST",
+                payload={"title": commit_message, "head": branch, "base": GITHUB_BRANCH, "body": pr_body},
+                timeout=30,
+            )
+            pr_number, pr_url, reused = pr.get("number"), pr.get("html_url"), False
+
+        _append_jsonl("sync_log.jsonl", {
+            "timestamp": datetime.now().isoformat(timespec="seconds"),
+            "method": "approval_pull_request",
+            "branch": branch,
+            "commit_sha": new_commit_sha,
+            "pr_number": pr_number,
+            "files": sorted(safe_files),
+            "status": "updated" if reused else "opened",
+        })
+        return json.dumps({
+            "opened": True,
+            "reused_existing_pr": reused,
+            "pr_number": pr_number,
+            "pr_url": pr_url,
+            "branch": branch,
+            "head_commit_sha": new_commit_sha,
+            "base": GITHUB_BRANCH,
+            "included_files": sorted(safe_files),
+            "post_ids": [prompt["post_id"] for prompt in prompts],
+            "instruction_for_owner": (
+                "Merge this PR to approve every prompt in it. Comment `deny <POST-ID>: <reason>` "
+                "to reject specific prompts (then merge), or close the PR to reject all."
+            ),
+        }, ensure_ascii=False, indent=2)
+    except GitHubAPIError as error:
+        return json.dumps({
+            "opened": False, "http_status": error.status, "error": str(error), "token_exposed": False,
+        }, ensure_ascii=False, indent=2)
+
+
+@mcp.tool()
+def get_prompt_approval_pr(pr_number: int = 0, run_date: str = "") -> str:
+    """Reports an approval PR's state (open / merged / closed), its prompt files, and every comment.
+
+    The daily run calls this at bootstrap to apply the previous run's decisions:
+      merged            -> approve every prompt in the PR
+      closed, unmerged  -> deny every prompt (reason "PR closed without merge") and regenerate
+      open + `deny <ID>: <reason>` comments -> deny those, leave the rest pending
+
+    Pass pr_number, or leave it 0 to look the PR up by the approvals/<run_date> branch.
+    """
+    repo_path = f"/repos/{REPO_OWNER}/{REPO_NAME}"
+    try:
+        if not pr_number:
+            branch = f"{APPROVAL_BRANCH_PREFIX}/{(run_date.strip() or datetime.now().strftime('%Y-%m-%d'))}"
+            found = _github_api_request(f"{repo_path}/pulls?head={REPO_OWNER}:{branch}&state=all")
+            if not (isinstance(found, list) and found):
+                return json.dumps({"found": False, "branch": branch}, ensure_ascii=False, indent=2)
+            pr_number = found[0]["number"]
+        pr = _github_api_request(f"{repo_path}/pulls/{pr_number}")
+        files_data = _github_api_request(f"{repo_path}/pulls/{pr_number}/files?per_page=100")
+        issue_comments = _github_api_request(f"{repo_path}/issues/{pr_number}/comments?per_page=100")
+        review_comments = _github_api_request(f"{repo_path}/pulls/{pr_number}/comments?per_page=100")
+    except GitHubAPIError as error:
+        return json.dumps({"found": False, "http_status": error.status, "error": str(error)}, ensure_ascii=False, indent=2)
+
+    changed_files = [item.get("filename") for item in files_data] if isinstance(files_data, list) else []
+    prompt_files = [
+        path for path in changed_files
+        if path and path.startswith(GENERATION_PROMPTS_DIR + "/") and path != GENERATION_PROMPTS_INDEX
+    ]
+    post_ids = []
+    for rel_path in prompt_files:
+        name_match = _PROMPT_FILENAME_RE.match(os.path.splitext(os.path.basename(rel_path))[0])
+        full_path = _resolve_workspace_path(rel_path, require_markdown=False)
+        parsed = _parse_prompt_file(rel_path) if os.path.exists(full_path) else {}
+        post_ids.append(parsed.get("post_id") or (name_match.group("post_id") if name_match else rel_path))
+
+    def _fmt(comment: dict) -> dict:
+        return {
+            "user": comment.get("user", {}).get("login"),
+            "created_at": comment.get("created_at"),
+            "body": comment.get("body", ""),
+        }
+
+    state = pr.get("state")
+    merged = bool(pr.get("merged"))
+    recommended = "approve_all" if merged else "deny_all" if state == "closed" else "pending_or_partial"
+    return json.dumps({
+        "found": True,
+        "pr_number": pr_number,
+        "pr_url": pr.get("html_url"),
+        "state": state,
+        "merged": merged,
+        "merged_at": pr.get("merged_at"),
+        "mergeable": pr.get("mergeable"),
+        "head_sha": pr.get("head", {}).get("sha"),
+        "prompt_files": prompt_files,
+        "post_ids": post_ids,
+        "comments": (
+            [_fmt(comment) for comment in (issue_comments or []) if isinstance(comment, dict)]
+            + [_fmt(comment) for comment in (review_comments or []) if isinstance(comment, dict)]
+        ),
+        "recommended_apply_action": recommended,
+        "instruction": (
+            "approve_all: git fetch origin && git reset --hard origin/main, then apply_prompt_decision(<id>,'approve') "
+            "for every post id and push the status flips + decision_log to main. "
+            "deny_all: apply_prompt_decision(<id>,'deny', reason='PR closed without merge') and regenerate each. "
+            "pending_or_partial: honour only `deny <ID>: <reason>` comments; leave the PR open."
+        ),
+    }, ensure_ascii=False, indent=2)
+
+
 # ----------------- 10. LEGACY GIT SYNC TOOLS -----------------
 
 def _git_changed_paths() -> list:
@@ -1952,7 +2469,7 @@ def _path_is_sync_eligible(filepath: str, include_code: bool, include_obsidian: 
     if normalized == ".env" or normalized.endswith((".pyc", ".pyo")):
         return False
     managed_root = bool(re.match(r"^0[0-8]_[A-Z_]+/", normalized)) or normalized in {
-        ".gitignore", "README.md", "prompt.md", "server.py"
+        ".gitignore", "README.md", "prompt.md", "server.py", "APPROVAL_UI.md"
     }
     if not managed_root:
         return False

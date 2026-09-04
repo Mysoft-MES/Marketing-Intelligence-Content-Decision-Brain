@@ -1,9 +1,49 @@
 # DAILY OPERATING SPEC
 
-Version: 2.0
+Version: 2.3
 Created: 2026-09-02
 Authorised by: human owner (explicit instruction, 2026-09-02)
 Status: ACTIVE
+
+> **2026-09-04 — v2.3 change, authorised by the human owner in session.** The competitor
+> set was **reset**. The owner deleted the prior 14-competitor set from GitHub and supplied
+> one replacement analysis (Allied Solutions Global / ASPL), copied verbatim into
+> `04_COMPETITORS/allied-solutions-global.md`. **The daily run does not discover or add
+> competitors.** It researches and analyses **only** the competitor(s) listed in
+> `04_COMPETITORS/competitor_index.md`. Adding a competitor is a human action. If a run
+> encounters a possible new competitor, it notes it for the owner (e.g. in
+> `08_DECISIONS/analysis_log.md` open questions) and does not create a profile.
+> Every "14 verified MES competitors" phrasing below is superseded by this note.
+> `competitor_gaps.md` and `competitor_patterns.md` are stubs until the tracked set is
+> large enough to support gap/pattern analysis again.
+
+> **2026-09-04 — v2.2 change, authorised by the human owner in session.** The loop's
+> **"human checking"** node is now a real gate. Generation prompts are **no longer pushed to
+> `main` by the run**. New and regenerated DRAFT prompts go onto a branch
+> `approvals/<run_date>` and the run opens a **GitHub Pull Request** (§9, §3). The owner
+> merges the PR to approve every prompt in it, comments `deny <POST-ID>: <reason>` then
+> merges to reject specific ones, or closes the PR to reject all. At bootstrap (§2A) every
+> run applies the previous run's PR decision: approved prompts are flipped to APPROVED and
+> logged, denied ones are logged to `08_DECISIONS/rejected_ideas.md` and regenerated. New
+> §13 describes the flow and the four `server.py` tools (`list_generation_prompt_status`,
+> `open_prompt_approval_pr`, `get_prompt_approval_pr`, `apply_prompt_decision`); operator
+> detail in `APPROVAL_UI.md`. A merged PR **is** the explicit human confirmation §3
+> requires — nothing else may set a prompt APPROVED. An earlier attempt at this (a published
+> Artifact + `db` panel) was abandoned 2026-09-03 (`decision_log.md`).
+
+> **2026-09-03 — v2.1 change, authorised by the human owner in session.** The loop now has
+> **two analysis stages**, not one. **Analysis #1 ("Researching")** runs after Research and
+> before Prompting — it interprets the run's findings into an explicit content decision
+> (new §4A; output → `08_DECISIONS/analysis_log.md`). **Analysis #2 ("Posting")** runs
+> after the prompting stage — our-performance review **plus** a competitor comparison of
+> our posts/ads/cadence/formats against the competitor(s) listed in `competitor_index.md`, producing
+> suggestions for beating them (new §9A; output → `06_PERFORMANCE/competitive_benchmark.md`
+> + a `REFINEMENT:` note in `06_PERFORMANCE/learning_log.md`). The loop is **closed**: each
+> run reads the previous run's most recent `REFINEMENT:` note at bootstrap (§2A) and
+> applies it to that run's Research and Prompting. The full-sweep Research stage now
+> includes a competitor **content/social** audit as deep as public sources allow (§4).
+> A third autonomous GitHub push carries the Analysis #2 output. Owner will supplement the
+> competitor audit with first-hand competitor information separately.
 
 > **2026-09-03 — v2.0 change, authorised by the human owner in session.** The daily run
 > is now FULLY AUTONOMOUS: it sweeps all research areas every run (no single-theme
@@ -39,6 +79,39 @@ If a run finds evidence that one or more days were missed, note it in `06_PERFOR
 
 ---
 
+# 2A. BOOTSTRAP — READ THE LAST RUN'S REFINEMENT (loop close)
+
+Immediately after `know_yourself` and reading this spec, every run reads:
+
+1. The most recent `REFINEMENT:` note in `06_PERFORMANCE/learning_log.md` (written by the
+   previous run's Analysis #2).
+2. The most recent entry in `06_PERFORMANCE/competitive_benchmark.md` (its "Suggestions to
+   beat them" list).
+3. The most recent entry in `08_DECISIONS/analysis_log.md`, including its "Open questions
+   handed to the next Research run".
+
+These three steer this run: the Research sweep (§4) prioritises the open questions and the
+competitor gaps; the Prompting stage (§9) treats the suggestions as inputs. If there is no
+prior note yet (first run under v2.1), say so and proceed with a normal full sweep.
+
+**4. Apply the previous run's approval decisions (§13).** Call
+`get_prompt_approval_pr(run_date=<previous run's date>)`.
+
+- `recommended_apply_action: approve_all` (PR merged) → `git fetch origin && git reset
+  --hard origin/main`; for each `post_id`, `apply_prompt_decision(id, "approve")`; push the
+  status flips + `decision_log.md` to `main` via the §3 atomic path; `git reset --hard
+  origin/main`.
+- `deny_all` (PR closed unmerged) → for each `post_id`,
+  `apply_prompt_decision(id, "deny", reason="PR closed without merge")`; push; then
+  regenerate each denied prompt as a fresh DRAFT and carry it into today's PR (§9).
+- `pending_or_partial` (PR still open) → honour only `deny <POST-ID>: <reason>` comments:
+  `apply_prompt_decision(id, "deny", reason=<comment reason>)`, push, regenerate that prompt
+  addressing the reason; leave the PR open for the undecided prompts.
+
+If no previous approval PR exists, say so and continue.
+
+---
+
 # 3. AUTONOMY BOUNDARIES
 
 Confirmed by the human owner on 2026-09-02.
@@ -63,17 +136,24 @@ Changes to these two folders are proposed in `08_DECISIONS/brain_update_proposal
 ## AUTONOMOUS GITHUB SYNC (authorised by the human owner, 2026-09-03)
 
 The daily run pushes to GitHub `main` on its own authority — research after the research
-stage, prompts after the prompting stage. No human confirmation. Mechanics: the scheduled
+stage, Analysis #1 after the prompting stage, Analysis #2 (competitive benchmark
++ refinement note) after §9A. No human confirmation. Mechanics: the scheduled
 task SKILL.md §7 (`check_github_connection` → `preview_github_api_sync` → verify every
 changed file is brain content and not a CRLF false positive → `sync_to_github_atomic` with
 the preview's `remote_commit_sha` and confirmation `CREATE ATOMIC GITHUB COMMIT` → local
 `git reset --hard origin/main`). Never deletes remote files. Never pushes secrets or
 untracked non-brain files.
 
+**Generation prompts are the exception — they are not pushed to `main` by the run.** New and
+regenerated DRAFT prompt files go onto branch `approvals/<run_date>` via
+`open_prompt_approval_pr` (confirmation `OPEN APPROVAL PR`), which opens a Pull Request to
+`main` for the owner to merge (approve) or close (reject). Approved prompts only reach `main`
+on the next run's §2A step 4, after the merge. See §13.
+
 ## MUST NOT DO WITHOUT EXPLICIT HUMAN CONFIRMATION
 
-- Publish to any social platform, schedule a post for actual publication, or send outreach. Pushing a DRAFT prompt file to the repo is allowed; publishing its output is not.
-- Mark any content calendar or prompt as APPROVED.
+- Publish to any social platform, schedule a post for actual publication, or send outreach. Opening an approval PR with a DRAFT prompt is allowed; publishing its output is not.
+- Mark any content calendar or prompt as APPROVED. **A merged approval PR is that confirmation for the prompts it contains** — the next run then runs `apply_prompt_decision(..., "approve")` for each. Nothing else may set a prompt APPROVED.
 - Spend money or trigger paid media.
 - Record a pattern as VALIDATED without the sample-size threshold being met by `analyze_posting_time_performance` itself.
 - Write directly to `00_SYSTEM/` or `01_BUSINESS/` (propose in `08_DECISIONS/brain_update_proposals.md`).
@@ -89,7 +169,8 @@ enforced by the stopping rule in §5, not by restricting scope.
 
 | Area | Primary destination |
 |---|---|
-| Competitor activity | `04_COMPETITORS/<competitor>.md`, `competitor_patterns.md`, `competitor_gaps.md` |
+| Competitor activity — **only the competitor(s) in `competitor_index.md`; do not discover or add new competitors** (v2.3) | `04_COMPETITORS/<competitor>.md`, `competitor_patterns.md`, `competitor_gaps.md` |
+| Competitor **content/social** activity (posts, ads, cadence, formats, angles, engagement) for the listed competitor(s) — as deep as public/non-authenticated sources allow; flag what needs a logged-in pass | `04_COMPETITORS/<competitor>.md`, `competitor_patterns.md`; feeds Analysis #2 §9A |
 | Platform behaviour and algorithm change | `03_PLATFORM/<platform>.md` |
 | Audience and customer signals | `02_AUDIENCE/<role>.md` (`07_RESEARCH/customer_insights.md` is first-party only) |
 | Industry, manufacturing, market | `07_RESEARCH/industry_news.md`, `07_RESEARCH/market_trends.md` |
@@ -103,6 +184,27 @@ of `07_RESEARCH/research_index.md`, `02_AUDIENCE/audience_index.md`,
 `05_CREATIVE/content_calendars/calendar_index.md` for anything touched that run.
 
 Weekends: no scheduled run.
+
+---
+
+# 4A. ANALYSIS #1 — "RESEARCHING"
+
+Runs **after the research stage and its GitHub push, before the prompting stage.** It is an
+interpretation pass, not new research — it adds no external sources.
+
+1. Read this run's new/updated research entries, the last `08_DECISIONS/analysis_log.md`
+   entry, and the prior `REFINEMENT:` note (§2A).
+2. Decide what the findings *mean* for content — the "so what", not a restatement.
+3. Produce one dated entry in `08_DECISIONS/analysis_log.md` (newest first, template in
+   that file) recording: research read, prior refinement applied, what the findings mean,
+   the content decision (Create / Test / Monitor / Nothing this run, with platform /
+   audience / angle / derived-from entry / hypothesis / success metric if Create or Test),
+   confidence, and open questions for the next Research run.
+4. The prompting stage (§9) executes this decision. If the decision is "Nothing this run",
+   the prompting stage is skipped and says so.
+
+`analysis_log.md` is a running decision log, not a dated research file — it does **not**
+count against the two-new-file cap in §5.
 
 ---
 
@@ -171,7 +273,43 @@ warrants a content asset; skipped (and said so) when nothing warrants one.
 5. Every prompt carries a hypothesis and a success metric before it is produced, per `decision_framework.md` §26.
 6. No prompt may instruct generation of a claim prohibited by `products.md` §31.
 7. Status starts DRAFT. The run never sets APPROVED.
-8. After the prompting stage, the prompts are pushed to GitHub `main` (§3, and SKILL.md §6–§7).
+8. After the prompting stage: push Analysis #1 (`analysis_log.md`) to GitHub `main` (§3),
+   then call `open_prompt_approval_pr(confirmation="OPEN APPROVAL PR")` with every new or
+   regenerated DRAFT prompt file from this run (pass no `files` to auto-pick every
+   generation prompt that differs from `main`). Keep the returned `pr_url` and `post_ids`
+   for §10. The prompt files themselves are **not** pushed to `main` — they live on the PR
+   branch until the owner merges. See §13.
+
+---
+
+# 9A. ANALYSIS #2 — "POSTING"
+
+Runs **after the prompting stage and its push.** Two halves, one output file, one refinement
+note, one push.
+
+**Half 1 — our performance.** Read `analyze_posting_time_performance` and
+`record_post_performance` data for every platform. Until the first post is published this is
+"no first-party performance data yet — zero published posts"; record that plainly and move on.
+
+**Half 2 — competitor comparison.** Compare Mysoft's marketing output — published posts if
+any, otherwise the approved/planned content calendars and positioning — against the
+competitor content/social activity gathered in §4 and held in `04_COMPETITORS/` and the
+dated competitor-content audits. For each competitor listed in `competitor_index.md`: what they published or ran,
+format and channel, whether it worked (with evidence), recency/cadence. Then: where Mysoft
+is behind, where white space still holds, what competitors tried that flopped.
+
+**Output.**
+1. One dated entry in `06_PERFORMANCE/competitive_benchmark.md` (newest first, template in
+   that file), ending with a numbered "Suggestions to beat them" list.
+2. One dated `REFINEMENT:` note appended to `06_PERFORMANCE/learning_log.md` — a single
+   concrete way the Brain should operate better next cycle. This note is what the next run
+   reads at bootstrap (§2A); it is the mechanism by which Research "refers to" Analysis #2.
+3. Third GitHub push: `competitive_benchmark.md` + `learning_log.md`. Commit message
+   `Automated daily run <YYYY-MM-DD> — competitive benchmark + refinement`. Skip only if
+   both files are unchanged.
+
+Evidence discipline (§6) applies in full: competitor claims are claims, not fact; nothing
+here is VALIDATED; flag everything that needs a logged-in or human pass.
 
 ---
 
@@ -179,13 +317,21 @@ warrants a content asset; skipped (and said so) when nothing warrants one.
 
 Gmail and Google Calendar are connected (as of 2026-09-03).
 
-Every run, after both GitHub pushes: create one all-day Google Calendar event on
+Every run, after all three GitHub pushes: create one all-day Google Calendar event on
 `posinsidernow@gmail.com` dated today with the full run summary, then send that same
 summary as a plain-text email to `posinsidernow@gmail.com` (sent directly, not a draft),
-including the calendar event's htmlLink and every commit SHA/URL from the run. If
+including the calendar event's htmlLink and every commit SHA/URL from the run. The summary
+must include the Analysis #1 content decision, the Analysis #2 "Suggestions to beat them"
+list, and the `REFINEMENT:` note written this run. If
 generation prompts were drafted, add a `[DRAFT]` all-day event per planned posting date.
 Do this even on a quiet day or a partial failure. Full mechanics in the scheduled task
 SKILL.md §9.
+
+**If an approval PR was opened this run (§9 step 8), the email must include a
+"REVIEW & APPROVE TODAY'S PROMPTS" block:** the PR URL, the list of post IDs in it, and the
+one line — *"Merge the PR to approve all. Comment `deny <POST-ID>: <reason>` then merge to
+reject some. Close the PR to reject all."* Omit the block only on a run that drafted no
+prompts.
 
 ---
 
@@ -199,3 +345,57 @@ SKILL.md §9.
 # 12. UPDATE RULE
 
 This file changes only on explicit human instruction. A scheduled run may propose changes in `08_DECISIONS/brain_update_proposals.md` but must not edit this file itself.
+
+---
+
+# 13. HUMAN APPROVAL LOOP — THE "HUMAN CHECKING" NODE
+
+The loop is `Prompting → Generating → Human checking ─(No)─↺ Generating ; (Yes) → Posting`.
+"Human checking" is a **GitHub Pull Request**. (A published-Artifact panel was tried first
+and abandoned 2026-09-03 — its data runtime would not load in the owner's viewer;
+`decision_log.md`.)
+
+**Branch / PR convention.** One branch `approvals/<run_date>` (e.g. `approvals/2026-09-04`)
+per run that drafts prompts. `open_prompt_approval_pr` puts the DRAFT prompt files (and the
+`generation_prompts/README.md` index) on it and opens/refreshes a PR to `main`. It refuses
+if the branch carries commits it did not make (hand-edited) — comment on the PR instead of
+editing files there.
+
+**The four `server.py` tools.**
+
+| Tool | Role |
+|---|---|
+| `list_generation_prompt_status()` | Every prompt with post ID / platform / date / status |
+| `open_prompt_approval_pr(files="", run_date="", confirmation="OPEN APPROVAL PR")` | Open/refresh the approval PR. Empty `files` = every generation prompt that differs from `main` |
+| `get_prompt_approval_pr(pr_number=0, run_date="")` | The PR's state, files, post IDs, every comment, and a `recommended_apply_action` |
+| `apply_prompt_decision(post_id, "approve"\|"deny", reason="")` | Flip one prompt's `**Status:**` line, update the index row, log to `decision_log.md` (approve) or `rejected_ideas.md` (deny). Refuses non-DRAFT. Does not touch git |
+
+**Owner actions on the PR:** merge = approve every prompt in it; comment
+`deny <POST-ID>: <reason>` then merge = reject those, approve the rest; close without merge
+= reject all.
+
+**Apply (next run §2A step 4, or the same-day apply run §14):** read the PR with
+`get_prompt_approval_pr`, then follow `recommended_apply_action` —
+`approve_all` / `deny_all` / `pending_or_partial` — running `apply_prompt_decision` per post
+ID, pushing the status flips + logs to `main` via the §3 atomic path, and regenerating any
+denied prompt (addressing the comment reason when one was given) into the next PR.
+
+**Merging publishes nothing.** APPROVED authorises production of the asset only. Actual
+social publishing remains a separate explicit human step (§3).
+
+Operator walkthrough, email wiring, and the scheduled-task SKILL.md text block:
+`APPROVAL_UI.md` (repo root).
+
+---
+
+# 14. SAME-DAY APPROVAL APPLY RUN
+
+An optional second scheduled run (suggested 14:00 MYT, Mon–Fri, same machine/desktop-app
+dependency as §2) so an approval made during the day is committed the same day instead of
+waiting for the next 09:30 run. It does **only** the apply step of §13 (for every open or
+today-closed `approvals/*` PR), pushes to `main`, regenerates denied prompts and updates
+their PR, and — if anything was applied — appends a one-line note to
+`06_PERFORMANCE/learning_log.md` and sends a short plain-text email to
+`posinsidernow@gmail.com`. It opens no new research and sets nothing APPROVED without a
+merged PR. Full steps: `00_SYSTEM/apply_approvals_runbook.md`. The owner creates the OS
+scheduled task (exact task prompt in `APPROVAL_UI.md`).

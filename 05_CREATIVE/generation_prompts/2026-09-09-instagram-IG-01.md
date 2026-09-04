@@ -1,6 +1,6 @@
 # IG-01 — Instagram — 2026-09-09
 
-**Status:** DRAFT
+**Status:** APPROVED (human via approval PR #1 (merged 2026-09-04), 2026-09-04)
 **Calendar row:** 05_CREATIVE/content_calendars/2026-09-instagram.md → IG-01
 **Platform:** Instagram (Reel)
 **Audience:** Production Manager (Problem Owner — company_profile.md §18–19; not usually the budget holder)

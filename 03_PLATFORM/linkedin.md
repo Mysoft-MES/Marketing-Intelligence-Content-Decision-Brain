@@ -32,3 +32,40 @@ marketer commentary, not category- or Malaysia-specific; directional only.
 - **Status:** TESTING. Revisit against Mysoft first-party LinkedIn data once the September
   cycle produces any.
 
+### 2026-09-04 — carousel / employee-advocacy figures firmed up (still external → TESTING)
+
+Access date 2026-09-04. Sources: multiple 2026 B2B-marketing analyses (SocialPilot,
+Oktopost, DataSlayer, carousel-statistics compilations). Aggregated marketer data, not
+Malaysia- or MES-specific — directional only, and the exact percentages vary by source.
+
+- **Document / PDF-carousel posts are cited as the single highest-engagement LinkedIn
+  format in 2026** (~6.6% average engagement in one widely-repeated figure; "far above text
+  or native video"). **Optimal length is now given as 8–12 slides**, not the ~6 the Brain
+  had assumed — the swipe-through dwell time is the mechanism. **Action taken this run:**
+  `05_CREATIVE/generation_prompts/2026-09-03-linkedin-LI-C1.md` panel count revised from 6
+  to 8–10 to match; noted on the approval PR.
+- **Company-page organic reach is reported down 60–66% (2024→2026)**; **posts from
+  individual employees about their work are cited at up to ~5–6× the reach-per-post of the
+  company page.** This is a *stronger* version of the founder/named-expert signal already
+  on file (2026-08-31 entry) and further supports `competitor_gaps.md` Gap 1 (no local
+  founder-led MES presence) as the priority white space.
+- **No change to the rule set.** These are external benchmarks (TESTING). They sharpen the
+  existing recommendations; they do not become Mysoft-validated until the September cycle
+  yields first-party numbers.
+
+#### 2026-09-04 (evening re-sweep) — figures re-confirmed, no directional change
+
+Access date 2026-09-04. Sources: SocialPilot "LinkedIn Algorithm August 2026", Oktopost,
+carousels-generator statistics compilations. Still aggregated marketer data, not Malaysia-
+or MES-specific.
+- Company-page organic reach **down 60–66% (2024→2026)**; employee-advocacy posts cited at
+  **~+561% reach-per-post** vs the company page (a sharper figure for the "several times
+  over" already on file — same direction).
+- Document / PDF carousels: **~596% more engagement than text-only, ~278% more than native
+  video**; ~6.6% average engagement; **8–12 slides** optimal. Consistent with the
+  2026-09-04 entry above.
+- "Depth Score" now explicitly described as dwell time **+ comment depth + saves + private
+  shares**; off-platform links ~60% less reach.
+- **Net effect on the Brain: none.** Re-confirms the founder/named-person priority and the
+  LI-C1 carousel test design. No new action; freshness only.
+

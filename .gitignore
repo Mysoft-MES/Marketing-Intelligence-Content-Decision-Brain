@@ -1,4 +1,6 @@
 .env
+.env.local
+.secrets/
 .mcp_data/
 gemini_output/
 __pycache__/

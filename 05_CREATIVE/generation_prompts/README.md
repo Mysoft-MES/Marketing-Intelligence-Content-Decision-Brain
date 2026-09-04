@@ -112,13 +112,13 @@ Drafted 2026-09-02 from the September 2026 Facebook and Instagram calendars. **A
 |---|---|---|---|---|
 | 2026-09-08 | FB-01 | Facebook | 30–45s Reel — "where is this job" silence | DRAFT |
 | 2026-09-15 | FB-02 | Facebook | 30–45s Reel — paper vs digital job record, split screen | DRAFT |
-| 2026-09-22 | FB-03 | Facebook | 30–45s Reel — brand-line message test (看不见的损失…) | DRAFT |
-| 2026-09-29 | FB-04 | Facebook | 30–45s Reel — "the record just can't be checked" | DRAFT |
-| 2026-09-09 | IG-01 | Instagram | 60–90s process-breakdown — six stations, one number | DRAFT |
-| 2026-09-17 | IG-02 | Instagram | 45–60s screen recording — Digital Job Order record tour | DRAFT |
+| 2026-09-22 | FB-03 | Facebook | 30–45s Reel — brand-line message test (看不见的损失…) | APPROVED |
+| 2026-09-29 | FB-04 | Facebook | 30–45s Reel — "the record just can't be checked" | APPROVED |
+| 2026-09-09 | IG-01 | Instagram | 60–90s process-breakdown — six stations, one number | APPROVED |
+| 2026-09-17 | IG-02 | Instagram | 45–60s screen recording — Digital Job Order record tour | APPROVED |
 | 2026-09-23 | IG-03 | Instagram | 60–90s — traceability check, step by step | DRAFT |
-| 2026-09-30 | IG-04 | Instagram | 60–90s process-breakdown — what replaces the clipboard | DRAFT |
-| 2026-09-03 | LI-C1 | LinkedIn | 6-panel carousel — "a shift handover, panel by panel" (NEW format test; no calendar row yet) | DRAFT |
+| 2026-09-30 | IG-04 | Instagram | 60–90s process-breakdown — what replaces the clipboard | APPROVED |
+| 2026-09-03 | LI-C1 | LinkedIn | 6-panel carousel — "a shift handover, panel by panel" (NEW format test; no calendar row yet) | APPROVED |
 
 ### Open dependencies before any of these can be produced
 

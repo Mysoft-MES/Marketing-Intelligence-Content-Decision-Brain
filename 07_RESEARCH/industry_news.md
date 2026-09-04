@@ -152,9 +152,22 @@ and date.
 - **Possible marketing impact:** Positioning angle — "start with visibility and the
   digital Job Traveller, expand later" fits the modular-adoption trend and the low
   current adoption base. Use market-size figures only as loose context, attributed.
+- **2026-09-04 addendum:** Re-checked. Another aggregator puts the **global MES market at
+  ~USD 20.58b in 2026** (from ~USD 19.09b in 2025), ~13.3% CAGR to ~USD 44.67b by 2034 —
+  a slightly higher point estimate, same growth story. The SME-relevant theme is
+  re-confirmed and sharper: modern MES described as **modular, cloud-based, fast to deploy,
+  designed for phased adoption — "start small with basic performance tracking on a single
+  line and scale only once value is proven."** This is a direct external tailwind for
+  Mysoft's "start with the Digital Job Order, expand later" framing. No directional change;
+  freshness only. Sources (accessed 2026-09-04): GlobeNewswire — "MES Market Expected to
+  Reach US$44.67 Billion at 13.3% CAGR by 2034" (2026-06-29); ITI Group — "Why MES should
+  be first on an SME's digital roadmap in 2026"
+  (https://www.itigroup.com/why-manufacturing-execution-systems-should-be-first-on-an-smes-digital-roadmap-in-2026/);
+  Global Growth Insights — MES companies 2026 (USD 20.58b figure).
 - **Evidence type:** INDUSTRY SOURCE (vendor/analyst blogs) — weak.
 - **Confidence:** LOW (wide ranges, secondary aggregators).
-- **Contradicting evidence:** Market-size estimates vary substantially between sources.
+- **Contradicting evidence:** Market-size estimates vary substantially between sources
+  (USD 17–21b for 2026 depending on aggregator).
 - **Evidence gaps:** No Malaysia-specific MES market sizing or adoption rate from a
   primary research house.
 - **Sources:** Ken Research — Malaysia Smart Manufacturing and Industry 4.0 Market
@@ -162,4 +175,13 @@ and date.
   OpenMinds Resources — Manufacturing Digitalization Malaysia
   (https://www.openmindsresources.com/blog/manufacturing-digitalization/);
   iFactory — MES guide for 2026 (https://ifactoryapp.com/blog/mes-manufacturing-execution-system-guide).
-- **Last checked:** 2026-09-02.
+- **Last checked:** 2026-09-04 (see 2026-09-04 addendum above).
+
+---
+
+## 2026-09-04 — Evening re-sweep note
+
+Second full-sweep pass this day. **PMI:** no new data — September figure not released
+(due early October); August 2026 = 50.2 already recorded in #1. **NIMP 2030 / Penang E&E /
+tariffs (#2–#4):** re-checked, no material change. **MES category (#5):** freshness addendum
+added above (higher point estimate, phased-adoption theme re-confirmed). No new dated file.
