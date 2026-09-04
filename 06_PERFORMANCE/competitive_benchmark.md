@@ -250,7 +250,7 @@ carousel test — all DRAFT / awaiting approval, none published.
 | Bizit, Sciengate, YNY, VISI, Blue Ocean, SOFtronix, TNA, Regaltech, XTS, Zoomo | MES is one line in a broader automation/robotics/consulting business; social identity (where any) is built around the parent business, not MES | Mostly Facebook/company pages tied to the non-MES core business | n/a for MES-buyer content | n/a |
 
 **Where Mysoft is behind:** nothing published at all, so behind everyone with an active
-channel — DigiwinSoft most of all (real multi-channel operation + named case studies +
+channel — ASPL most of all (real multi-channel operation + named case studies +
 official-body webinars). Mysoft also cannot yet run its strongest documented format (the
 quantified customer case study) because it is pre-customer.
 
@@ -263,8 +263,7 @@ short-form* lane is still empty even against them.
 **What competitors tried that flopped:** nothing observable flopped — but the "MES as an
 afterthought line" pattern (9–10 of 14 vendors) means most competitors are effectively
 absent from MES-buyer content and are not a threat for the content audience even where they
-compete for the deal. Do not over-index on beating them; the real bar is DigiwinSoft +
-"start publishing at all."
+compete for the deal. Do not over-index on beating them; the real bar is "start publishing at all."
 
 ### Suggestions to beat them (feed next Research + Prompting)
 1. **Stand up one named person on LinkedIn before scaling anything else.** The white space
@@ -274,7 +273,7 @@ compete for the deal. Do not over-index on beating them; the real bar is Digiwin
 2. **Ship LI-C1 (carousel) as the first move into the empty lane** — it is format white
    space (no competitor uses carousels) and now correctly sized (9 panels). Treat its
    result as the first read on whether the dwell-time thesis holds for this audience.
-3. **Benchmark against DigiwinSoft's case-study structure, not their channel mix** — when
+3. **Benchmark against ASPL's case-study structure, not their channel mix** — when
    Mysoft has its first customer, the quantified case study is the format to answer their
    vendor-published ones with; until then, use the "one real production problem, no
    product" technical-breakdown format they are *not* doing.
