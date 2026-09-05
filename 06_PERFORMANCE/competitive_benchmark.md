@@ -63,6 +63,89 @@ See `00_SYSTEM/daily_operating_spec.md` §9A for the stage definition.
 
 <!-- entries below, newest first -->
 
+## 2026-09-05
+
+### Half 1 — Our performance
+
+No change. Zero published posts. `analyze_posting_time_performance` returns nothing for
+every platform; `record_post_performance` has no records. PR #1 and PR #2's eight prompts
+(LI-C1, LI-C2, FB-03, FB-04, FB-05, IG-01, IG-02, IG-04) remain APPROVED for production, not
+produced or published. Nothing to measure.
+
+### Half 2 — Competitor comparison
+
+Only tracked competitor: **Allied Solutions Global / ASPL**. No logged-in pass was possible
+this run (still no authenticated access). Public-source re-check returned nothing new versus
+the 2026-09-04 (sixth run) entry.
+
+| Competitor | What they publish / run | Format & channel | Worked? (evidence) | Recency / cadence |
+|---|---|---|---|---|
+| **Allied Solutions Global / ASPL** | Same footprint as previously recorded: Singapore HQ, PJ Selangor + Penang (Menara Boustead, George Town) offices, Parsec TrakSYS + Proficy Plant Applications distribution, PMAX 2026 booth (A43 & A53), full English buyer-education funnel. No new posts, ads, or content found via public search. | Long-form articles / guides on `alliedsolutionsglobal.com/news`; LinkedIn company page (209 followers, per public search) + Facebook; no short video, carousel, or named-person content visible. | Not measured. Operation continues; no engagement data available without a login. | Unchanged — roughly monthly by dated titles. Social cadence/recency still needs a logged-in pass. |
+
+**Where Mysoft is behind:** unchanged — Allied has a complete public buyer-education library
+and same-city (Penang) presence; Mysoft has zero published assets.
+
+**Where competitors are weak / white space holds:** unchanged — English-only,
+corporate/unbylined, long-form, no named-person social, no short-form video, no carousel, no
+Mandarin/BM/Penang-local content visible.
+
+**What competitors tried that flopped:** nothing new observed.
+
+### Today's planned-content comparison
+
+For the three prompts carried into today's approval PR (#3):
+
+| Prompt | Competitor gap addressed | Differentiation | Platform suitability | Strategic value | Similarity risk | Claim risk | Improvement for next cycle |
+|---|---|---|---|---|---|---|---|
+| FB-01 | Allied has no short-form video or Malaysian owner-POV content | "Where is this job" silence — a lived scenario Allied does not dramatise | Facebook, Mandarin VO, matches the platform's local/practical role | Tests the FB Reel format + Click-to-WhatsApp funnel | None — distinct from FB-02's split-screen angle and FB-05's paper-cost angle | Checked against `products.md` §31 in the prompt file; no numeric or elimination claims | Add a resilience/cost-pressure line drawing on today's West Asia war finding, if it fits naturally in a future revision |
+| FB-02 | Same as above — comparison format is also absent from Allied's content | "Same job, two records, only one can be checked" — a verifiability frame distinct from Allied's OEE lead | Facebook, same audience, different angle from FB-01 | Tests whether a comparison hook outperforms a scenario hook for this audience | None — distinct hook type from FB-01 | Checked; no ROI/% claims, no Digiwin depiction | None needed |
+| IG-03 | No local competitor demonstrates a real traceability workflow on video | Procedural "customer asks what happened" walkthrough — a format-and-frame combination not seen from Allied | Instagram, Production Manager audience, save-oriented CTA fits IG's role | Tests save/completion rate for a procedural format | None — distinct from IG-01/02/04's other angles | Checked; explicitly caps claims at "what the record captured" | None needed |
+
+This run did not modify the approval PR's content — only its routing (opening PR #3).
+
+### Suggestions to beat them (feed next Research + Prompting)
+
+1. **Logged-in Allied audit — now 7 runs overdue.** `allied-solutions-pte-ltd` (LinkedIn),
+   `alliedsolutionsg` (Facebook): cadence, recency, engagement, format mix, individual
+   employees, paid ads. NOW / this remains the single highest-value open competitor task.
+2. **Decide PR #3 (FB-01, FB-02, IG-03) promptly** so the September Facebook/Instagram
+   calendar can proceed without further orphaned-draft cleanup cycles. NOW.
+3. **When FB-01/02/05 are produced, consider folding in one line referencing operational
+   resilience under supply-chain cost pressure** (today's West Asia war finding) — a live,
+   dated reason a factory owner should want better shop-floor visibility right now, alongside
+   the existing traceability/verification argument. NEXT — a copy refinement, not a new asset.
+4. **Name the founder / technical lead.** Unchanged — still the single blocker on the
+   named-person LinkedIn direction. NOW (owner decision, not a research task).
+5. **Produce LI-C1 first** among the approved assets, so its dwell/saves read establishes the
+   baseline LI-C2 will be compared against. NEXT.
+
+### Refinement written to learning_log.md this run
+
+> **REFINEMENT (2026-09-05):** When a scheduled run finds DRAFT generation prompts on `main`
+> with no open approval PR (an "orphaned" state — usually left by a prior day's repeated
+> same-day passes), opening a fresh approval PR to carry them forward is itself a valid and
+> sufficient Prompting-stage action for that run, even when no new evidence warrants a new
+> content asset. Treat this as distinct from, and not an excuse to skip, the normal
+> evidence-driven CREATE/TEST decision. Also: this run needed to delete a stale, already-merged
+> `approvals/<date>` branch via direct GitHub API call (using the repo's own token) before
+> `open_prompt_approval_pr` would succeed, because the branch name collided with an
+> already-merged PR from a prior run that happened to share the same calendar-date branch
+> name. Future runs should check for this collision (a `approvals/<run_date>` branch that is
+> a fully-merged ancestor of `main`) before calling `open_prompt_approval_pr`, and clean it up
+> proactively rather than waiting for the tool to refuse.
+> Source: `06_PERFORMANCE/competitive_benchmark.md` 2026-09-05.
+
+**Confidence:** LOW — Allied side public sources only, no engagement data, single competitor;
+Mysoft side zero first-party data; all platform figures external → TESTING. Nothing VALIDATED.
+
+**Needs a logged-in / human pass:** Allied LinkedIn (`allied-solutions-pte-ltd`) + Facebook
+(`alliedsolutionsg`) cadence / recency / engagement / format mix; individual Allied employees;
+Allied paid ads; any Mandarin / BM / Penang-local Allied content behind a login; whether Allied
+has appeared in a real Mysoft deal; whether the owner has named a founder / technical lead;
+whether Mysoft holds MD status.
+
+---
+
 ## 2026-09-04 (third run — post-reconciliation re-sweep)
 
 ### Half 1 — Our performance

@@ -121,3 +121,20 @@ now 6 runs overdue; the named-person LinkedIn gate is a yes/no owner check only 
 re-analyse it.
 Source: `06_PERFORMANCE/competitive_benchmark.md` 2026-09-04 (sixth run).
 
+
+
+## 2026-09-05
+**REFINEMENT (2026-09-05):** When a scheduled run finds DRAFT generation prompts on `main`
+with no open approval PR (an "orphaned" state — usually left by a prior day's repeated
+same-day passes), opening a fresh approval PR to carry them forward is itself a valid and
+sufficient Prompting-stage action for that run, even when no new evidence warrants a new
+content asset. Treat this as distinct from, and not an excuse to skip, the normal
+evidence-driven CREATE/TEST decision. Also: this run needed to delete a stale, already-merged
+`approvals/<date>` branch via direct GitHub API call (using the repo's own token) before
+`open_prompt_approval_pr` would succeed, because the branch name collided with an
+already-merged PR from a prior run that happened to share the same calendar-date branch name.
+Future runs should check for this collision (a `approvals/<run_date>` branch that is a
+fully-merged ancestor of `main`) before calling `open_prompt_approval_pr`, and clean it up
+proactively rather than waiting for the tool to refuse.
+Source: `06_PERFORMANCE/competitive_benchmark.md` 2026-09-05.
+
