@@ -136,6 +136,30 @@ and date.
   industries" (https://www.digitimes.com/news/a20260120VL206/malaysia-chips-manufacturing-usa-tariffs-policy.html).
 - **Last checked:** 2026-09-02.
 
+- **2026-09-05 addendum — a different and more immediate supply-chain stressor:** a
+  survey reported by Malay Mail (3 Sep 2026, citing an industry association survey)
+  found **96% of Malaysian manufacturers report being affected by the West Asia
+  (Middle East) war**, with **74% citing raw-material supply shortages and rising
+  costs** as the most pressing concern — firms are shifting sourcing toward Singapore
+  and China. This is a distinct pressure from the US tariff picture above (input-cost
+  and supply-continuity risk, not export-market risk), and it is new since the
+  2026-09-04 sweep.
+  **Relevance to Mysoft:** reinforces the "buyers scrutinise payback, want operational
+  resilience" read already on file — a cost/input-shock environment makes "see what's
+  actually happening to your production and material flow in real time" a more
+  credible message than a pure growth/efficiency pitch. Does not change the recommended
+  register (still plain, problem-first, no boom-time language) — sharpens the reason
+  for it.
+  **Evidence type:** INDUSTRY SOURCE (survey reported via news).
+  **Confidence:** LOW-MEDIUM (single survey, no primary data seen).
+  **Contradicting evidence:** None on file.
+  **Evidence gaps:** Survey methodology / sample size not stated in the news report;
+  no MES-specific or Penang-specific breakdown.
+  **Source:** Malay Mail — "Malaysian manufacturers still hit by West Asia war as firms
+  shift raw-material sourcing to Singapore, China, survey finds" (3 Sep 2026)
+  (https://www.malaymail.com/news/money/2026/09/03/malaysian-manufacturers-still-hit-by-west-asia-war-as-firms-shift-rawmaterial-sourcing-to-singapore-china-survey-finds/233781).
+  **Last checked:** 2026-09-05.
+
 ### 5. MES category: growing market, shift to modular/cloud
 
 - **Development:** Third-party estimates put the **global MES market at ~USD 17–19b in

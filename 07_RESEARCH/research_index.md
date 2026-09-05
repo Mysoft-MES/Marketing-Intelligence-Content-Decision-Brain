@@ -73,3 +73,17 @@ No new dated research files this pass (cap respected — all in-place updates). 
 | Correction — Facebook organic page reach "<~2.2%" → **~0.15–0.5% (negligible)** | `03_PLATFORM/facebook.md` (2026-09-04 evening); `03_PLATFORM/platform_index.md` | 2026-09-04 | LOW-MEDIUM → TESTING | Active — direction unchanged, strengthened; Click-to-WhatsApp economics added |
 | Addition — Budget 2026 national AI line (~RM5.9b AI / ~RM2b sovereign AI cloud) | `07_RESEARCH/government_updates.md` (#1) | 2026-09-04 | LOW-MEDIUM | Active — recorded for completeness; NOT an SME/MES grant, not for customer-facing content |
 
+
+
+## 2026-09-05 — Light full-sweep re-check (new day, first run)
+
+| Area | File(s) updated | Last researched | Confidence | Status |
+|---|---|---|---|---|
+| Malaysia manufacturing macro (PMI, NIMP, Penang, tariffs, MES category) | re-checked, no material change beyond the item below | 2026-09-05 | LOW-MEDIUM | RECONFIRMED — NO STRATEGIC CHANGE |
+| New: West Asia war supply-chain stressor (96% of manufacturers affected; 74% cite raw-material shortages) | `07_RESEARCH/industry_news.md` (#4 addendum) | 2026-09-05 | LOW-MEDIUM | Active — new context, sharpens resilience/operational-control framing; not a content trigger on its own |
+| Malaysia e-Invoice / SME digitalisation grants | re-checked, no September announcement beyond what is already on file (`government_updates.md` #2) | 2026-09-05 | MEDIUM | RECONFIRMED — NO STRATEGIC CHANGE |
+| LinkedIn algorithm | re-checked (dwell/"Depth Score", carousel, company-page reach penalty, engagement-bait down-ranking) — all consistent with `03_PLATFORM/linkedin.md` on file; no new figure | 2026-09-05 | LOW-MEDIUM → TESTING | RECONFIRMED — NO STRATEGIC CHANGE |
+| Allied Solutions Global — public-source re-check | no new public activity found beyond what is on file; logged-in audit still blocked (PUBLIC ACCESS LIMIT) | 2026-09-05 | LOW-MEDIUM | RECONFIRMED — NO STRATEGIC CHANGE; logged-in pass now 7 runs overdue |
+
+No new dated research file this pass (one in-place addendum only, well under the two-file cap). See `08_DECISIONS/analysis_log.md` (2026-09-05) and `08_DECISIONS/strategy_brief_2026-09-05.md` for the interpretation.
+
