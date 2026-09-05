@@ -47,6 +47,52 @@ See `00_SYSTEM/daily_operating_spec.md` §4A for the stage definition.
 
 <!-- entries below, newest first -->
 
+## 2026-09-05
+
+**Full strategist reasoning:** `08_DECISIONS/strategy_brief_2026-09-05.md`.
+
+**Research read:** this run's push `2b6b150` — `07_RESEARCH/industry_news.md` #4 addendum
+(West Asia war supply-chain stressor, Malay Mail 2026-09-03), `07_RESEARCH/research_index.md`.
+Re-checks (no material change): `03_PLATFORM/linkedin.md`, `07_RESEARCH/government_updates.md`,
+`04_COMPETITORS/allied-solutions-global.md`. Context: `08_DECISIONS/strategy_brief_2026-09-04.md`,
+`06_PERFORMANCE/learning_log.md` (2026-09-04, sixth run), `06_PERFORMANCE/competitive_benchmark.md`
+(2026-09-04, sixth run), `list_generation_prompt_status`, `get_prompt_approval_pr` (PR #1 and
+PR #2, both merged and already applied as of the last 2026-09-04 commit).
+
+**Prior refinement applied:** `learning_log.md` REFINEMENT (2026-09-04, sixth run) — the
+short-circuit condition (repeat same-day pass + an open PR) does not apply today: this is the
+first run of a new calendar day and both prior approval PRs are already closed. A normal
+full-sweep run applies. **Gate checked this run: still NO named person.** Not rebuilt.
+**Logged-in Allied audit: still not possible** — 7 runs overdue.
+
+**What the findings mean:**
+- One new data point (West Asia war supply-chain stressor — 96% of manufacturers affected,
+  74% citing raw-material shortages, Malay Mail 2026-09-03) sharpens the existing
+  verification-frame positioning with a second "why now" argument (operational resilience
+  under cost pressure) but does not open a new content opportunity.
+- Everything else re-confirmed with no directional change (PMI, e-Invoice/grants, LinkedIn
+  algorithm, Allied's public footprint).
+- Both approval PRs from 2026-09-04 (#1 and #2) were already merged and applied before this
+  run started — no bootstrap apply action was needed today.
+- Three DRAFT prompts (FB-01, FB-02, IG-03) have been orphaned on `main` with no open approval
+  PR since 2026-09-04. This run carries them into a fresh approval PR.
+
+**Content decision:**
+- **Nothing new to create.** The West Asia war finding is folded into existing copy as a line,
+  not a new asset (`brain_rules.md` §31 — do not manufacture content on a quiet-evidence day).
+- **Operational fix, not new content:** open a new approval PR carrying FB-01, FB-02, IG-03
+  forward (no regeneration — their evidence and claim-safety checks remain valid).
+
+**Confidence:** LOW — `current_priorities.md` still carries no owner-set business priority;
+`sales_insights.md` still records pre-revenue / zero customers / zero demo notes. Nothing here
+is validated against Mysoft sales, customer or performance evidence.
+
+**Open questions handed to the next Research run:** unchanged from 2026-09-04 (sixth run) —
+(1) logged-in Allied social audit, now 7 runs overdue; (2) first demo notes; (3) owner business
+priority; (4) named founder / technical lead — yes/no; (5) Malaysia Digital (MD) status;
+(6) keyword-tool verification of the search clusters before REC-6 is written; (7) Budget 2027
+actual measures from 9 Oct 2026.
+
 ## 2026-09-04 (third run — post-reconciliation re-sweep)
 
 **Research read:** this run's in-place updates — `07_RESEARCH/government_updates.md` #2
