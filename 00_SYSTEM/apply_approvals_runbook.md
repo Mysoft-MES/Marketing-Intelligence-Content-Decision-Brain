@@ -6,7 +6,7 @@ Authorised by: human owner (explicit in-session instruction, 2026-09-04)
 Status: ACTIVE
 
 The step list for the **same-day approval apply run** (`daily_operating_spec.md` §14). A
-second, lightweight scheduled run — suggested 14:00 MYT, Mon–Fri — whose only job is to
+second, lightweight scheduled run — suggested 14:00 MYT, Mon–Sat — whose only job is to
 apply an approval decision the owner has made on an open `approvals/<date>` Pull Request,
 without waiting for the next 09:30 daily run.
 
